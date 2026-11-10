@@ -1,6 +1,6 @@
 # FORMA AI — Product Roadmap
 
-> Planning document for the public **portfolio demo**. None of the features below are complete or available in the current public preview. The commercial application's internal source code will be developed in a separate, private repository.
+> Planning document for the public **portfolio demo**. A private development prototype of Exercise Atlas now exists, but it is **not available in the public preview**; its exercise instructions and 3D-style illustration concepts have **not** been professionally validated. The commercial app's source code remains separate from this public repository.
 
 ## Vision
 
@@ -10,12 +10,12 @@ Turn FORMA AI into a fitness experience where an exercise is not just a name in 
 
 | Stage | Deliverable | Acceptance criteria | Status |
 |---|---|---|---|
-| 1. Taxonomy | Muscles, movement patterns, equipment, difficulty and aliases (IT/EN) | Valid schema, deduplication, transparent sources | Planned |
-| 2. Curated library | Initial set of ~50 diverse exercises, with home-gym alternatives | Each entry includes instructions, cautions, and attributions; reviewed by a qualified trainer | Planned |
-| 3. Anatomy | Consistent 3D-style anatomical illustrations for each selected exercise | Primary/secondary muscles checked; labels understandable; assets licensed or original | Planned |
+| 1. Taxonomy | Muscles, movement patterns, equipment, difficulty and aliases (IT/EN) | Valid schema, deduplication, transparent sources | Draft implemented privately; validation pending |
+| 2. Curated library | Initial set of ~50 diverse exercises, with home-gym alternatives | Each entry includes instructions, cautions, and attributions; reviewed by a qualified trainer | 50 original drafts prepared privately; 0 professionally reviewed |
+| 3. Anatomy | Consistent 3D-style anatomical illustrations for each selected exercise | Primary/secondary muscles checked; labels understandable; assets licensed or original | Two unvalidated illustrative concepts for one exercise; rest planned |
 | 4. Virtual trainer | One original, consistent 3D trainer identity and static start/end poses | Coherent anatomy/positioning across assets; labeled demonstrations | Planned |
 | 5. Motion | Optional short demonstrations, with reduced-motion support | Motion and cues reviewed for accuracy; accessible still image alternative | Planned |
-| 6. App integration | Search, filters, exercise details and Home Gym equipment matching | Automated data validation and user testing | Planned |
+| 6. App integration | Search, filters, exercise details and Home Gym equipment matching | Automated data validation and user testing | Private web prototype working; full QA pending |
 | 7. Personalized coaching | Use the curated library as a controlled retrieval source for the private AI coach | No fabricated exercise identifiers; safety checks and qualified review | Planned |
 
 ### Proposed exercise record
