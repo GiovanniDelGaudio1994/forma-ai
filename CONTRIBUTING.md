@@ -1,6 +1,8 @@
 # Contribuire a FORMA AI
 
-FORMA AI è un prototipo educativo e open source orientato a una Home Gym.
+**Attenzione:** FORMA AI è un progetto proprietario (*All rights reserved*). Issue e proposte sono benvenute, ma non inviare codice o pull request senza un accordo esplicito con il titolare dei diritti. La disponibilità pubblica dei sorgenti non concede una licenza di riuso. Vedi [`LICENSE`](LICENSE).
+
+FORMA AI è un prototipo educativo a sorgente consultabile, non open source orientato a una Home Gym.
 
 ## Ambiente di sviluppo
 
