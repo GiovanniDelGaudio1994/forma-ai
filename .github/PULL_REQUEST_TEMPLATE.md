@@ -1,3 +1,5 @@
+> **Progetto proprietario:** non inviare contributi di codice senza aver prima ottenuto l'autorizzazione scritta del titolare dei diritti (vedi `LICENSE` e `CONTRIBUTING.md`).
+
 ## Modifica
 
 Descrivi brevemente cosa cambia e perché.
