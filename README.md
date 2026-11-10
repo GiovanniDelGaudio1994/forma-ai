@@ -2,9 +2,25 @@
 
 **The fitness app that adapts to you.** *(Product concept and interactive prototype.)*
 
-[![Demo](https://img.shields.io/badge/Experience-Interactive%20Demo-baff6b?style=for-the-badge&labelColor=12171d)](https://github.com/GiovanniDelGaudio1994/forma-ai)
+[![Demo live](https://img.shields.io/badge/OPEN-LIVE%20DEMO-baff6b?style=for-the-badge&labelColor=12171d)](https://giovannidelgaudio1994.github.io/forma-ai/)
 ![Rights](https://img.shields.io/badge/License-All%20Rights%20Reserved-8d94a5?style=for-the-badge&labelColor=12171d)
 ![Status](https://img.shields.io/badge/Status-Portfolio%20Preview-a998ff?style=for-the-badge&labelColor=12171d)
+
+## 👀 FORMA AI in movimento
+
+<p align="center">
+  <a href="https://giovannidelgaudio1994.github.io/forma-ai/" title="Apri la demo interattiva di FORMA AI">
+    <img src="assets/forma-ai-demo-animated.gif" alt="Tour animato di FORMA AI: dashboard, scheda workout, alimentazione, check e progressi, coach dimostrativo e Video Lab" width="100%">
+  </a>
+</p>
+
+<p align="center"><sub>Tour visivo illustrativo delle sezioni della demo · Valori fittizi · Coach AI e Video Lab non sono funzioni operative nella preview pubblica.</sub></p>
+
+<p align="center">
+  <a href="https://giovannidelgaudio1994.github.io/forma-ai/"><strong>▶ PROVA LA DEMO INTERATTIVA</strong></a>
+  &nbsp; · &nbsp;
+  <a href="https://github.com/GiovanniDelGaudio1994/forma-ai/tree/main/assets">Visual assets</a>
+</p>
 
 > **This repository contains a demonstration of the FORMA AI product experience, not the commercial application or its proprietary algorithms.**
 
