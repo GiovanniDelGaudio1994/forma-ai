@@ -2,11 +2,11 @@
 
 > **Una Home Gym. Un percorso davvero tuo.**
 
-![Versione](https://img.shields.io/badge/versione-0.2.0-c7f58c?style=flat-square&labelColor=141a24) [![CI](https://github.com/GiovanniDelGaudio1994/forma-ai/actions/workflows/ci.yml/badge.svg)](https://github.com/GiovanniDelGaudio1994/forma-ai/actions/workflows/ci.yml) ![PWA](https://img.shields.io/badge/PWA-installabile-9f8ff0?style=flat-square&labelColor=141a24) ![License](https://img.shields.io/badge/license-MIT-9ab0bf?style=flat-square&labelColor=141a24)
+![Versione](https://img.shields.io/badge/versione-0.2.0-c7f58c?style=flat-square&labelColor=141a24) [![CI](https://github.com/GiovanniDelGaudio1994/forma-ai/actions/workflows/ci.yml/badge.svg)](https://github.com/GiovanniDelGaudio1994/forma-ai/actions/workflows/ci.yml) ![PWA](https://img.shields.io/badge/PWA-installabile-9f8ff0?style=flat-square&labelColor=141a24) ![License](https://img.shields.io/badge/license-All%20Rights%20Reserved-9ab0bf?style=flat-square&labelColor=141a24)
 
 ![Anteprima desktop di FORMA AI](assets/screenshot-desktop.png)
 
-**FORMA** è una Progressive Web App responsive, completamente open-source, che unisce pianificazione degli allenamenti per la Home Gym, gestione dei progressi, check fotografici, ricette e un coach AI opzionale. Il progetto è pensato sia per l'uso personale sia per un portfolio da software developer.
+**FORMA** è una Progressive Web App responsive, con sorgente consultabile a fini di portfolio (non open source), che unisce pianificazione degli allenamenti per la Home Gym, gestione dei progressi, check fotografici, ricette e un coach AI opzionale. Il progetto è pensato sia per l'uso personale sia per un portfolio da software developer.
 
 ## 🎨 Interfaccia v0.2.0 — Precision / Liquid Training
 
@@ -150,9 +150,11 @@ forma-ai/
 - Validazione del Video Lab su dispositivi reali, con riprese frontali/laterali ed eventuali modelli di stima più avanzati.
 - Login e multi-device, app nativa Flutter se serve una distribuzione sugli store.
 
-## Licenza
+## Licenza e diritti d'autore
 
-MIT. Vedi `LICENSE`.
+**Copyright © 2026 Giovanni Del Gaudio — All rights reserved.** Il sorgente è pubblico per consultazione e valutazione del portfolio, ma **non è rilasciato con una licenza open source**: il riutilizzo, la modifica, la redistribuzione e l'uso commerciale richiedono preventiva autorizzazione scritta, salvo i diritti riconosciuti dalla legge e dai Termini di servizio di GitHub (inclusa la possibilità di visualizzare e fare fork su GitHub). Consulta [`LICENSE`](LICENSE) per i dettagli.
+
+**Nota sulla precedente versione:** il commit iniziale riportava la licenza MIT. Il cambio di termini si applica alle pubblicazioni successive e non elimina automaticamente eventuali diritti già concessi sulle copie distribuite con la licenza precedente.
 
 ## 🤝 Contribuzioni e repository
 
