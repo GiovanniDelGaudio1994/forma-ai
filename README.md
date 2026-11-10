@@ -35,6 +35,24 @@
 
 The preview runs entirely in the browser without sign-up, keys or backend services. It **does not collect real user fitness or health data**.
 
+## 🧬 Next milestone: Exercise Atlas & Virtual Coach
+
+**Product roadmap — planned, not yet implemented.** We're designing a structured exercise library with anatomy-first visualizations and a consistent virtual personal trainer.
+
+| Feature | Concept | Status |
+|---|---|---|
+| Exercise knowledge base | Curated exercise metadata: muscles, equipment, movement pattern, skill level and home-gym alternatives | 🟡 Research & design |
+| 3D anatomy viewer | Anatomical illustrations highlighting prime movers and supporting muscles | 🟡 Planned |
+| Virtual trainer | Original branded 3D avatar demonstrating start/end positions, later short movement animations | 🟡 Planned |
+| Coaching integration | Link exercise explanations and appropriate alternatives to the future adaptive coach | 🟡 Planned |
+| Video form review | Carefully qualified visual feedback, requiring separate validation and consent | 🟡 Experimental concept |
+
+**Data quality first:** no unrestricted copying of commercial fitness databases, images or videos. Exercise information will be curated from suitable sources with documented attribution and licensing, reviewed for accuracy, and supported by original or properly licensed media. 3D demonstrations are illustrations, not certified technique assessments.
+
+**[Explore the development roadmap →](ROADMAP.md)**
+
+---
+
 ### Open locally
 
 Open `index.html` in a browser. No build system is required. For a local static server:
