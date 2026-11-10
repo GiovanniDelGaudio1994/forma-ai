@@ -1,4 +1,4 @@
-name: Deploy PWA su GitHub Pages
+name: Publish public demo
 on:
   push:
     branches: [main]
@@ -18,21 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Esegui test unitari
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-      - run: npm test
-      - name: Prepara sito statico
-        run: |
-          mkdir -p dist/assets dist/src
-          cp index.html manifest.webmanifest sw.js dist/
-          cp assets/* dist/assets/
-          cp src/*.js dist/src/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
-      - name: Pubblica
-        id: deployment
+          path: .
+      - id: deployment
         uses: actions/deploy-pages@v4

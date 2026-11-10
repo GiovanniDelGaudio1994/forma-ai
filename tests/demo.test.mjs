@@ -1,0 +1,12 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {readFileSync} from 'node:fs';
+const html=readFileSync(new URL('../index.html',import.meta.url),'utf8');
+const privacy=readFileSync(new URL('../privacy.html',import.meta.url),'utf8');
+test('all six demo screens exist',()=>{for(const id of ['dashboard','workout','nutrition','progress','coach','video'])assert.match(html,new RegExp('id="'+id+'"'));});
+test('five goals are preconfigured',()=>{for(const goal of ['massa','forza','definizione','dimagrimento','mantenimento'])assert.match(html,new RegExp('data-goal="'+goal+'"'));});
+test('demo clearly distinguishes static coach from live AI',()=>{assert.match(html,/non è collegata ad alcun modello AI/i);assert.match(html,/risposte dimostrative statici|contenuti dimostrativi statici/i);});
+test('privacy page documents no real data or video',()=>{assert.match(privacy,/dati fittizi/i);assert.match(privacy,/non carica foto o video/i);});
+test('health and nutrition disclaimers are visible',()=>{assert.match(html,/celiachia/i);assert.match(html,/nessuna ricetta .*certificata/i);assert.match(html,/non sostituiscono consigli medici/i);});
+test('no backend endpoints or API credentials in demo',()=>{assert.doesNotMatch(html,/OPENAI_API_KEY|sk-proj-|\/api\/coach|fetch\s*\(/);});
+test('aria current and reduced-motion support are present',()=>{assert.match(html,/aria-current/);assert.match(html,/prefers-reduced-motion/);});

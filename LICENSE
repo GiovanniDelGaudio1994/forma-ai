@@ -1,23 +1,16 @@
 Copyright (c) 2026 Giovanni Del Gaudio. All rights reserved.
 
-FORMA AI — PROPRIETARY / SOURCE-AVAILABLE NOTICE
+FORMA AI — PROPRIETARY SOURCE-AVAILABLE DEMO
 
 The source code is publicly visible for portfolio and evaluation purposes only.
-
 Except for permissions required by applicable law and GitHub's Terms of Service
-for public repositories (including viewing and forking within the Service),
-no license or permission is granted to use this software in other projects,
-copy or redistribute it outside those permissions, modify it, prepare
-derivative works, sublicense it, or commercially exploit it without prior
-written permission from the copyright holder.
+(including viewing and forking on the Service), no permission is granted to use
+this code in other projects, modify or redistribute it, prepare derivative
+works, sublicense it or commercially exploit it without prior written permission.
 
-Public access to this repository does not make the project open source.
+Third-party assets and software retain their own license terms.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY TO THE EXTENT PERMITTED BY LAW.
 
-Third-party software, libraries, fonts and other third-party assets retain
-their own licenses and rights; this notice does not override them.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, TO THE
-EXTENT PERMITTED BY APPLICABLE LAW.
-
-To request authorization for a particular use, contact the repository
-owner through GitHub.
+Historical notice: Earlier commits of this repository were distributed with an
+MIT license. This notice does not retroactively revoke permissions already
+granted under that license to recipients of those versions.
