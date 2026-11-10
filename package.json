@@ -1,0 +1,16 @@
+{
+  "name": "forma-ai",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "PWA local-first per allenamento Home Gym, check fotografici e coach AI opzionale",
+  "scripts": {
+    "start": "node server/index.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node --check src/app.js && node --check src/planner.js && node --check src/storage.js && node --check src/ai.js && node --check src/adaptive.js && node --check src/technique.js && node --check src/motion.js && node --check server/index.mjs && node --check server/coach.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT"
+}

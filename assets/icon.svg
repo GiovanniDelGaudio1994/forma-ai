@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="FORMA AI">
+  <defs>
+    <linearGradient id="lime" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f1ffb8"/>
+      <stop offset="0.58" stop-color="#d6ff7b"/>
+      <stop offset="1" stop-color="#9beea6"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="128" fill="#18261b"/>
+  <rect x="20" y="20" width="472" height="472" rx="115" fill="url(#lime)"/>
+  <path d="M20 179Q20 20 179 20h195Q225 150 20 179Z" fill="url(#shine)"/>
+  <path d="M150 125h239v65H224v72h148v65H224v96h-74V125Z" fill="#1d321f"/>
+  <circle cx="391" cy="385" r="35" fill="#426944"/>
+</svg>

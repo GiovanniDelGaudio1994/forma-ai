@@ -1,0 +1,19 @@
+.env
+.env.*
+!.env.example
+.DS_Store
+node_modules/
+coverage/
+*.log
+.vscode/
+
+# Dati di allenamento personali mai versionati
+private/
+local-data/
+user-data/
+backups/
+exports/
+*.heic
+*.mov
+*.mp4
+*.webm

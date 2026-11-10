@@ -1,0 +1,27 @@
+name: Bug report
+description: Segnala un problema senza includere dati sensibili o sanitari.
+title: "bug: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Non allegare fotografie personali, dati sanitari, backup, token o altre credenziali.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Descrizione
+      description: Che comportamento hai osservato?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Come riprodurlo
+      description: Passaggi, browser e versione del sistema.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamento atteso
