@@ -24,7 +24,10 @@
   <link rel="sitemap" type="application/xml" href="sitemap.xml">
   <title>Giovanni Del Gaudio | Software Developer · Portfolio</title>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Giovanni Del Gaudio","url":"https://giovannidelgaudio1994.github.io/forma-ai/portfolio/","image":"https://avatars.githubusercontent.com/u/353828254?v=4","description":"Software developer e studente universitario, con progetti di app mobile, AI e sviluppo web","affiliation":{"@type":"CollegeOrUniversity","name":"Università degli Studi di Salerno","url":"https://www.unisa.it/"},"sameAs":["https://github.com/GiovanniDelGaudio1994","https://www.linkedin.com/in/giovanni-del-gaudio-9b6780153/"]}</script>
-  <style>
+  <script id="gdg-theme-init">
+(function(){var t='dark';try{if(localStorage.getItem('gdg-theme')==='light')t='light'}catch(_e){}document.documentElement.dataset.theme=t})()
+</script>
+<style>
 :root{--bg:#070b14;--bg-alt:#0b101b;--panel:#101827;--panel-2:#111b2d;--ink:#f5f8fe;--muted:#9ba9c0;--blue:#3297ff;--blue-light:#8adbff;--violet:#755bff;--border:rgba(165,191,230,.13);--radius:26px;--max:1260px;--ease:cubic-bezier(.22,1,.36,1)}
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
@@ -119,6 +122,143 @@ h1,h2,h3,p{margin:0}h1,h2,h3{letter-spacing:-.05em}p{color:var(--muted)}
 @media(max-width:390px){.credential-intro{padding:19px}.credential-filter{flex:1 1 calc(50% - 7px)}.credential-image{height:175px}}
 @media(prefers-reduced-motion:reduce){.credential-image img{transition:none}}
 
+/* Portfolio v1.2 — personal photo, orbit choreography and accessible theme switch */
+.theme-switch{display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:0 0 auto;min-height:43px;min-width:43px;padding:8px 13px;border:1px solid rgba(136,181,237,.28);border-radius:999px;color:#d5e8ff;background:rgba(33,53,87,.55);cursor:pointer;transition:background .2s,color .2s,transform .2s,border-color .2s;white-space:nowrap}
+.theme-switch:hover{background:rgba(42,98,164,.7);border-color:#74bcff;transform:translateY(-1px)}
+.theme-switch svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linejoin:round;stroke-linecap:round;flex-shrink:0}
+.theme-switch-text{font-size:12px;font-weight:720;letter-spacing:.01em}
+.theme-switch .switch-moon{display:none}
+:root[data-theme="light"] .theme-switch .switch-sun{display:none}
+:root[data-theme="light"] .theme-switch .switch-moon{display:block}
+/* Authentic project story: approved image from the robotics encounter */
+.about-visual.about-photo{display:block;padding:0;margin:0;isolation:isolate;background:#12243d;border:1px solid #5c8cc07d;box-shadow:0 34px 80px #0004}
+.about-visual.about-photo::before{content:none}
+.about-photo img{position:absolute;inset:0;z-index:-2;display:block;width:100%;height:100%;object-fit:cover;object-position:center 40%;transition:transform .75s var(--ease)}
+.about-photo:hover img{transform:scale(1.045)}
+.about-photo::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,#07102220 0%,#07102204 42%,#050e22d9 100%)}
+.about-photo-pill{position:absolute;top:22px;left:22px;max-width:calc(100% - 44px);padding:10px 14px;border:1px solid #c1dcff5c;border-radius:100px;background:#071322c7;backdrop-filter:blur(15px);color:#eff7ff;font-size:10px;font-weight:760;letter-spacing:.13em}
+.about-photo .about-visual-caption{position:absolute;bottom:33px;left:33px;right:33px;z-index:2;color:#fff;text-shadow:0 2px 20px #000c;font-size:12px;letter-spacing:.14em;line-height:1.6}
+.about-interests{display:flex;flex-wrap:wrap;gap:9px;margin:21px 0 6px}
+.about-interests span{border:1px solid #487fbd58;background:#142744;padding:9px 13px;border-radius:100px;color:#bfdaf7;font-size:12px;font-weight:650}
+/* Subtle, continuous elliptical motion (GPU-friendly; disabled for reduced-motion) */
+.orbit-one{animation:gdg-orbit-forward 19s linear infinite}
+.orbit-two{animation:gdg-orbit-backward 29s linear infinite}
+.portrait-frame{animation:gdg-portrait-float 7.5s ease-in-out infinite}
+.portrait-frame img{transform:translate3d(var(--face-x,0px),var(--face-y,0px),0) scale(1.045);transition:transform .5s ease-out}
+.orbit-one::after,.orbit-two::after{content:"";position:absolute;top:-5px;left:50%;width:10px;height:10px;border-radius:50%;background:#79d8ff;box-shadow:0 0 0 6px #2788ff1c,0 0 28px 7px #42a3ff82}
+.orbit-two::after{left:17%;width:7px;height:7px;top:3%;background:#a4b7ff;box-shadow:0 0 20px 4px #727fff88}
+.orbit-point{animation:gdg-point-glow 3s ease-in-out infinite alternate}
+.orbit-point-b{animation-delay:1.2s}
+@keyframes gdg-orbit-forward{from{transform:rotate(-28deg)}to{transform:rotate(332deg)}}
+@keyframes gdg-orbit-backward{from{transform:rotate(27deg)}to{transform:rotate(-333deg)}}
+@keyframes gdg-portrait-float{0%,100%{translate:0 0}50%{translate:0 -7px}}
+@keyframes gdg-point-glow{from{opacity:.6;filter:brightness(.9)}to{opacity:1;filter:brightness(1.5)}}
+/* True light theme, rather than CSS filter inversion: preserves natural image colors. */
+:root[data-theme="light"]{--bg:#f8fbff;--bg-alt:#f0f5fc;--panel:#ffffff;--panel-2:#edf3fa;--ink:#14233a;--muted:#4c6079;--blue:#0968dd;--blue-light:#0070df;--border:rgba(29,65,108,.16);color-scheme:light}
+:root[data-theme="dark"]{color-scheme:dark}
+:root[data-theme="light"] body{background:#f8fbff;color:#14233a}
+:root[data-theme="light"] p{color:#4c6079}
+:root[data-theme="light"] .site-nav{color:#14233a}
+:root[data-theme="light"] .site-nav.is-scrolled{background:rgba(250,252,255,.9);border-bottom-color:#c7d4e344;box-shadow:0 7px 24px #18324b12}
+:root[data-theme="light"] .nav-links{color:#41536b}
+:root[data-theme="light"] .nav-links>a:not(.nav-cta):hover,:root[data-theme="light"] .nav-links>a[aria-current="true"]{color:#0a55aa}
+:root[data-theme="light"] .brand .blue{color:#066ccc}
+:root[data-theme="light"] .nav-cta{background:#e5f1ff;color:#134e97;border-color:#8dbaf255}
+:root[data-theme="light"] .nav-cta:hover{background:#cbe4ff}
+:root[data-theme="light"] .nav-toggle,:root[data-theme="light"] .theme-switch{background:#ecf4fe;border-color:#a4bbd6;color:#195398}
+:root[data-theme="light"] .nav-toggle span{background:#16436f}
+:root[data-theme="light"] .hero{background:radial-gradient(ellipse 700px 510px at 70% 44%,rgba(126,198,255,.33),transparent 78%),radial-gradient(ellipse 650px 450px at 7% 110%,rgba(160,181,252,.20),transparent 70%),#f8fbff}
+:root[data-theme="light"] .hero-grid{background-image:linear-gradient(to right,#31579e0b 1px,transparent 1px),linear-gradient(to bottom,#31579e0b 1px,transparent 1px)}
+:root[data-theme="light"] .hero-lead{color:#40566f}
+:root[data-theme="light"] .hero-lead strong{color:#142641}
+:root[data-theme="light"] .eyebrow{color:#176eb7}
+:root[data-theme="light"] .gradient-text{background-image:linear-gradient(100deg,#007ac2,#0667dc 50%,#554ac8)}
+:root[data-theme="light"] .btn-outline{color:#174572;background:#ffffffcf;border-color:#b0c4df}
+:root[data-theme="light"] .btn-outline:hover{background:#e3f1ff}
+:root[data-theme="light"] .hero-metadata{color:#62758d}
+:root[data-theme="light"] .hero-metadata>span:first-child{color:#264566}
+:root[data-theme="light"] .scroll-cue{color:#617c9b}
+:root[data-theme="light"] .intro-band{background:#e6f1ff;border-block-color:#d4e3f4}
+:root[data-theme="light"] .intro-band-inner{color:#23456f}
+:root[data-theme="light"] .projects{background:#f2f6fc}
+:root[data-theme="light"] .section-intro>p{color:#526681}
+:root[data-theme="light"] .muted-heading{color:#7488a5}
+:root[data-theme="light"] .project-card{background:linear-gradient(160deg,#ffffff,#f1f7ff);border-color:#cfdeeb;box-shadow:0 18px 45px #24456612}
+:root[data-theme="light"] .project-card:hover{box-shadow:0 23px 60px #24456625}
+:root[data-theme="light"] .project-text h3{color:#172e4d}
+:root[data-theme="light"] .project-text p{color:#51647e}
+:root[data-theme="light"] .project-meta{color:#1761ba}
+:root[data-theme="light"] .project-meta span+span{color:#5d738f}
+:root[data-theme="light"] .text-action{color:#075fae}
+:root[data-theme="light"] .sub-action{color:#4e6482}
+:root[data-theme="light"] .projects-extra>a{color:#28527b;background:#ffffff;border-color:#c8d8e8}
+:root[data-theme="light"] .projects-extra>a:hover{background:#e5f1ff}
+:root[data-theme="light"] .expertise{background:#fff;color:#142033}
+:root[data-theme="light"] .expertise-panel{background:#f9fbff}
+:root[data-theme="light"] .about{background:#fff}
+:root[data-theme="light"] .about-copy h2{color:#132c4b}
+:root[data-theme="light"] .about-copy p{color:#4e6381}
+:root[data-theme="light"] .about-copy p strong{color:#182f50}
+:root[data-theme="light"] .education{background:#eff6ff;border-color:#c7d9eb}
+:root[data-theme="light"] .education strong{color:#1a3657}
+:root[data-theme="light"] .education>div>span{color:#536d89}
+:root[data-theme="light"] .about-interests span{background:#f0f7ff;border-color:#c2d9ef;color:#1a547e}
+:root[data-theme="light"] .certifications{background:#f1f6fc}
+:root[data-theme="light"] .credential-intro{background:linear-gradient(110deg,#fff,#e6f2ff);border-color:#c9deef}
+:root[data-theme="light"] .credential-total{color:#163659}
+:root[data-theme="light"] .credential-intro-text{color:#234a76}
+:root[data-theme="light"] .credential-intro-text small{color:#617e9e}
+:root[data-theme="light"] .credential-linkedin{background:#e1f0ff;color:#15589b;border-color:#b5cee8}
+:root[data-theme="light"] .credential-filter{background:#fff;color:#31516f;border-color:#bbd0e5}
+:root[data-theme="light"] .credential-filter.is-active{background:#1762c4;border-color:#1762c4;color:#fff}
+:root[data-theme="light"] .credential-count{color:#516985}
+:root[data-theme="light"] .credential-card{background:#fff;border-color:#d2e0ed;box-shadow:0 10px 28px #1a395612}
+:root[data-theme="light"] .credential-card:hover{box-shadow:0 17px 38px #1a395623}
+:root[data-theme="light"] .credential-body h3{color:#182f4e}
+:root[data-theme="light"] .credential-meta{color:#1262c2}
+:root[data-theme="light"] .credential-meta span:last-child:not(:first-child){color:#5b718d}
+:root[data-theme="light"] .credential-org{color:#365676!important}
+:root[data-theme="light"] .credential-note{color:#5e748f!important}
+:root[data-theme="light"] .credential-bottom{border-top-color:#d3dfeb}
+:root[data-theme="light"] .credential-action{color:#1165bd}
+:root[data-theme="light"] .credential-action:hover{color:#083d79}
+:root[data-theme="light"] .credential-privacy{color:#536d85;border-color:#c3d8ea}
+:root[data-theme="light"] .contact{background:#e7f0fc}
+:root[data-theme="light"] .contact h2{color:#172e4f}
+:root[data-theme="light"] .contact-inner>p{color:#4e6583}
+:root[data-theme="light"] .contact-glow{opacity:.11}
+:root[data-theme="light"] .site-footer{background:#fff;border-top-color:#d3dfed}
+:root[data-theme="light"] .footer-inner>span{color:#536c85}
+:root[data-theme="light"] .footer-links{color:#255b8e}
+/* The editorial statement remains blue in both themes for visual rhythm. */
+@media(max-width:920px){
+  .nav-inner{gap:10px}
+  .nav-links{margin-left:0}
+  .theme-switch{margin-left:auto}
+  .theme-switch-text{display:none}
+  :root[data-theme="light"] .nav-links{background:#f8fbfffa;border-bottom-color:#ceddee;color:#28466a}
+  :root[data-theme="light"] .nav-links>a:not(.nav-cta){color:#2a4d76}
+}
+@media(max-width:700px){
+  .about-visual.about-photo{min-height:540px}
+  .about-photo img{object-position:center 38%}
+  .about-photo .about-visual-caption{left:24px;right:24px;bottom:26px;font-size:11px}
+  .portrait-frame{animation-duration:9s}
+}
+@media(max-width:420px){
+  .nav-inner{gap:8px}
+  .site-nav .brand>span{display:none}
+  .theme-switch{width:43px;height:43px;padding:9px;margin-left:auto}
+  .theme-switch-text{display:none}
+  .about-visual.about-photo{min-height:470px}
+  .about-photo-pill{top:17px;left:17px;font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){
+  .orbit-one,.orbit-two,.portrait-frame,.orbit-point{animation:none!important;translate:none!important}
+  .orbit-one{transform:rotate(-28deg)}.orbit-two{transform:rotate(27deg)}
+  .portrait-frame img{transform:none!important;transition:none}
+  .about-photo img{transition:none}
+}
 </style>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer integrity="sha256-/JqT3SQfawRcv/biwT+X3pxrJ+n7Xh4uoEJ4WLezm+c=" crossorigin="anonymous"></script>
   
@@ -142,6 +282,11 @@ h1,h2,h3,p{margin:0}h1,h2,h3{letter-spacing:-.05em}p{color:var(--muted)}
         <a href="#certificazioni">Certificazioni</a>
         <a class="nav-cta" href="#contatti">Contattami <span aria-hidden="true">↗</span></a>
       </nav>
+      <button id="theme-switch" class="theme-switch" type="button" aria-label="Attiva tema chiaro" title="Passa al tema chiaro" aria-pressed="false">
+        <svg class="switch-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+        <svg class="switch-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.25 15.2A8.8 8.8 0 0 1 8.8 3.75 8.85 8.85 0 1 0 20.25 15.2Z"/></svg>
+        <span class="theme-switch-text">Chiaro</span>
+      </button>
     </div>
   </header>
 
@@ -213,7 +358,7 @@ h1,h2,h3,p{margin:0}h1,h2,h3{letter-spacing:-.05em}p{color:var(--muted)}
       <div class="expertise-panel reveal"><div class="expertise-icon"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="2.6"/><circle cx="7" cy="12" r="3" fill="currentColor"/><circle cx="40" cy="12" r="3" fill="currentColor"/><circle cx="7" cy="37" r="3" fill="currentColor"/><circle cx="40" cy="37" r="3" fill="currentColor"/><path d="m17 18-7-5m20 5 7-5M17 30l-7 6m20-6 7 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></div><h3>AI & software design</h3><p>Esploro prodotti assistiti dall'intelligenza artificiale e il processo di ingegneria del software.</p><span>AI integration · UML · Java</span></div>
     </div></div></section>
 
-    <section class="about section-space" id="chi-sono" aria-labelledby="about-heading"><div class="wrap about-grid"><div class="about-visual reveal"><div class="about-monogram">GDG<span class="about-monogram-circle"></span></div><p class="about-visual-caption">IMPARARE. PROGETTARE.<br>METTERE IN PRATICA.</p></div><div class="about-copy reveal"><span class="eyebrow section-kicker">03 / CHI SONO</span><h2 id="about-heading">Una mente curiosa.<br>Un progetto alla volta.</h2><p>Mi chiamo <strong>Giovanni Del Gaudio</strong> e studio all'<strong>Università degli Studi di Salerno</strong>. Mi interessa tutto il percorso di un prodotto software: capire il problema, progettare la soluzione, svilupparla e migliorarla attraverso il feedback.</p><p>Nel mio portfolio convivono esperienze universitarie e progetti personali: app per auto, fitness con AI, gestionali PHP/MySQL e applicazioni Java. Pubblico demo e documentazione per rendere verificabile ciò che costruisco.</p><div class="education"><span class="education-icon">↗</span><div><strong>Università degli Studi di Salerno</strong><span>Percorso universitario in corso</span></div></div><a class="text-action" href="https://www.unisa.it/" target="_blank" rel="noopener noreferrer">Scopri l'università <span aria-hidden="true">↗</span></a></div></div></section>
+    <section class="about section-space" id="chi-sono" aria-labelledby="about-heading"><div class="wrap about-grid"><figure class="about-visual about-photo reveal"><img src="assets/giovanni-robot-about-2026.webp" alt="Giovanni Del Gaudio durante un incontro sulla robotica insieme al robot AEBOT" loading="lazy" decoding="async" width="900" height="1350"><span class="about-photo-pill">ROBOTICA · INCONTRI REALI</span><figcaption class="about-visual-caption">TECNOLOGIA E CURIOSITÀ.<br>DALLE IDEE ALLE ESPERIENZE REALI.</figcaption></figure><div class="about-copy reveal"><span class="eyebrow section-kicker">03 / CHI SONO</span><h2 id="about-heading">Una mente curiosa.<br>Un progetto alla volta.</h2><p>Mi chiamo <strong>Giovanni Del Gaudio</strong> e studio all'<strong>Università degli Studi di Salerno</strong>. Mi interessa tutto il percorso di un prodotto software: capire il problema, progettare la soluzione, svilupparla e migliorarla attraverso il feedback.</p><p>Nel mio portfolio convivono esperienze universitarie e progetti personali: app per auto, fitness con AI, gestionali PHP/MySQL e applicazioni Java. Mi appassionano anche la <strong>cybersecurity</strong> e la <strong>robotica</strong>: mi piace comprendere come nascono sistemi affidabili e come migliorarli. Pubblico demo e documentazione per rendere verificabile ciò che costruisco.</p><p>Fuori dal codice trovo ispirazione nella musica e nello sport: suono <strong>chitarra</strong> e <strong>pianoforte</strong> e mi piace allenarmi. Creatività e costanza si riflettono anche nel mio modo di progettare.</p><div class="about-interests" aria-label="Interessi personali"><span>♫ Chitarra e pianoforte</span><span>◈ Cybersecurity</span><span>↗ Sport e fitness</span></div><div class="education"><span class="education-icon">↗</span><div><strong>Università degli Studi di Salerno</strong><span>Percorso universitario in corso</span></div></div><a class="text-action" href="https://www.unisa.it/" target="_blank" rel="noopener noreferrer">Scopri l'università <span aria-hidden="true">↗</span></a></div></div></section>
 
     <section class="certifications section-space" id="certificazioni" aria-labelledby="cert-heading">
  <div class="wrap">
@@ -400,6 +545,49 @@ h1,h2,h3,p{margin:0}h1,h2,h3{letter-spacing:-.05em}p{color:var(--muted)}
   }
 })();
 
+/* Theme persistence and lightweight hero cursor parallax. */
+(() => {
+  'use strict';
+  const root=document.documentElement;
+  const toggle=document.getElementById('theme-switch');
+  const updateToggle=()=>{
+    if(!toggle)return;
+    const light=root.dataset.theme==='light';
+    toggle.setAttribute('aria-label',light?'Attiva tema scuro':'Attiva tema chiaro');
+    toggle.setAttribute('title',light?'Passa al tema scuro':'Passa al tema chiaro');
+    toggle.setAttribute('aria-pressed',String(light));
+    const label=toggle.querySelector('.theme-switch-text');
+    if(label)label.textContent=light?'Scuro':'Chiaro';
+    const meta=document.querySelector('meta[name="theme-color"]');
+    if(meta)meta.setAttribute('content',light?'#f8fbff':'#080c16');
+  };
+  if(toggle){
+    updateToggle();
+    toggle.addEventListener('click',()=>{
+      const newTheme=root.dataset.theme==='light'?'dark':'light';
+      root.dataset.theme=newTheme;
+      try{localStorage.setItem('gdg-theme',newTheme)}catch(_){}
+      updateToggle();
+    });
+  }
+  const visual=document.querySelector('.hero-visual');
+  const portrait=visual?.querySelector('.portrait-frame img');
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
+  const fine=window.matchMedia('(hover: hover) and (pointer: fine)');
+  if(visual && portrait && !reduce.matches && fine.matches){
+    visual.addEventListener('pointermove',(event)=>{
+      const rect=visual.getBoundingClientRect();
+      const dx=(event.clientX-(rect.left+rect.width/2))/Math.max(rect.width,1);
+      const dy=(event.clientY-(rect.top+rect.height/2))/Math.max(rect.height,1);
+      portrait.style.setProperty('--face-x',(dx*7).toFixed(2)+'px');
+      portrait.style.setProperty('--face-y',(dy*6).toFixed(2)+'px');
+    },{passive:true});
+    visual.addEventListener('pointerleave',()=>{
+      portrait.style.setProperty('--face-x','0px');
+      portrait.style.setProperty('--face-y','0px');
+    });
+  }
+})();
 </script>
 </body>
 </html>
