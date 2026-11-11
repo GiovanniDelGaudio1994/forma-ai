@@ -6,7 +6,7 @@
 
 **La differenza non è trovare un cambiamento: è spiegare cosa è cambiato, da dove arriva e perché potrebbe essere importante.**
 
-SignalScope è un prototipo open-source Python per monitorare **pagine pubbliche autorizzate**, conservarne snapshot e mostrare differenze leggibili. L'analisi restituisce tag spiegabili per scadenze, requisiti, opportunità e modifiche economiche: un motore di regole, **non** un classificatore AI o una previsione automatica. Ogni segnale richiede verifica umana.
+SignalScope è un prototipo Python con codice pubblico per monitorare **pagine pubbliche autorizzate**, conservarne snapshot e mostrare differenze leggibili. L'analisi restituisce tag spiegabili per scadenze, requisiti, opportunità e modifiche economiche: un motore di regole, **non** un classificatore AI o una previsione automatica. Ogni segnale richiede verifica umana.
 
 ## Il problema
 
