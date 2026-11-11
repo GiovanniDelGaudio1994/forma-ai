@@ -3,7 +3,9 @@
 Sito live: https://giovannidelgaudio1994.github.io/forma-ai/portfolio/
 
 ## Features
-- Sito responsive con design blu notte personalizzato per desktop, iPad, iPhone e Android.
+- Sito responsive con **tema scuro e chiaro selezionabile**, preferenza salvata localmente, design GDG originale per desktop, iPad, iPhone e Android.
+- Sezione «Chi sono» con ritratto insieme al robot AEBOT, rielaborato a partire dalla foto originale condivisa dall'autore, e interessi personali (cybersecurity, musica, sport).
+- Homepage con ellissi animate attorno al ritratto, movimento delicato e supporto a `prefers-reduced-motion`.
 - Animazioni on-scroll realizzate con **jQuery 3.7.1**, indicatori di avanzamento e lieve parallasse; fallback JS se il CDN non è disponibile.
 - Supporto a `prefers-reduced-motion`, navigazione tastiera e menu accessibile.
 - Progetti realmente documentati: DriveGlass, FORMA AI, Fit Zone, GestioneFarmacia, RememberMe, e-Wine.
