@@ -2,7 +2,8 @@
 # Meteo Bash 2D — modern terminal edition. Uses Open-Meteo (no API token).
 set -euo pipefail
 CITY="${1:-Salerno}"
-case "${CITY,,}" in
+CITY_LOWER="$(printf "%s" "$CITY" | tr "[:upper:]" "[:lower:]")"
+case "$CITY_LOWER" in
   salerno) LAT="40.6824"; LON="14.7681";;
   roma|rome) LAT="41.9028"; LON="12.4964";;
   milano|milan) LAT="45.4642"; LON="9.1900";;
