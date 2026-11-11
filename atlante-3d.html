@@ -39,6 +39,11 @@ a{color:inherit}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-
 .info p{color:#b4b0d0;font-size:13px;line-height:1.7;margin:0}
 .muscles{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0}
 .muscle{background:#222345;border:1px solid #6e5d9c7a;color:#c9c1e2;padding:9px 11px;border-radius:11px;font-size:12px;font-weight:700}
+.model-switch{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:12px}
+.model-option{border:1px solid #7958b7;padding:14px 12px;border-radius:14px;background:#1b1c40;color:#d8ceef;font-weight:800;font-size:13px;cursor:pointer;transition:background .25s,border-color .25s}
+.model-option[aria-pressed="true"]{background:linear-gradient(115deg,#684ef3,#af42e6);color:#fff;border-color:#d28cff;box-shadow:0 7px 23px #9f49ea4b}
+.model-option:hover{border-color:#d091ff}
+#stage canvas{width:100%;height:100%;display:block}
 .muscle:hover{border-color:#d39aff;color:#fff}.muscle.active{background:linear-gradient(110deg,#6a49dd,#ab43e2);border-color:#cb86ff;color:white;box-shadow:0 7px 24px #9e4fe331}
 .exercise{border:1px solid #7959b16e;border-radius:16px;padding:16px;background:#6f49bd1e}
 .exercise strong{font-size:15px}.exercise p{margin-top:8px}.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}.chip{font-size:10px;color:#cfc1ec;background:#ab79ff17;border:1px solid #9669d759;padding:6px 9px;border-radius:30px}
@@ -61,6 +66,10 @@ a{color:inherit}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-
 <section class="panel viewer" aria-label="Visualizzatore anatomico 3D dimostrativo"><div class="viewer-head"><b>◉ LIVE 3D VIEWER</b><span class="view-chip">Modello stilizzato · Demo</span></div><div id="stage" tabindex="0" aria-label="Modello 3D. Trascina per ruotarlo, scorri per ingrandire, oppure utilizza i pulsanti di vista."></div><div class="overlay"><button class="action" id="front">Vista frontale</button><button class="action" id="back">Vista posteriore</button><button class="action" id="spin" aria-pressed="false">⟳ Auto rotazione</button><button class="action" id="reset">Ripristina</button><span class="hint">↔ Trascina · ⤢ Zoom · Tocca un muscolo</span></div></section>
 <aside class="panel info">
 <div><span class="kicker">INTERACTIVE MUSCLE MAP</span><h2 id="muscle-name">Pettorali</h2><p id="muscle-description">Muscoli anteriori del torace coinvolti in movimenti di spinta e adduzione dell'arto superiore.</p></div>
+<div><span class="kicker">SCEGLI MODELLO 3D</span><div class="model-switch" id="model-switch" role="group" aria-label="Modello corporeo">
+<button type="button" class="model-option" data-model="male" aria-pressed="true">♂ Uomo 3D</button>
+<button type="button" class="model-option" data-model="female" aria-pressed="false">♀ Donna 3D</button>
+</div><p style="margin-top:10px;font-size:11px">Modelli corporei illustrativi, non rappresentativi di tutte le corporature.</p></div>
 <div><span class="kicker">SELEZIONA UN GRUPPO</span><div class="muscles" id="muscles"></div></div>
 <div class="exercise"><span class="kicker">ESEMPIO DI MOVIMENTO</span><div style="margin-top:10px"><strong id="exercise-title">Push-up facilitato</strong></div><p id="exercise-description">Esempio educativo di spinta a corpo libero, modificabile in base alle capacità individuali.</p><div class="chips"><span class="chip" id="exercise-area">Parte superiore</span><span class="chip">Solo esempio · Non prescrizione</span></div></div>
 <p class="warning">⚕️ Il modello è stilizzato e non rappresenta una ricostruzione anatomica clinicamente accurata. Schede ed esercizi sono illustrativi, non valutazioni tecniche, programmi personalizzati o indicazioni mediche.</p>
