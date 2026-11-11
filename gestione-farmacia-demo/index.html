@@ -10,10 +10,38 @@
 .section{background:#e5e5e8;border:1px solid #b1b7c3;border-radius:6px;margin-bottom:14px;padding:12px}.section h3{font-size:15px;margin:0 0 12px}.toolbar{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:12px}.toolbar button{white-space:normal}.query{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.query input{max-width:250px}.appfield{display:grid;grid-template-columns:minmax(150px,1fr) minmax(160px,2fr);align-items:center;gap:10px 15px;margin:5px 0}.appfield label{font-weight:600}.appfield input,.appfield select,.query input{height:30px;border:1px solid #afb7c3;background:#fff;padding:4px 7px;border-radius:2px;width:100%}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.tablewrap{max-height:390px;min-height:220px;overflow:auto;background:#d8dadf;border:1px solid #aeb4c0}table{border-collapse:collapse;width:100%;font-size:12px;white-space:nowrap}thead{position:sticky;top:0;background:linear-gradient(#f8f8fa,#d9dde4)}td,th{padding:6px 9px;text-align:left;border-right:1px solid #b7bdc5;border-bottom:1px solid #c0c4cb}tbody tr:nth-child(even){background:#e6e8eb}tbody tr:hover{background:#c2d9f4}.summary{margin-top:12px;font-size:12px;color:#5c6570}.chip{display:inline-block;color:#164878;font-weight:650;background:#d2e6f8;border-radius:20px;padding:4px 9px}.notice{padding:12px;border:1px solid #a9c5dc;background:#e5f3ff;border-radius:5px;color:#2d5572;margin-bottom:12px}.mini{font-size:12px;color:#5e6873}.reportgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.reportcard{background:#f4f6f9;padding:16px;border:1px solid #b3c1d1;border-radius:7px}.reportcard b{font-size:26px;color:#1c76b2}.reportcard small{display:block;color:#556575;margin-top:10px}.hidden{display:none!important}.alert{margin:8px 0;color:#196c43}.code{font:12px monospace;white-space:pre-line}.footerpage{text-align:center;font-size:12px;color:#5d6574;padding:15px 8px 25px}
 @media(max-width:850px){.appbanner{grid-template-columns:60px 1fr}.appbanner strong{font-size:15px}.clock{display:none}.work{grid-template-columns:150px minmax(0,1fr)}.sidebar button{font:12px Arial;padding:10px 6px}.formgrid{grid-template-columns:1fr}.loginbody{grid-template-columns:1fr}.loginart{min-height:220px}.loginart .medical{padding-top:20px}.appfield{grid-template-columns:1fr}.reportgrid{grid-template-columns:1fr}}
 @media(max-width:540px){.work{display:block}.sidebar{flex-direction:row;overflow:auto;padding:4px}.sidebar button{flex:0 0 auto;min-width:125px}.stage{padding:9px}.appbanner{height:53px}.loginform{padding:26px}.reportgrid{grid-template-columns:1fr}}
+
+/* Visual fidelity update: source screenshot with functional fields overlaid. */
+#login{position:relative;max-width:520px;width:calc(100% - 24px);margin:30px auto 16px;aspect-ratio:321/315;background:#fff;overflow:hidden;box-shadow:0 12px 36px #22405b40;border:0;border-radius:0}
+#login .login-screenshot{width:100%;height:100%;object-fit:fill;display:block}
+#login .loginform{position:absolute;inset:0;display:block;padding:0;background:none;pointer-events:none}
+#login .loginform .screen-input{position:absolute;left:35.6%;width:40.8%;height:5.5%;background:#fff;border:0;border-radius:0;outline-offset:1px;padding:0 4px;color:#1a2837;pointer-events:auto;font-size:clamp(11px,1.4vw,16px);box-shadow:none}
+#login .loginform .screen-input.user{top:41.2%}
+#login .loginform .screen-input.pass{top:59.0%}
+#login .loginform button{position:absolute;left:22%;width:54.7%;height:8.6%;border:0;background:transparent;color:transparent;font-size:0;pointer-events:auto;cursor:pointer}
+#login .loginform button[type=submit]{top:71.7%}
+#login .loginform #resetlogin{top:84.1%}
+#login .loginform button:hover{box-shadow:inset 0 0 0 2px #16375a70}
+#login .loginform :focus-visible{outline:3px solid #ffb82e;outline-offset:2px}
+.demo-login-note{text-align:center;margin:0 auto 20px;max-width:530px;color:#596875;font-size:12px;padding:0 14px;line-height:1.6}
+.appbanner{display:block!important;height:auto!important;padding:0!important;background:#248eec;line-height:0;border-bottom:1px solid #8ab3d5}
+.appbanner img{display:block;width:100%;height:auto}
+@media(max-width:850px){#login{max-width:520px}.appbanner{height:auto!important}}
+@media(max-width:540px){#login .loginform .screen-input{font-size:12px}.appbanner{height:auto!important}}
 </style></head><body>
 <div class="status"><span>🎓 <strong>GestioneFarmacia</strong> — Progetto universitario di Basi di Dati · Demo riproduttiva delle finestre Java Swing</span><span>Solo dati fittizi · nessun MySQL · <a href="https://github.com/GiovanniDelGaudio1994/GiovanniDelGaudio1994/tree/main/projects/gestione-farmacia/">Documentazione</a></span></div>
-<section id="login"><div class="macbar"><span class="traffic"><i></i><i></i><i></i></span> Login Database</div><div class="loginbody"><div class="loginart"><div class="medical">🩺 💊</div><div class="medicaltext">Gestione Farmaceutica</div></div><form class="loginform" id="loginform"><h1>🔐 Accesso al gestionale</h1><p>Questa schermata è ricostruita dal progetto universitario. Usa le credenziali dimostrative già precompilate per entrare: non è prevista autenticazione reale.</p><label>👤 Utente<input id="username" value="demo" autocomplete="off" required></label><label>🔑 Password<input id="password" type="password" value="demo" required></label><button class="primary" type="submit">Accedi</button><button class="danger" type="button" id="resetlogin">Ripristina dati demo</button><small class="mini">Accesso simulato. Non inserire password reali o dati personali.</small></form></div></section>
-<section id="app" class="hidden"><div class="macbar"><span class="traffic"><i></i><i></i><i></i></span>Gestione Farmacia</div><header class="appbanner"><span style="font-size:27px">👨‍⚕️💊</span><strong>Sistema di Gestione Farmaceutica</strong><span class="clock">Benvenuto, demo<br><span id="clock"></span></span></header><div class="work">
+<section id="login" aria-label="Login dimostrativo GestioneFarmacia">
+<img class="login-screenshot" src="assets/login-originale.svg" alt="Schermata Login Database originale: sfondo medico azzurro, logo farmacia, campi utente e password, pulsanti Accedi ed Esci" width="321" height="315">
+<form id="loginform" class="loginform" autocomplete="off">
+<label for="username" style="position:absolute;left:-10000px">Nome utente dimostrativo</label>
+<input id="username" class="screen-input user" name="username" value="demo" aria-label="Nome utente dimostrativo" autocomplete="off">
+<label for="password" style="position:absolute;left:-10000px">Password dimostrativa</label>
+<input id="password" class="screen-input pass" name="password" type="password" value="demo" aria-label="Password dimostrativa" autocomplete="off">
+<button type="submit" aria-label="Accedi alla demo" title="Accedi alla demo">Accedi alla demo</button>
+<button type="button" id="resetlogin" aria-label="Ripristina i dati dimostrativi" title="Ripristina la demo">Ripristina demo</button>
+</form></section>
+<p class="demo-login-note">Demo senza autenticazione reale. Premi <strong>Accedi</strong> per esplorare i moduli: nessun account MySQL o dato sanitario viene utilizzato.</p>
+<section id="app" class="hidden"><div class="macbar"><span class="traffic"><i></i><i></i><i></i></span>Gestione Farmacia</div><header class="appbanner"><img src="assets/topbar-originale.svg" width="522" height="27" alt="Barra originale blu Sistema di Gestione Farmaceutica, con icona del farmacista e indicazione di benvenuto"></header><div class="work">
 <nav class="sidebar" id="nav">
 <button data-page="farmaci" class="current">💊 Gestione Farmaci</button>
 <button data-page="pazienti">👥 Gestione Pazienti</button>
@@ -102,5 +130,5 @@ document.querySelector('.workspace').addEventListener('click',e=>{
 $('loginform').addEventListener('submit',e=>{e.preventDefault();$('login').classList.add('hidden');$('app').classList.remove('hidden');draw();window.scrollTo(0,0);});
 $('exit').addEventListener('click',()=>{$('app').classList.add('hidden');$('login').classList.remove('hidden');window.scrollTo(0,0);});
 $('resetlogin').addEventListener('click',()=>{$('username').value='demo';$('password').value='demo';});
-$('clock').textContent='12 febbraio 2025 · orario illustrativo';
+
 </script></body></html>
