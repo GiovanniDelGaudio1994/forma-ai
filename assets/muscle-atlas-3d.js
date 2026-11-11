@@ -76,13 +76,14 @@ function makeBody(type){
  return body;
 }
 const bodies={male:makeBody('male'),female:makeBody('female')};
-let model='male',body=bodies.male;
+let model='male',body=bodies.male,transition=1;
 function activeMuscles(){return modelParts[model];}
 function chooseModel(next,{persist=true}={}){
  if(!bodies[next]||model===next)return;
  const old=bodies[model],incoming=bodies[next];
  incoming.rotation.y=old.rotation.y;
  old.visible=false;incoming.visible=true;
+ incoming.scale.setScalar(.96);transition=0;
  model=next;body=incoming;
  if(persist){try{localStorage.setItem('forma-ai-atlas-model',next)}catch{}}
  document.querySelectorAll('[data-model]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.model===model)));
@@ -141,6 +142,7 @@ function draw(time){
  raf=requestAnimationFrame(draw);
  const dt=Math.min((time-last)/1000,.05);last=time;
  if(rotating&&!reduceMotion)body.rotation.y+=dt*.44;
+ if(transition<1){transition=reduceMotion?1:Math.min(1,transition+dt*3.2);const eased=1-Math.pow(1-transition,3);body.scale.setScalar(.96+.04*eased);}
  controls.update();renderer.render(scene,camera);
 }
 raf=requestAnimationFrame(draw);
