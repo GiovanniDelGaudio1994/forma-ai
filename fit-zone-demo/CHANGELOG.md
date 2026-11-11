@@ -1,3 +1,18 @@
+## 2026-11-11 — v1.1.0 · Responsive UI Fix (iPad / iPhone / Android)
+
+**Commit associati:** rimozione nel README della galleria obsoleta (repository portfolio); ottimizzazione CSS responsive e menu adattivo (repository demo).
+
+- Allineate le griglie dei corsi e dei servizi ai diversi viewport, con passaggio 3 → 2 → 1 colonne e immagini proporzionate.
+- Aggiornato il catalogo dei corsi: card su una colonna per smartphone, fotografie leggibili, pulsanti touch più grandi e filtri disposti su due colonne.
+- Migliorati header e menu a comparsa per iPad/tablet; il menu si richiude passando a desktop, usando il tasto Esc o navigando a un'ancora.
+- Rifiniti hero, tipografia fluida, margini, form, galleria e footer per telefoni piccoli (320–390 px) e tablet (768–1024 px).
+- Nessuna modifica al database, al codice PHP originale o alle funzioni server: la demo rimane solo frontend.
+- Nel README portfolio sono state eliminate le anteprime della precedente demo scura, sostituite con una descrizione dell'esperienza responsive.
+
+**Verifiche di codice:** presenza dei breakpoint CSS e dei riferimenti JS. **Da verificare su dispositivi reali:** rendering visivo su iPhone Safari, iPad Safari e Samsung Internet/Chrome; non considerare questi test conclusi finché non sono effettuati.
+
+---
+
 # Fit Zone — Registro modifiche demo
 
 ## 2026-11-11 — `fix(fit-zone): allinea il frontend alla copertina del portfolio`
