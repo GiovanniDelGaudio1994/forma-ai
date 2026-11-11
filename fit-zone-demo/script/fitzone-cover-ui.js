@@ -12,7 +12,19 @@ if (menuToggle && navLinks) {
   });
   navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
   document.addEventListener('click', e => { if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) closeMenu(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeMenu(); menuToggle.focus(); } });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
+      closeMenu();
+      menuToggle.focus();
+    }
+  });
+  // Chiudi il menu quando si passa da mobile/tablet a desktop.
+  const desktopMedia = window.matchMedia('(min-width: 931px)');
+  const handleViewportChange = () => { if (desktopMedia.matches) closeMenu(); };
+  if (desktopMedia.addEventListener) desktopMedia.addEventListener('change', handleViewportChange);
+  else if (desktopMedia.addListener) desktopMedia.addListener(handleViewportChange);
+  // Non lasciare aperto il menu dopo aver selezionato un'ancora interna.
+  window.addEventListener('hashchange', closeMenu);
 }
 const filters = [...document.querySelectorAll('.fz-filter[data-filter]')];
 const cards = [...document.querySelectorAll('.fz-catalog-card[data-type]')];
