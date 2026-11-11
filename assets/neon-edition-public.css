@@ -1,0 +1,116 @@
+/* FORMA AI | Neon Edition — public, static, privacy-safe design layer.
+   Visual counterpart to the private app. No backend, credentials or personal data. */
+:root{
+ color:#f8f6ff;background:#070917;
+ --muted:#a9a8ca;--line:rgba(156,129,249,.19);
+ --accent:#b968ff;--purple:#6b8dff;
+ --panel:#141831;--radius:23px
+}
+body{
+ background:
+ radial-gradient(ellipse 58% 45% at 88% 2%,rgba(117,47,227,.24),transparent 72%),
+ radial-gradient(ellipse 52% 43% at 5% 86%,rgba(28,70,197,.15),transparent 74%),
+ linear-gradient(145deg,#070917,#0e1129 65%,#080b19);
+ color:#f8f7ff
+}
+button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible{outline-color:#bf7eff}
+.sidebar{
+ background:linear-gradient(165deg,rgba(12,15,38,.98),rgba(8,11,29,.98));
+ border-right:1px solid rgba(162,124,245,.23);
+ box-shadow:14px 0 55px rgba(0,0,0,.15)
+}
+.mark{
+ background:linear-gradient(140deg,#15285b,#46136c);
+ border:1px solid #9d68f9;
+ color:#e1b8ff;box-shadow:0 0 27px #9747ff3b
+}
+.brand b{color:#c374ff}.brand small{color:#a79acb}.side-label{color:#9386c3}
+.nav button{color:#aeb0cd;border:1px solid transparent}
+.nav button:hover{background:rgba(147,87,236,.15);color:white;transform:translateX(2px)}
+.nav button[aria-current=page]{
+ color:#eacfff;background:linear-gradient(100deg,rgba(138,69,238,.27),rgba(54,91,195,.1));
+ border-color:rgba(165,110,255,.35);box-shadow:inset 3px 0 #bb69ff,0 0 25px #7f41e21a
+}
+.side-bottom{border:1px solid #62458c;background:linear-gradient(140deg,#291d50,#111d3a)}
+.side-bottom p{color:#c0b9d9}.side-bottom a{color:#dec8ff}
+.mini,.overline{color:#c277ff}
+.crumb{color:#9996be}.crumb b{color:#fff}
+.pill{color:#e6c7ff;background:rgba(114,65,210,.2);border-color:#7956bd}
+.avatar{color:white;background:linear-gradient(125deg,#5a79ff,#c03ae7)}
+.page-title{color:#fff}.subtext,.message,.muted{color:#aaa9cb}
+.hero{
+ border:1px solid rgba(157,96,253,.48);
+ background:
+ radial-gradient(circle at 81% 41%,rgba(138,53,252,.29),transparent 44%),
+ radial-gradient(circle at 96% 80%,rgba(53,91,231,.22),transparent 40%),
+ linear-gradient(116deg,#14182f,#21163f 60%,#101c3a);
+ box-shadow:0 22px 90px #4a1c9929,inset 0 1px #ffffff12
+}
+.hero:before{border-color:#c185ff28;box-shadow:0 0 0 42px #a34fff0a,0 0 0 90px #a34fff05}
+.hero h1{color:#fff}.hero h1 em{color:#cf76ff}
+.hero p{color:#c3bcdd}
+.primary{
+ color:white;background:linear-gradient(110deg,#694df9,#b13df4 70%,#d13eda);
+ border-color:#d48cfc59;box-shadow:0 12px 34px #9d38ef45
+}
+.primary:hover{background:linear-gradient(110deg,#7b5bff,#c151fb);box-shadow:0 16px 38px #973af05c}
+.secondary{background:rgba(119,80,222,.12);border-color:#8e70d36b;color:#e7dafa}
+.secondary:hover{background:rgba(141,95,242,.22)}
+.circle{border-color:#c77bff42}
+.circle.c3{background:radial-gradient(#bd66ff6b,#a643ff0b);box-shadow:0 0 110px #a44cff55}
+.body-icon{color:#db91ff;filter:drop-shadow(0 0 35px #a64aff9a)}
+.orbit{background:#221c4aba;border-color:#ad71ff6a}
+.orbit.a{color:#ebd5ff}.orbit.b{color:#c6ccff}
+.section-head h2{color:#faf7ff}
+.section-head small{color:#a6a1c8}
+.card{
+ border-color:var(--line);
+ background:linear-gradient(145deg,rgba(31,34,71,.91),rgba(15,20,46,.95));
+ box-shadow:inset 0 1px #ffffff07
+}
+.card:hover{border-color:#bd79ff6b;box-shadow:0 15px 35px #3d1e7c29}
+.metric-label{color:#afa9cf}
+.metric-value{color:#fff}
+.metric-value small{color:#aaa7c9}
+.metric-foot{color:#c48dff}
+.day{background:#9682ff0a;color:#b3add6}
+.day.done{background:#ab6aff19;border-color:#b974ff68}
+.day.done span{color:#cb83ff}.day.now{border-color:#808fff}
+.track{background:#313653}.track span{background:linear-gradient(90deg,#5c81ff,#bd50ff)}
+.notice{background:#49341b39;border-color:#a57d5370}
+.tab{border-color:#51436f;background:#1b203e;color:#cbc2e2}
+.tab.active{color:white;background:linear-gradient(120deg,#754df5,#b249ed);border-color:#aa6bff}
+.highlight{background:linear-gradient(135deg,#302256,#182644);border-color:#7256ac}
+.ex-no{background:#362454;color:#d18dff}
+.ex-name{color:#f5f0ff}.ex-dose{color:#d4c5f3}
+.tag{background:#9872ff20;color:#d8c2ff}
+.recipe-art,.recipe:nth-child(2) .recipe-art,.recipe:nth-child(3) .recipe-art{
+ background:radial-gradient(circle at 55% 80%,#ab4cff33,transparent 70%),linear-gradient(135deg,#302453,#192342)
+}
+.recipe h3{color:#fff}.recipe p{color:#b1aece}
+.chart path{stroke:#b568ff}.chart .gridline{stroke:#70608b45}.chart .dot{fill:#b568ff}
+.bubble{background:#302050;border-color:#7e59b5;color:#f4eafa}
+.preview-list button{background:#1a2241;border-color:#57477e;color:#eee8ff}
+.preview-list button:hover{border-color:#bb70ff;background:#2a2351}
+.mock-video{border-color:#815bbe;background:radial-gradient(ellipse at 55% 40%,#50327d,#101a36 75%)}
+.mock-video:after{color:#d6baff}.silhouette{filter:drop-shadow(0 0 28px #9f63ff9c)}
+.picture{border-color:#7a65ac;background:linear-gradient(135deg,#322a52,#162342);color:#bab2d6}
+.footer{border-color:var(--line);color:#8e8bac}.footer a{color:#cc98ff}
+.mobile-nav{background:#0c1127f5;border-color:#8860bd54}
+.mobile-nav button{color:#ada3ce}
+.mobile-nav button[aria-current=page]{color:#d18cff}
+.preview-edition{
+ display:inline-flex;align-items:center;gap:9px;margin-bottom:15px;
+ color:#e7ceff;border:1px solid #aa74ec65;background:#8648ee20;
+ border-radius:999px;padding:8px 13px;font-size:11px;font-weight:800;letter-spacing:.08em
+}
+.preview-edition:before{content:"";width:7px;height:7px;border-radius:50%;background:#c679ff;box-shadow:0 0 11px #b75cff}
+@media(min-width:781px){.app{grid-template-columns:258px minmax(0,1fr)}}
+@media(max-width:780px){
+ .main{padding:21px 15px 105px}
+ .hero{box-shadow:0 14px 50px #5a289c29}
+ .mobile-nav{border-top:1px solid #8a59c663}
+ .grid .card{border-radius:19px}
+}
+@media(hover:hover){.card,.nav button,.primary,.secondary{transition:transform .2s,box-shadow .2s,background .2s,border-color .2s}}
+@media(prefers-reduced-motion:reduce){.card,.nav button,.primary,.secondary{transition:none!important}}
