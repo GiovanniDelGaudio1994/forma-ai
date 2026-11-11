@@ -1,12 +1,14 @@
-# FORMA AI — Public Experience Demo
+# FORMA AI — Neon Edition · Public Experience Demo
 
 <p align="center">
   <img src="assets/forma-ai-cover.svg" alt="FORMA AI — copertina concept neon con dashboard, coach virtuale e monitoraggio progressi" width="100%">
 </p>
 
-**The fitness app that adapts to you.** *(Product concept and interactive prototype.)*
+**The fitness app that adapts to you.** *(Neon Edition — public product concept and interactive prototype.)*
 
-[![Demo live](https://img.shields.io/badge/OPEN-LIVE%20DEMO-baff6b?style=for-the-badge&labelColor=12171d)](https://giovannidelgaudio1994.github.io/forma-ai/)
+**Nuovo restyling:** la demo pubblica utilizza ora la palette viola/blu Dark Neon della versione privata, con dashboard e navigazione responsive. Restano contenuti dimostrativi: il backend, i dati privati e le funzioni AI reali non sono pubblicati.
+
+[![Demo live](https://img.shields.io/badge/OPEN-LIVE%20DEMO-a85aff?style=for-the-badge&labelColor=12171d)](https://giovannidelgaudio1994.github.io/forma-ai/)
 ![Rights](https://img.shields.io/badge/License-All%20Rights%20Reserved-8d94a5?style=for-the-badge&labelColor=12171d)
 ![Status](https://img.shields.io/badge/Status-Portfolio%20Preview-a998ff?style=for-the-badge&labelColor=12171d)
 
