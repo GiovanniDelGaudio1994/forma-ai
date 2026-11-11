@@ -77,6 +77,24 @@ function makeBody(type){
 }
 const bodies={male:makeBody('male'),female:makeBody('female')};
 let model='male',body=bodies.male,transition=1;
+let renderMode='3d';
+const artStage=document.getElementById('art-stage');
+const artImages=[...document.querySelectorAll('[data-art]')];
+function refreshArt(){
+ artImages.forEach(img=>{img.hidden=img.dataset.art!==model;});
+ const current=artImages.find(img=>img.dataset.art===model);
+ artStage.classList.toggle('failed',!current?.complete||!current.naturalWidth);
+}
+function setRenderMode(mode){
+ if(mode!=='art'&&mode!=='3d')return;
+ renderMode=mode;
+ artStage.classList.toggle('active',mode==='art');
+ document.querySelector('.viewer').classList.toggle('art-active',mode==='art');
+ document.querySelectorAll('[data-render]').forEach(btn=>btn.setAttribute('aria-pressed',String(btn.dataset.render===mode)));
+ refreshArt();
+}
+artImages.forEach(img=>{img.addEventListener('load',refreshArt);img.addEventListener('error',refreshArt);});
+document.querySelectorAll('[data-render]').forEach(btn=>btn.addEventListener('click',()=>setRenderMode(btn.dataset.render)));
 function activeMuscles(){return modelParts[model];}
 function chooseModel(next,{persist=true}={}){
  if(!bodies[next]||model===next)return;
@@ -87,7 +105,7 @@ function chooseModel(next,{persist=true}={}){
  model=next;body=incoming;
  if(persist){try{localStorage.setItem('forma-ai-atlas-model',next)}catch{}}
  document.querySelectorAll('[data-model]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.model===model)));
- setActive(active);
+ setActive(active);refreshArt();
 }
 const floor=new THREE.Mesh(new THREE.RingGeometry(1.16,1.19,90),new THREE.MeshBasicMaterial({color:0x7957f9,transparent:true,opacity:.5,side:THREE.DoubleSide}));
 floor.rotation.x=-Math.PI/2;floor.position.y=-2.42;scene.add(floor);
@@ -119,10 +137,11 @@ function setActive(id){
 setActive('chest');
 document.querySelectorAll('[data-model]').forEach(b=>b.addEventListener('click',()=>chooseModel(b.dataset.model)));
 try{const preferred=localStorage.getItem('forma-ai-atlas-model');if(preferred==='female')chooseModel('female',{persist:false});}catch{}
+setRenderMode('3d');
 stage.addEventListener('pointerdown',e=>{previous={x:e.clientX,y:e.clientY};drag=false});
 stage.addEventListener('pointermove',e=>{if(Math.abs(e.clientX-previous.x)>5||Math.abs(e.clientY-previous.y)>5)drag=true});
 stage.addEventListener('click',event=>{
- if(drag)return;
+ if(drag||renderMode==='art')return;
  const rect=renderer.domElement.getBoundingClientRect();
  pointer.set((event.clientX-rect.left)/rect.width*2-1,-(event.clientY-rect.top)/rect.height*2+1);
  raycaster.setFromCamera(pointer,camera);
@@ -141,7 +160,7 @@ let last=performance.now();
 function draw(time){
  raf=requestAnimationFrame(draw);
  const dt=Math.min((time-last)/1000,.05);last=time;
- if(rotating&&!reduceMotion)body.rotation.y+=dt*.44;
+ if(rotating&&renderMode==='3d'&&!reduceMotion)body.rotation.y+=dt*.44;
  if(transition<1){transition=reduceMotion?1:Math.min(1,transition+dt*3.2);const eased=1-Math.pow(1-transition,3);body.scale.setScalar(.96+.04*eased);}
  controls.update();renderer.render(scene,camera);
 }
