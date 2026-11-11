@@ -21,14 +21,14 @@ Un buon SEO favorisce la ricerca organica, ma non può garantire la prima posizi
 © 2026 Giovanni Del Gaudio.
 
 ## Privacy degli attestati
-Le immagini nella cartella `assets/certificates/` sono anteprime parziali derivate dai documenti forniti dall'autore; non sono stati pubblicati i PDF integrali, numeri di registrazione, codici personali o QR. Il titolo «certificazione» nel sito indica la sezione complessiva, ma ogni elemento conserva la propria natura di attestato di corso, partecipazione, credenziale digitale o programma professionale. Per il certificato professionale Google AI è presente il collegamento di verifica ufficiale.
+Le anteprime grafiche nella cartella `assets/certificates/` restano versioni ridotte per la galleria; nella cartella pubblica `assets/certificates/full/` sono invece disponibili, su richiesta esplicita del titolare, 2 PDF originali e 12 immagini della parte documentale visibile negli screenshot forniti. Eventuali codici identificativi e QR presenti **non sono oscurati** e sono accessibili pubblicamente. Il titolo «certificazione» nel sito indica la sezione complessiva, ma ogni elemento conserva la propria natura di attestato di corso, partecipazione, credenziale digitale o programma professionale. Per il certificato professionale Google AI è presente il collegamento di verifica ufficiale.
 
 ## Restyling sezioni Progetti e Certificazioni (v1.3)
 
 - **Progetti personali:** DriveGlass, FORMA AI e Fit Zone con gerarchia visiva dedicata, stack, descrizioni e collegamenti al codice/demo realmente disponibili.
 - **Progetti universitari:** GestioneFarmacia, RememberMe/iRem ed e-Wine raggruppati separatamente e collegati alle relative schede.
 - **Screenshot DriveGlass e FORMA AI:** immagini di visione UI fornite dall'autore; non tutti i dettagli visualizzati costituiscono funzionalità già rilasciate.
-- **Certificazioni:** 14 badge circolari associati agli enti; l'interazione apre una nuova scheda con l'anteprima del documento corrispondente. I loghi ufficiali disponibili sono stati inseriti in formato SVG; dove non disponibili vengono utilizzati badge tipografici con il nome dell'ente, senza inventare credenziali o status.
+- **Certificazioni:** 14 badge circolari associati agli enti; l'interazione apre una nuova scheda con il PDF originale oppure con l'immagine disponibile del documento. I loghi ufficiali disponibili sono stati inseriti in formato SVG; dove non disponibili vengono utilizzati badge tipografici con il nome dell'ente, senza inventare credenziali o status.
 - **Formazione:** sigillo dell'Università degli Studi di Salerno nella scheda «Chi sono» e nell'intestazione dei progetti universitari; identificazione del percorso da studente, senza suggerire patrocinio dell'Ateneo.
 - **UI:** sfumature e microinterazioni al passaggio del mouse; tema scuro/chiaro e preferenze del visitatore preservati.
 - **Documenti:** con consenso esplicito del titolare, sono disponibili 2 PDF originali (Google AI Professional e attestazione drone EASA A1/A3) e 12 immagini complete della parte documentale visibile negli screenshot forniti. I QR e i codici identificativi presenti nei file non sono oscurati.
