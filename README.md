@@ -12,6 +12,10 @@
 ![Rights](https://img.shields.io/badge/License-All%20Rights%20Reserved-8d94a5?style=for-the-badge&labelColor=12171d)
 ![Status](https://img.shields.io/badge/Status-Portfolio%20Preview-a998ff?style=for-the-badge&labelColor=12171d)
 
+## 🧬 Novità — Muscle Atlas 3D
+
+**[Esplora l'atlante muscolare 3D interattivo](https://giovannidelgaudio1994.github.io/forma-ai/atlante-3d.html)** · Modello umano stilizzato 3D ruotabile, selezione di 7 gruppi muscolari, vista frontale/posteriore e schede esercizio illustrative. Funziona lato browser con Three.js via CDN, senza dati personali o backend proprietario. **È una preview educativa, non un atlante clinicamente accurato né un sistema di analisi biomeccanica.**
+
 ## 👀 FORMA AI in movimento
 
 <p align="center">
