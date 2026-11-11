@@ -1,32 +1,61 @@
-# SignalScope — Responsible Web Change Monitor
+# SignalScope / Scraper — Explainable Source Intelligence
 
-**Progetto personale · Python 3 · SQLite · Web scraping responsabile**
+![SignalScope cover](../../assets/signalscope-cover.svg)
 
-SignalScope è un prototipo CLI che analizza il contenuto testuale di pagine web pubbliche, calcola l'impronta SHA-256 e memorizza in SQLite soltanto le versioni modificate. Quando trova differenze, genera un *unified diff* esportabile in JSON. È pensato come base per il monitoraggio trasparente di pagine informative, avvisi e comunicazioni pubbliche.
+[▶ **Demo interattiva**](https://giovannidelgaudio1994.github.io/forma-ai/signalscope-demo/) · [Portfolio](https://giovannidelgaudio1994.github.io/forma-ai/portfolio/)
 
-## Avvio (Python 3.10+, nessuna dipendenza esterna)
+**La differenza non è trovare un cambiamento: è spiegare cosa è cambiato, da dove arriva e perché potrebbe essere importante.**
+
+SignalScope è un prototipo open-source Python per monitorare **pagine pubbliche autorizzate**, conservarne snapshot e mostrare differenze leggibili. L'analisi restituisce tag spiegabili per scadenze, requisiti, opportunità e modifiche economiche: un motore di regole, **non** un classificatore AI o una previsione automatica. Ogni segnale richiede verifica umana.
+
+## Il problema
+
+Scadenze di bandi, opportunità e avvisi possono cambiare senza comunicazioni evidenti. SignalScope rende il monitoraggio **trasparente e verificabile** senza costruire un crawler aggressivo.
+
+## Demo web
+
+La [demo SignalScope](https://giovannidelgaudio1994.github.io/forma-ai/signalscope-demo/) confronta due testi editabili nel browser: è illustrativa e non chiama siti esterni. Il motore Python sottostante implementa anche SHA-256, history SQLite e controlli robots.txt.
+
+## Usa il motore CLI
+
+Richiede Python 3.10+; non ha dipendenze aggiuntive.
 
 ```bash
-python3 source/signalscope.py check https://example.org/
-python3 source/signalscope.py history https://example.org/
-python3 -m unittest discover -s tests -v
+python3 projects/scraper/source/signalscope.py check https://example.org/
+python3 projects/scraper/source/signalscope.py history https://example.org/
+python3 -m unittest discover -s projects/scraper/tests -v
 ```
 
-Il file SQLite locale viene creato nella cartella corrente. Per cronologie separate usa `--db ./mio-monitor.sqlite3`.
+Il database SQLite viene creato localmente come `signalscope.sqlite3`. Puoi personalizzare il percorso con `--db ./monitor.sqlite3`.
 
-## Funzionalità implementate
-- Controllo di `robots.txt` prima di ogni richiesta al documento
-- Limitazione a HTTP(S), porte standard e host pubblicamente instradabili
-- Limite di dimensione (1 MB), timeout (15 secondi), blocco dei redirect cross-host
-- Estrazione del testo HTML ignorando script, style, noscript e SVG
-- Impronte SHA-256, versionamento incrementale su SQLite e differenze leggibili
-- Output JSON utilizzabile da script e pipeline
+### Cosa è implementato
 
-## Limiti e roadmap
-**Prototipo: non è un servizio cloud né un monitor automatico.** Richiede esecuzioni manuali o uno scheduler esterno; il supporto JavaScript, CSS selector, feed RSS, notifiche, statistiche e dashboard sono obiettivi futuri. Le pagine protette da login e i siti che negano l'accesso non sono supportati. Non esegue scraping massivo, bypass CAPTCHA, scraping di dati personali né aggira le regole dei siti. Il controllo DNS riduce i rischi di SSRF ma non è un isolamento di rete completo: per un servizio multiutente è richiesto anche un egress proxy con verifica degli IP di destinazione.
+- Rispetto di robots.txt e rifiuto se il file non è verificabile
+- Host HTTP(S) pubblici, restrizioni redirect, 15 s timeout, limite 1 MB
+- Estrazione testo HTML, snapshot SHA-256 e persistenza SQLite
+- Diff unificato da versione a versione ed esportazione JSON
+- Analisi esplicabile **rule-based** per parole come `scadenza`, `proroga`, `requisiti`, `finanziamento`, `revocato`, con livello di priorità indicativo
+- Test unitari senza chiamate di rete
 
-### Note sul mercato
-Esistono già prodotti di monitoring generico come changedetection.io. L'obiettivo è quindi distinguersi per tracciabilità, approccio trasparente e analisi delle fonti, non rivendicare una novità assoluta.
+### Caso d'uso
 
-## Autore
-Giovanni Del Gaudio · [Portfolio](https://giovannidelgaudio1994.github.io/forma-ai/portfolio/).
+Un ente cambia la scadenza di un avviso dal 15 al 30 novembre. SignalScope conserva la versione precedente, segnala la riga modificata, assegna il tag `deadline` ed esporta la prova del cambiamento con impronta SHA-256. Il contenuto resta da verificare alla fonte.
+
+### Origini del progetto
+
+Lo ZIP `Scraper.zip` fornito dall'autore contiene anche un **mini-scraper finanziario Python del 2020** che recuperava serie storiche Yahoo Finance e tracciava medie mobili. Si tratta di un progetto precedente e distinto, non del codice qui presentato come SignalScope. SignalScope è una nuova evoluzione per il portfolio, non una rinominazione di quel programma.
+
+## Roadmap
+
+1. Monitor schedulato con quote di accesso per dominio, retry e log strutturati.
+2. Selezione di aree del documento, RSS, export CSV/Atom.
+3. Dashboard con filtri, notifiche opt-in e triage dei cambiamenti.
+4. Feed verificabili con URL, timestamp, provenienza e gestione delle modifiche successive.
+
+**Non ancora presenti:** fetch JavaScript dinamico, notifiche, multiutente, dashboard cloud, scraping finanziario live. Non sono previste tecniche per aggirare login, CAPTCHA o limitazioni dei siti.
+
+## Sicurezza
+
+La protezione DNS inclusa non è sufficiente contro ogni possibile race DNS/SSRF; SignalScope non deve essere esposto come API multiutente senza controlli di rete aggiuntivi. Nessun dato da pagine private o protette. Prima di monitorare un sito, verificare termini d'uso e condizioni d'accesso.
+
+© 2026 Giovanni Del Gaudio — codice originale SignalScope.
