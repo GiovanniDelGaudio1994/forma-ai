@@ -111,6 +111,23 @@ def fetch_robots(url):
             return "", url
         raise
 
+def classify_changes(diff):
+    """Return deterministic, explainable signals. Not AI predictions."""
+    additions = [line[1:].lower() for line in diff.splitlines()
+                 if line.startswith("+") and not line.startswith("+++")]
+    text = " ".join(additions)
+    rules = {
+        "deadline": ("scadenza", "deadline", "termine", "due date", "proroga"),
+        "eligibility": ("requisiti", "requirements", "ammessi", "eligibility"),
+        "financial": ("importo", "finanziamento", "budget", "funding", "costo"),
+        "cancellation": ("annullato", "revocato", "canceled", "cancelled", "sospeso"),
+        "opportunity": ("bando", "concorso", "borsa", "scholarship", "call for"),
+    }
+    signals = [name for name, terms in rules.items() if any(term in text for term in terms)]
+    priority = ("high" if any(x in signals for x in ("deadline", "cancellation"))
+                else "medium" if signals else "low")
+    return {"priority": priority, "signals": signals, "reason": "Keyword rules on newly added text; human review required"}
+
 def connect(path):
     db = sqlite3.connect(path)
     db.execute("""CREATE TABLE IF NOT EXISTS snapshots
@@ -137,7 +154,8 @@ def check(url, db_path):
                 db.execute("INSERT INTO snapshots (url,checked_at,fingerprint,content) VALUES (?,?,?,?)",
                     (url, datetime.now(timezone.utc).isoformat(), digest, text))
         return {"url": url, "resolved_url": final, "status": status, "sha256": digest,
-                "characters": len(text), "diff": diff}
+                "characters": len(text), "diff": diff,
+                "change_intelligence": classify_changes(diff) if status == "changed" else None}
     finally:
         db.close()
 
