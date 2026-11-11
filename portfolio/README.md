@@ -31,4 +31,14 @@ Le immagini nella cartella `assets/certificates/` sono anteprime parziali deriva
 - **Certificazioni:** 14 badge circolari associati agli enti; l'interazione apre una nuova scheda con l'anteprima del documento corrispondente. I loghi ufficiali disponibili sono stati inseriti in formato SVG; dove non disponibili vengono utilizzati badge tipografici con il nome dell'ente, senza inventare credenziali o status.
 - **Formazione:** sigillo dell'Università degli Studi di Salerno nella scheda «Chi sono» e nell'intestazione dei progetti universitari; identificazione del percorso da studente, senza suggerire patrocinio dell'Ateneo.
 - **UI:** sfumature e microinterazioni al passaggio del mouse; tema scuro/chiaro e preferenze del visitatore preservati.
-- **Privacy:** le immagini apribili restano anteprime ritagliate degli attestati e non PDF completi contenenti informazioni personali.
+- **Documenti:** con consenso esplicito del titolare, sono disponibili 2 PDF originali (Google AI Professional e attestazione drone EASA A1/A3) e 12 immagini complete della parte documentale visibile negli screenshot forniti. I QR e i codici identificativi presenti nei file non sono oscurati.
+
+## Demo universitarie integrate
+
+- **GestioneFarmacia:** [demo web ricostruttiva](../gestione-farmacia-demo/) accessibile anche in una finestra interna al portfolio. Utilizza dati fittizi, non esegue il gestionale Java originale né MySQL.
+- **RememberMe/iRem:** [visita guidata dei mockup autentici](demos/irem/), con otto tappe navigabili tra mockup e paper sketch. Non è una build Android o un dispositivo medico.
+- **e-Wine:** al momento è disponibile la [scheda tecnica](https://github.com/GiovanniDelGaudio1994/GiovanniDelGaudio1994/tree/main/projects/e-wine). Una demo funzionante richiede il progetto eseguibile e relative dipendenze.
+
+## Trasparenza sulla pubblicazione dei certificati
+
+Il titolare ha richiesto espressamente la pubblicazione dei documenti senza oscurare QR o identificativi. I documenti sono accessibili pubblicamente dalla cartella `assets/certificates/full/`, non sono protetti da autenticazione e possono essere indicizzati o copiati. Le attestazioni ottenute solamente sotto forma di screenshot o badge non vengono spacciate per PDF originali.
