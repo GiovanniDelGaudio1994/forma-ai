@@ -38,7 +38,7 @@
 <label for="password" style="position:absolute;left:-10000px">Password dimostrativa</label>
 <input id="password" class="screen-input pass" name="password" type="password" value="demo" aria-label="Password dimostrativa" autocomplete="off">
 <button type="submit" aria-label="Accedi alla demo" title="Accedi alla demo">Accedi alla demo</button>
-<button type="button" id="resetlogin" aria-label="Ripristina i dati dimostrativi" title="Ripristina la demo">Ripristina demo</button>
+<button type="button" id="resetlogin" aria-label="Esci dalla demo e torna alla scheda del progetto" title="Esci dalla demo">Esci</button>
 </form></section>
 <p class="demo-login-note">Demo senza autenticazione reale. Premi <strong>Accedi</strong> per esplorare i moduli: nessun account MySQL o dato sanitario viene utilizzato.</p>
 <section id="app" class="hidden"><div class="macbar"><span class="traffic"><i></i><i></i><i></i></span>Gestione Farmacia</div><header class="appbanner"><img src="assets/topbar-originale.svg" width="522" height="27" alt="Barra originale blu Sistema di Gestione Farmaceutica, con icona del farmacista e indicazione di benvenuto"></header><div class="work">
@@ -129,6 +129,6 @@ document.querySelector('.workspace').addEventListener('click',e=>{
 });
 $('loginform').addEventListener('submit',e=>{e.preventDefault();$('login').classList.add('hidden');$('app').classList.remove('hidden');draw();window.scrollTo(0,0);});
 $('exit').addEventListener('click',()=>{$('app').classList.add('hidden');$('login').classList.remove('hidden');window.scrollTo(0,0);});
-$('resetlogin').addEventListener('click',()=>{$('username').value='demo';$('password').value='demo';});
+$('resetlogin').addEventListener('click',()=>{window.location.href='https://github.com/GiovanniDelGaudio1994/GiovanniDelGaudio1994/tree/main/projects/gestione-farmacia/';});
 
 </script></body></html>
