@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 450" width="1000" height="450" role="img" aria-label="e-Wine — copertina illustrativa portfolio"><defs>
+<linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#311824"/><stop offset="1" stop-color="#563245"/></linearGradient>
+<radialGradient id="r"><stop stop-color="#FFB1C0" stop-opacity=".16"/><stop offset="1" stop-color="#FFB1C0" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1000" height="450" rx="30" fill="url(#b)"/>
+<circle cx="827" cy="259" r="240" fill="url(#r)"/>
+<path d="M60 73H940" stroke="#FFFFFF" stroke-opacity=".17"/>
+<rect x="64" y="36" width="12" height="12" rx="6" fill="#FFB1C0"/>
+<text x="94" y="48" font-family="Arial,sans-serif" fill="#CAD9E0" font-size="21" font-weight="700" letter-spacing="2">PROGETTO UNIVERSITARIO</text>
+<rect x="643" y="112" width="303" height="300" rx="45" fill="#FFFFFF" fill-opacity=".045" stroke="#FFFFFF" stroke-opacity=".12"/>
+<g fill="none" stroke="#FFB1C0" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"><path d="M738 193h128l-15 89c-6 39-26 59-49 59s-43-20-49-59z"/><path d="M802 341v40m-50 10h100"/><path d="M750 273c25-10 69-10 101 0"/></g>
+<text x="64" y="198" font-family="Arial,sans-serif" font-size="76" font-weight="700" fill="#F5FAFF">e-Wine</text>
+<text x="67" y="243" font-family="Arial,sans-serif" font-size="26" fill="#C8D8E2">Web engineering & software design</text>
+<rect x="66" y="302" width="480" height="1" fill="#FFFFFF" fill-opacity=".2"/>
+<text x="67" y="346" font-family="Arial,sans-serif" font-size="24" fill="#FFB1C0">Java JSP/Servlet  ·  MySQL</text>
+<text x="66" y="410" font-family="Arial,sans-serif" font-size="18" fill="#94AAB7">Giovanni Del Gaudio · Portfolio</text>
+</svg>
