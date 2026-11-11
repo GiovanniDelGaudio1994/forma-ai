@@ -1,0 +1,24 @@
+name: SignalScope tests
+on:
+  push:
+    paths:
+      - 'projects/scraper/**'
+      - '.github/workflows/signalscope-tests.yml'
+  pull_request:
+    paths:
+      - 'projects/scraper/**'
+      - '.github/workflows/signalscope-tests.yml'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile SignalScope
+        run: python -m py_compile projects/scraper/source/signalscope.py
+      - name: Unit tests
+        run: python -m unittest discover -s projects/scraper/tests -v
