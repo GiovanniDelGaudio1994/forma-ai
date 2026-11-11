@@ -1,4 +1,4 @@
-# Meteo Bash 2D — terminal weather, open source presentation
+# Meteo Bash 2D — terminal weather, public project
 
 ![Meteo Bash 2D](../../assets/meteo-bash2d-cover.svg)
 
