@@ -42,7 +42,8 @@ def adapt_portfolio(html: str, root: bool) -> str:
             html = html.replace(f'{attr}="assets/', f'{attr}="{path_to_assets}assets/')
         html = html.replace('data-demo-url="demos/', 'data-demo-url="portfolio/demos/')
         html = html.replace('data-demo-url="../', 'data-demo-url="')
-        html = html.replace('href="sitemap.xml"', 'href="portfolio/sitemap.xml"')
+    else:
+        html = html.replace('href="sitemap.xml"', 'href="../sitemap.xml"')
 
     for name in ("fit-zone-demo", "signalscope-demo", "meteo-bash2d-demo",
                  "gestione-farmacia-demo", "ewine-demo"):
@@ -130,6 +131,23 @@ def build() -> None:
             else:
                 content = content.replace('href="index.html"', 'href="forma-ai-demo/"')
             page.write_text(content, encoding="utf-8")
+
+    # A single canonical sitemap covers the homepage and the public demos.
+    from xml.sax.saxutils import escape
+    paths = ("", "forma-ai-demo/", "ewine-demo/", "fit-zone-demo/",
+             "gestione-farmacia-demo/", "meteo-bash2d-demo/",
+             "signalscope-demo/", "atlante-3d.html")
+    sitemap = '<?xml version="1.0" encoding="UTF-8"?>\\n'
+    sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\\n'
+    for path in paths:
+        sitemap += f"  <url><loc>{escape(DOMAIN + path)}</loc></url>\\n"
+    sitemap += "</urlset>\\n"
+    (OUTPUT / "sitemap.xml").write_text(sitemap, encoding="utf-8")
+    (OUTPUT / "portfolio/sitemap.xml").write_text(sitemap, encoding="utf-8")
+    (OUTPUT / "robots.txt").write_text(
+        "User-agent: *\\nAllow: /\\nSitemap: " + DOMAIN + "sitemap.xml\\n",
+        encoding="utf-8",
+    )
 
     for page in (
         OUTPUT / "index.html",
