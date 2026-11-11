@@ -17,6 +17,12 @@ class SignalScopeTests(unittest.TestCase):
         self.assertIn("Hello world", output)
         self.assertNotIn("secret", output)
 
+    def test_explainable_change_signals(self):
+        info = module.classify_changes("--- before\n+++ after\n-Scadenza: 15 novembre\n+Scadenza: 30 novembre")
+        self.assertIn("deadline", info["signals"])
+        self.assertEqual(info["priority"], "high")
+        self.assertEqual(module.classify_changes("+Pagine pubbliche")["priority"], "low")
+
     def test_snapshots(self):
         with tempfile.TemporaryDirectory() as d:
             database = str(pathlib.Path(d) / "test.db")
