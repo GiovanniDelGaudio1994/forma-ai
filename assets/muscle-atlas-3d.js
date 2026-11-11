@@ -19,51 +19,75 @@ renderer.toneMappingExposure=1.55;
 stage.appendChild(renderer.domElement);
 const scene=new THREE.Scene();
 const camera=new THREE.PerspectiveCamera(37,1,.1,100);
-camera.position.set(0,1.28,8.4);
+camera.position.set(0,.15,9.1);
 const controls=new OrbitControls(camera,renderer.domElement);
 controls.enableDamping=true;controls.dampingFactor=.065;
-controls.enablePan=false;controls.minDistance=5;controls.maxDistance=11;
+controls.enablePan=false;controls.minDistance=6.7;controls.maxDistance=13;
 controls.minPolarAngle=.3;controls.maxPolarAngle=Math.PI-.3;
-controls.target.set(0,.15,0);
+controls.target.set(0,.05,0);
 scene.add(new THREE.HemisphereLight(0xcad3ff,0x1c1c56,2.1));
 const key=new THREE.DirectionalLight(0xe9c1ff,3.4);key.position.set(3,6,5);scene.add(key);
 const blue=new THREE.PointLight(0x527aff,65,12);blue.position.set(-3,-1,2);scene.add(blue);
 const rim=new THREE.PointLight(0xae55ff,50,12);rim.position.set(3,2,-4);scene.add(rim);
-const body=new THREE.Group();scene.add(body);
+// Two separate procedural models. All geometry is original, simplified anatomy.
+const modelRoot=new THREE.Group();scene.add(modelRoot);
 const baseMat=new THREE.MeshStandardMaterial({color:0x435276,metalness:.25,roughness:.44});
 const jointMat=new THREE.MeshStandardMaterial({color:0x304066,metalness:.28,roughness:.42});
-const muscles=[];
-function part(x,y,z,sx,sy,sz,group=null,rot=0){
- const material=group?new THREE.MeshStandardMaterial({color:0x3e466c,metalness:.28,roughness:.4,emissive:0x080816,emissiveIntensity:.24}):baseMat;
- const mesh=new THREE.Mesh(new THREE.SphereGeometry(1,24,16),material);
- mesh.position.set(x,y,z);mesh.scale.set(sx,sy,sz);mesh.rotation.z=rot;
- mesh.castShadow=false;mesh.userData.group=group;body.add(mesh);
- if(group)muscles.push(mesh);
- return mesh;
+const modelParts={male:[],female:[]};
+function makeBody(type){
+ const female=type==='female';
+ const body=new THREE.Group();
+ const list=modelParts[type];
+ const make=(x,y,z,sx,sy,sz,group=null,rot=0)=>{
+  const mat=group?new THREE.MeshStandardMaterial({color:0x3e466c,metalness:.28,roughness:.4,emissive:0x080816,emissiveIntensity:.24}):baseMat;
+  const obj=new THREE.Mesh(new THREE.SphereGeometry(1,24,16),mat);
+  obj.position.set(x,y,z);obj.scale.set(sx,sy,sz);obj.rotation.z=rot;
+  obj.userData.group=group;body.add(obj);if(group)list.push(obj);
+  return obj;
+ };
+ const bone=(x,y,z,sx,sy,sz,rot=0)=>{
+  const obj=new THREE.Mesh(new THREE.SphereGeometry(1,20,14),jointMat);
+  obj.position.set(x,y,z);obj.scale.set(sx,sy,sz);obj.rotation.z=rot;body.add(obj);
+ };
+ const shoulder=female?.60:.70,hip=female?.56:.47;
+ make(0,2.12,0,female?.34:.38,.42,.34);
+ bone(0,1.67,0,.15,.19,.15);
+ make(0,.85,0,shoulder,.88,.35);
+ make(0,-.16,0,hip,.37,.36);
+ for(const s of [-1,1]){
+  make(s*(female?.28:.33),1.20,.30,female?.29:.34,female?.30:.37,.16,'chest',s*.10);
+  make(s*(female?.62:.72),1.37,.03,female?.24:.29,.25,.29,'shoulders');
+  make(s*(female?.77:.86),.87,.05,female?.165:.205,.42,.20,'arms',s*.1);
+  make(s*(female?.87:.96),.14,.07,female?.155:.18,.38,.17,'arms',-s*.1);
+  bone(s*(female?.87:.96),-.19,.07,.14,.15,.14);
+  make(s*(female?.31:.33),-.72,0,female?.28:.30,.53,.29,'legs',-s*.05);
+  bone(s*.33,-1.25,0,.22,.23,.23);
+  make(s*.33,-1.69,.02,female?.18:.21,.45,.20,'legs',s*.03);
+  make(s*.34,-2.14,.19,.22,.12,.38);
+  make(s*(female?.31:.27),-.18,-.33,female?.32:.27,.34,.15,'glutes');
+  make(s*(female?.30:.35),.56,-.33,female?.26:.30,.64,.14,'back',s*.04);
+ }
+ for(let i=0;i<3;i++)for(const s of [-1,1]){
+  make(s*(female?.17:.19),.91-i*.30,.33,.16,.13,.085,'core');
+ }
+ make(0,-.04,.31,.27,.17,.12,'core');
+ body.visible=type==='male';
+ modelRoot.add(body);
+ return body;
 }
-function bone(x,y,z,sx,sy,sz,rot=0){const mesh=new THREE.Mesh(new THREE.SphereGeometry(1,20,14),jointMat);mesh.position.set(x,y,z);mesh.scale.set(sx,sy,sz);mesh.rotation.z=rot;body.add(mesh);return mesh;}
-part(0,2.12,0,.38,.43,.34); // head
-bone(0,1.68,0,.17,.18,.16);
-part(0,.85,0,.65,.91,.37); // upper torso
-part(0,-.15,0,.49,.39,.36); // pelvis
-for(const sign of [-1,1]){
- part(sign*.32,1.21,.26,.34,.38,.17,'chest',sign*.1);
- part(sign*.68,1.39,.05,.29,.25,.3,'shoulders');
- part(sign*.82,.87,.05,.20,.44,.21,'arms',sign*.12);
- part(sign*.92,.14,.07,.18,.39,.18,'arms',-sign*.1);
- bone(sign*.95,-.18,.07,.15,.15,.15);
- bone(sign*1,-.32,.07,.14,.18,.14);
- part(sign*.33,-.72,0,.29,.53,.29,'legs',-sign*.06);
- bone(sign*.33,-1.25,.01,.23,.23,.24);
- part(sign*.32,-1.69,.03,.20,.46,.21,'legs',sign*.03);
- part(sign*.34,-2.15,.19,.22,.12,.39);
- part(sign*.26,-.18,-.33,.27,.32,.14,'glutes');
- part(sign*.35,.55,-.32,.29,.65,.14,'back',sign*.04);
+const bodies={male:makeBody('male'),female:makeBody('female')};
+let model='male',body=bodies.male;
+function activeMuscles(){return modelParts[model];}
+function chooseModel(next,{persist=true}={}){
+ if(!bodies[next]||model===next)return;
+ const old=bodies[model],incoming=bodies[next];
+ incoming.rotation.y=old.rotation.y;
+ old.visible=false;incoming.visible=true;
+ model=next;body=incoming;
+ if(persist){try{localStorage.setItem('forma-ai-atlas-model',next)}catch{}}
+ document.querySelectorAll('[data-model]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.model===model)));
+ setActive(active);
 }
-for(let i=0;i<3;i++){
- for(const sign of [-1,1])part(sign*.19,.92-i*.31,.33,.17,.135,.085,'core');
-}
-part(0,-.05,.31,.3,.18,.13,'core');
 const floor=new THREE.Mesh(new THREE.RingGeometry(1.16,1.19,90),new THREE.MeshBasicMaterial({color:0x7957f9,transparent:true,opacity:.5,side:THREE.DoubleSide}));
 floor.rotation.x=-Math.PI/2;floor.position.y=-2.42;scene.add(floor);
 const floor2=new THREE.Mesh(new THREE.CircleGeometry(1.08,90),new THREE.MeshBasicMaterial({color:0x46248a,transparent:true,opacity:.09,side:THREE.DoubleSide}));
@@ -83,8 +107,8 @@ function setActive(id){
  document.getElementById('exercise-description').textContent=g.instruction;
  document.getElementById('exercise-area').textContent=g.area;
  buttonHolder.querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.group===id));
- muscles.forEach(mesh=>{
-  const selected=mesh.userData.group===id;
+ modelParts.male.concat(modelParts.female).forEach(mesh=>{
+  const selected=mesh.userData.group===id&&modelParts[model].includes(mesh);
   mesh.material.color.setHex(selected?g.color:0x354161);
   mesh.material.emissive.setHex(selected?g.color:0x070a18);
   mesh.material.emissiveIntensity=selected?.28:.12;
@@ -92,6 +116,8 @@ function setActive(id){
  });
 }
 setActive('chest');
+document.querySelectorAll('[data-model]').forEach(b=>b.addEventListener('click',()=>chooseModel(b.dataset.model)));
+try{const preferred=localStorage.getItem('forma-ai-atlas-model');if(preferred==='female')chooseModel('female',{persist:false});}catch{}
 stage.addEventListener('pointerdown',e=>{previous={x:e.clientX,y:e.clientY};drag=false});
 stage.addEventListener('pointermove',e=>{if(Math.abs(e.clientX-previous.x)>5||Math.abs(e.clientY-previous.y)>5)drag=true});
 stage.addEventListener('click',event=>{
@@ -99,7 +125,7 @@ stage.addEventListener('click',event=>{
  const rect=renderer.domElement.getBoundingClientRect();
  pointer.set((event.clientX-rect.left)/rect.width*2-1,-(event.clientY-rect.top)/rect.height*2+1);
  raycaster.setFromCamera(pointer,camera);
- const hit=raycaster.intersectObjects(muscles,false)[0];
+ const hit=raycaster.intersectObjects(activeMuscles(),false)[0];
  if(hit?.object.userData.group)setActive(hit.object.userData.group);
 });
 document.getElementById('front').addEventListener('click',()=>{rotating=false;syncSpin();body.rotation.y=0;controls.reset()});
