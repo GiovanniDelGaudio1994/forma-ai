@@ -93,8 +93,9 @@ function setRenderMode(mode){
  document.querySelectorAll('[data-render]').forEach(btn=>btn.setAttribute('aria-pressed',String(btn.dataset.render===mode)));
  refreshArt();
 }
-artImages.forEach(img=>{img.addEventListener('load',refreshArt);img.addEventListener('error',refreshArt);});
-document.querySelectorAll('[data-render]').forEach(btn=>btn.addEventListener('click',()=>setRenderMode(btn.dataset.render)));
+let manuallySelectedMode=false;
+artImages.forEach(img=>{img.addEventListener('load',()=>{refreshArt();if(!manuallySelectedMode&&img.dataset.art===model)setRenderMode('art');});img.addEventListener('error',refreshArt);});
+document.querySelectorAll('[data-render]').forEach(btn=>btn.addEventListener('click',()=>{manuallySelectedMode=true;setRenderMode(btn.dataset.render)}));
 function activeMuscles(){return modelParts[model];}
 function chooseModel(next,{persist=true}={}){
  if(!bodies[next]||model===next)return;
@@ -138,6 +139,7 @@ setActive('chest');
 document.querySelectorAll('[data-model]').forEach(b=>b.addEventListener('click',()=>chooseModel(b.dataset.model)));
 try{const preferred=localStorage.getItem('forma-ai-atlas-model');if(preferred==='female')chooseModel('female',{persist:false});}catch{}
 setRenderMode('3d');
+if(artImages.some(img=>img.dataset.art===model&&img.complete&&img.naturalWidth))setRenderMode('art');
 stage.addEventListener('pointerdown',e=>{previous={x:e.clientX,y:e.clientY};drag=false});
 stage.addEventListener('pointermove',e=>{if(Math.abs(e.clientX-previous.x)>5||Math.abs(e.clientY-previous.y)>5)drag=true});
 stage.addEventListener('click',event=>{
