@@ -1,5 +1,9 @@
 # FORMA AI — Public Experience Demo
 
+<p align="center">
+  <img src="assets/forma-ai-cover.svg" alt="FORMA AI — copertina concept neon con dashboard, coach virtuale e monitoraggio progressi" width="100%">
+</p>
+
 **The fitness app that adapts to you.** *(Product concept and interactive prototype.)*
 
 [![Demo live](https://img.shields.io/badge/OPEN-LIVE%20DEMO-baff6b?style=for-the-badge&labelColor=12171d)](https://giovannidelgaudio1994.github.io/forma-ai/)
