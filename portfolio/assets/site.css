@@ -622,3 +622,16 @@ body.gdg-mouse-active .gdg-cursor-aura.is-over-action{scale:1.3;opacity:.79;filt
 #project-legacybridge{scroll-margin-top:110px}
 :root[data-theme="light"] .dg-legacybridge .dg-kicker{color:#0c7291}
 @media(prefers-reduced-motion:reduce){.dg-legacybridge:hover{box-shadow:none}}
+
+/* IT/EN language selector — native links, keyboard accessible, responsive */
+.locale-switch{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;gap:3px;padding:4px;border:1px solid rgba(137,181,236,.3);border-radius:99px;background:rgba(23,44,72,.68);white-space:nowrap;color:#8ba5bf}
+.locale-switch a{min-width:36px;min-height:34px;display:grid;place-items:center;border-radius:99px;color:#c4d2e4;font-weight:790;font-size:11px;letter-spacing:.035em;transition:background .2s,color .2s}
+.locale-switch a[aria-current="page"]{background:#2483e0;color:#fff;box-shadow:0 3px 14px #2f94ee40}
+.locale-switch a:hover:not([aria-current="page"]){background:#24476b;color:#fff}
+.locale-switch a:focus-visible{outline:2px solid #8fdaff;outline-offset:2px}
+:root[data-theme="light"] .locale-switch{background:#f0f7fe;color:#6b859f;border-color:#b6cce3}
+:root[data-theme="light"] .locale-switch a:not([aria-current="page"]){color:#285985}
+:root[data-theme="light"] .locale-switch a:hover:not([aria-current="page"]){background:#d5e9fd;color:#164676}
+@media(max-width:920px){.locale-switch{margin-left:auto}.nav-inner .theme-switch{margin-left:0}}
+@media(max-width:420px){.locale-switch{padding:3px;gap:2px}.locale-switch a{min-width:31px;min-height:33px;font-size:10px}.nav-inner{gap:6px}}
+@media(prefers-reduced-motion:reduce){.locale-switch a{transition:none}}
