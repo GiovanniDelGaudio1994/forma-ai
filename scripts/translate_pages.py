@@ -76,12 +76,12 @@ def translate(source: str, section: str) -> str:
             'content="LegacyBridge: responsible legacy hardware diagnostics and compatibility research. HP 550 case study."',
         )
         output = output.replace(
-            'data-locale="it" aria-current="page"',
-            'data-locale="it"',
+            'data-locale="it" lang="it" hreflang="it" aria-label="Versione italiana" aria-current="page"',
+            'data-locale="it" lang="it" hreflang="it" aria-label="Italian version"',
         )
         output = output.replace(
-            'data-locale="en" aria-label="English version"',
-            'data-locale="en" aria-current="page" aria-label="English version"',
+            'data-locale="en" lang="en" hreflang="en" aria-label="English version"',
+            'data-locale="en" lang="en" hreflang="en" aria-label="English version" aria-current="page"',
         )
         output = output.replace(
             '<link rel="canonical" href="https://giovannidelgaudio.it/legacybridge-demo/">',
