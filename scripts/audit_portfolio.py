@@ -70,7 +70,12 @@ class PortfolioAudit(HTMLParser):
 
 def main() -> int:
     errors: list[str] = []
-    for path in (SITE / "index.html", SITE / "portfolio/index.html"):
+    for path in (
+        SITE / "index.html",
+        SITE / "portfolio/index.html",
+        SITE / "en/index.html",
+        SITE / "portfolio/en/index.html",
+    ):
         if not path.is_file():
             errors.append(f"Missing generated page: {path}")
             continue
@@ -82,8 +87,20 @@ def main() -> int:
                 errors.append(f"{path}: missing CSP directive {directive}")
         if "'unsafe-inline'" in page.csp or "'unsafe-eval'" in page.csp:
             errors.append(f"{path}: unsafe-inline or unsafe-eval in CSP")
-        if page.canonical != CANONICAL:
-            errors.append(f"{path}: canonical must be {CANONICAL}")
+        english = path.parent.name == "en"
+        expected_canonical = CANONICAL + ("en/" if english else "")
+        if page.canonical != expected_canonical:
+            errors.append(f"{path}: canonical must be {expected_canonical}")
+        html = path.read_text(encoding="utf-8")
+        if f'<html lang="{"en" if english else "it"}">' not in html:
+            errors.append(f"{path}: incorrect document language")
+        if 'hreflang="it"' not in html or 'hreflang="en"' not in html:
+            errors.append(f"{path}: bilingual alternate links missing")
+        if 'class="locale-switch"' not in html:
+            errors.append(f"{path}: language selector missing")
+        if english and ('<h3 id="stack-heading">Languages & technologies' not in html
+                        or 'Personal projects' not in html):
+            errors.append(f"{path}: essential English translations missing")
         if len(page.js_sources) != 2 or len(page.css_sources) != 1:
             errors.append(f"{path}: first-party JS/CSS assets missing")
         for asset in page.js_sources | page.css_sources:
