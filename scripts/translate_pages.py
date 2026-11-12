@@ -72,8 +72,27 @@ def translate(source: str, section: str) -> str:
         )
     else:
         output = output.replace(
-            'content="LegacyBridge: diagnostica hardware legacy e ricerca sulla compatibilità. Primo esperimento HP 550."',
-            'content="LegacyBridge: responsible legacy hardware diagnostics and compatibility research. HP 550 case study."',
+            'content="LegacyBridge: recupero di vecchi PC e compatibilità Windows 11. Caso studio HP 550 con Core 2 Duo T5670, diagnostica CPU e test Linux Live, senza modificare il disco."',
+            'content="LegacyBridge: reviving older PCs and researching Windows 11 compatibility. Real HP 550/Core 2 Duo case study, CPU diagnostics and non-invasive Linux Live tests."',
+        )
+        output = output.replace(
+            '<title>LegacyBridge — Vecchi PC, HP 550 e compatibilità Windows 11</title>',
+            '<title>LegacyBridge — Reviving older PCs & Windows 11 research</title>',
+        )
+        output = output.replace(
+            'content="it_IT"', 'content="en_US"',
+        )
+        output = output.replace(
+            'content="LegacyBridge — Recupero vecchi PC e ricerca Windows 11"',
+            'content="LegacyBridge — Reviving old PCs & Windows 11 research"',
+        )
+        output = output.replace(
+            'content="HP 550 del 2008: risultati reali, istruzioni CPU e laboratorio pubblico. Windows 11 non ancora avviato."',
+            'content="2008 HP 550 research: real findings, CPU instruction limits and an open laboratory. Windows 11 has not been booted."',
+        )
+        output = output.replace(
+            '<meta property="og:url" content="https://giovannidelgaudio.it/legacybridge-demo/">',
+            '<meta property="og:url" content="https://giovannidelgaudio.it/legacybridge-demo/en/">',
         )
         output = output.replace(
             'data-locale="it" lang="it" hreflang="it" aria-label="Versione italiana" aria-current="page"',
