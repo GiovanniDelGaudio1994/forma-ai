@@ -49,6 +49,12 @@ No administrator privileges are required. Please remove personal identifiers bef
 - [LegacyBridge interactive lab (English)](https://giovannidelgaudio.it/legacybridge-demo/en/)
 - [Developer portfolio (English)](https://giovannidelgaudio.it/en/)
 
+
+## Community research
+
+- [Read the HP 550 case study (English)](https://giovannidelgaudio.it/legacybridge-demo/hp-550/en/)
+- [Submit a reproducible, anonymized hardware report](CONTRIBUTING.md)
+
 ## Licensing and scope
 
 The public original source code is licensed under **GNU AGPL-3.0-only** — see [LICENSE](LICENSE). It may be copied, modified and redistributed subject to the license; AGPL is not a no-copy license. The LegacyBridge name and project identity are handled separately from the code license.
