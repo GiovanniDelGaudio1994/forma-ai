@@ -241,7 +241,8 @@
       "Open core sotto AGPLv3. Nessuna ISO Windows, DLL Microsoft o patch di kernel distribuite.": "The public core is licensed under AGPLv3. No Windows ISOs, Microsoft DLLs or kernel patches are distributed.",
       "Esplora il codice aperto ↗": "Explore the public source ↗",
       "Ricerca sperimentale indipendente. Non affiliato a HP, Intel o Microsoft.": "Independent experimental research. Not affiliated with HP, Intel or Microsoft.",
-      "Torna al portfolio ↗": "Back to portfolio ↗"
+      "Torna al portfolio ↗": "Back to portfolio ↗",
+      "Leggi il caso studio HP 550 ↗": "Read the HP 550 case study ↗"
     },
     "attributes": {
       "aria-label=\"Sezioni del report\"": "aria-label=\"Report sections\"",
