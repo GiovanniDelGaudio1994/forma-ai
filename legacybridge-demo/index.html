@@ -1,10 +1,20 @@
 <!doctype html>
 <html lang="it"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#08121e"><meta name="description" content="LegacyBridge: diagnostica hardware legacy e ricerca sulla compatibilità. Primo esperimento HP 550.">
+<meta name="theme-color" content="#08121e"><meta name="description" content="LegacyBridge: recupero di vecchi PC e compatibilità Windows 11. Caso studio HP 550 con Core 2 Duo T5670, diagnostica CPU e test Linux Live, senza modificare il disco.">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; script-src-attr 'none'; style-src 'self'; style-src-attr 'none'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
-<title>LegacyBridge · Hardware Compatibility Lab</title>
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Giovanni Del Gaudio">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LegacyBridge — Hardware Compatibility Lab">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="LegacyBridge — Recupero vecchi PC e ricerca Windows 11">
+<meta property="og:description" content="HP 550 del 2008: risultati reali, istruzioni CPU e laboratorio pubblico. Windows 11 non ancora avviato.">
+<meta property="og:url" content="https://giovannidelgaudio.it/legacybridge-demo/">
+<meta property="og:image" content="https://giovannidelgaudio.it/portfolio/assets/projects/legacybridge-cover.svg">
+<meta name="twitter:card" content="summary_large_image">
+<title>LegacyBridge — Vecchi PC, HP 550 e compatibilità Windows 11</title>
 <link rel="canonical" href="https://giovannidelgaudio.it/legacybridge-demo/">
 <link rel="alternate" hreflang="it" href="https://giovannidelgaudio.it/legacybridge-demo/">
 <link rel="alternate" hreflang="en" href="https://giovannidelgaudio.it/legacybridge-demo/en/">
@@ -18,7 +28,7 @@
   <a href="https://giovannidelgaudio.it/legacybridge-demo/en/" data-locale="en" lang="en" hreflang="en" aria-label="English version">EN</a>
 </div> <a href="https://github.com/GiovanniDelGaudio1994/forma-ai/tree/main/projects/legacybridge" rel="noopener noreferrer" target="_blank">Codice pubblico ↗</a></div></header>
 <main id="main">
-<section class="hero"><span class="eyebrow">OPEN RESEARCH · OLD HARDWARE · REAL RESULTS</span><h1>Old hardware.<br><em>New possibilities.</em></h1><p>Un laboratorio aperto per riportare in vita computer legacy: analisi CPU, limiti delle istruzioni, sistemi Live e risultati riproducibili. Niente promesse impossibili.</p><div class="actions"><a class="primary" href="#lab">Esplora il laboratorio ↗</a><a class="secondary" href="#method">Come lavoriamo ↓</a></div><div class="metrics"><div><strong>001</strong><span>Case study reale</span></div><div><strong>2008</strong><span>Generazione HP 550</span></div><div><strong>64 bit</strong><span>Capacità CPU</span></div><div><strong>AGPLv3</strong><span>Public read-only probe</span></div></div></section>
+<section class="hero"><span class="eyebrow">OPEN RESEARCH · OLD HARDWARE · REAL RESULTS</span><h1>Old hardware.<br><em>New possibilities.</em></h1><p>Un laboratorio aperto per riportare in vita computer legacy: analisi CPU, limiti delle istruzioni, sistemi Live e risultati riproducibili. Niente promesse impossibili.</p><div class="actions"><a class="primary" href="#lab">Esplora il laboratorio ↗</a><a class="secondary" href="#method">Come lavoriamo ↓</a><a class="secondary" href="hp-550/">Leggi il caso studio HP 550 ↗</a></div><div class="metrics"><div><strong>001</strong><span>Case study reale</span></div><div><strong>2008</strong><span>Generazione HP 550</span></div><div><strong>64 bit</strong><span>Capacità CPU</span></div><div><strong>AGPLv3</strong><span>Public read-only probe</span></div></div></section>
 <section class="lab" id="lab"><div class="section-head"><div><span class="eyebrow">HARDWARE DIAGNOSTICS</span><h2>HP 550 · Esperimento #001</h2></div><span class="pill"><span class="live-dot"></span> Windows 10 avviato</span></div>
 <div class="two"><article class="showcase"><div class="cover"><img src="../portfolio/assets/projects/legacybridge-cover.svg" alt="Copertina LegacyBridge, con un portatile datato e un ponte luminoso verso il software moderno" loading="lazy"></div><div class="cardtext"><span class="eyebrow">HARDWARE REALE · 2008</span><h3>Una seconda vita per il vecchio hardware.</h3><p>Un Core 2 Duo T5670, circa 3 GiB di RAM e Windows 10 a 32 bit già avviato. Il prossimo passo è un test Linux Live a 64 bit, senza installazioni sul disco.</p></div></article>
 <article class="dashboard"><div class="dashboardtop"><span>HARDWARE STATUS</span><span class="mono">● READ ONLY</span></div><div role="tablist" aria-label="Sezioni del report" class="tabs"><button type="button" role="tab" aria-selected="true" aria-controls="cpu" id="tab-cpu" tabindex="0">CPU</button><button type="button" role="tab" aria-selected="false" aria-controls="storage" id="tab-storage" tabindex="-1">Disco</button><button type="button" role="tab" aria-selected="false" aria-controls="protocol" id="tab-protocol" tabindex="-1">Protocollo</button></div>
