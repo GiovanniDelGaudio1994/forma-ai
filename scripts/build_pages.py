@@ -109,6 +109,7 @@ def adapt_legacybridge_english(html: str) -> str:
         html.replace('href="site.css"', 'href="../site.css"')
         .replace('src="site.js"', 'src="../site.js"')
         .replace('src="../portfolio/assets/', 'src="../../portfolio/assets/')
+        .replace('href="hp-550/"', 'href="../hp-550/en/"')
     )
 
 
@@ -209,6 +210,7 @@ def build() -> None:
     paths = ("", "en/", "forma-ai-demo/", "ewine-demo/", "fit-zone-demo/",
              "gestione-farmacia-demo/", "meteo-bash2d-demo/",
              "signalscope-demo/", "legacybridge-demo/", "legacybridge-demo/en/",
+             "legacybridge-demo/hp-550/", "legacybridge-demo/hp-550/en/",
              "atlante-3d.html")
     sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n'
     sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
@@ -230,6 +232,8 @@ def build() -> None:
         OUTPUT / "forma-ai-demo/index.html",
         OUTPUT / "legacybridge-demo/index.html",
         OUTPUT / "legacybridge-demo/en/index.html",
+        OUTPUT / "legacybridge-demo/hp-550/index.html",
+        OUTPUT / "legacybridge-demo/hp-550/en/index.html",
     ):
         verify_local_references(page)
 
@@ -240,6 +244,8 @@ def build() -> None:
     assert (OUTPUT / "meteo-bash2d-demo/index.html").exists()
     assert (OUTPUT / "legacybridge-demo/index.html").exists()
     assert (OUTPUT / "legacybridge-demo/en/index.html").exists()
+    assert (OUTPUT / "legacybridge-demo/hp-550/index.html").exists()
+    assert (OUTPUT / "legacybridge-demo/hp-550/en/index.html").exists()
     assert (OUTPUT / "en/index.html").exists()
     print("Site prepared: / = portfolio; /forma-ai-demo/ = FORMA AI; other demos preserved.")
 
