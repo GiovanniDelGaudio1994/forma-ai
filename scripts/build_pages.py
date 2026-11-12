@@ -28,6 +28,7 @@ PUBLIC_DIRS = (
     "gestione-farmacia-demo",
     "meteo-bash2d-demo",
     "signalscope-demo",
+    "legacybridge-demo",
 )
 PUBLIC_FILES = (".nojekyll", "atlante-3d.html", "privacy.html")
 
@@ -46,7 +47,7 @@ def adapt_portfolio(html: str, root: bool) -> str:
         html = html.replace('href="sitemap.xml"', 'href="../sitemap.xml"')
 
     for name in ("fit-zone-demo", "signalscope-demo", "meteo-bash2d-demo",
-                 "gestione-farmacia-demo", "ewine-demo"):
+                 "gestione-farmacia-demo", "ewine-demo", "legacybridge-demo"):
         html = html.replace(OLD_BASE + name + "/", folder + name + "/")
 
     # Preserve the main FORMA AI demo on its new dedicated URL.
@@ -136,7 +137,7 @@ def build() -> None:
     from xml.sax.saxutils import escape
     paths = ("", "forma-ai-demo/", "ewine-demo/", "fit-zone-demo/",
              "gestione-farmacia-demo/", "meteo-bash2d-demo/",
-             "signalscope-demo/", "atlante-3d.html")
+             "signalscope-demo/", "legacybridge-demo/", "atlante-3d.html")
     sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n'
     sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     for path in paths:
@@ -153,6 +154,7 @@ def build() -> None:
         OUTPUT / "index.html",
         OUTPUT / "portfolio/index.html",
         OUTPUT / "forma-ai-demo/index.html",
+        OUTPUT / "legacybridge-demo/index.html",
     ):
         verify_local_references(page)
 
@@ -161,6 +163,7 @@ def build() -> None:
     assert (OUTPUT / "gestione-farmacia-demo/index.html").exists()
     assert (OUTPUT / "signalscope-demo/index.html").exists()
     assert (OUTPUT / "meteo-bash2d-demo/index.html").exists()
+    assert (OUTPUT / "legacybridge-demo/index.html").exists()
     print("Site prepared: / = portfolio; /forma-ai-demo/ = FORMA AI; other demos preserved.")
 
 
