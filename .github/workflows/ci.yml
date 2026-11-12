@@ -17,6 +17,7 @@ jobs:
       - name: Validate first-party JavaScript
         run: |
           node --check portfolio/assets/site.js
+          node --check legacybridge-demo/site.js
           node --check portfolio/assets/theme-init.js
       - name: Verify generated portfolio and security regressions
         run: |
