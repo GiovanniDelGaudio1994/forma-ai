@@ -259,3 +259,23 @@
   if (reduced.addEventListener) reduced.addEventListener('change', hide);
   if (mouse.addEventListener) mouse.addEventListener('change', hide);
 })();
+
+
+/* Visual-only progressive enhancement: evidence-based stack bars. */
+(() => {
+  'use strict';
+  const panel = document.querySelector('.stack-map');
+  if (!panel) return;
+  const show = () => panel.classList.add('stack-ready');
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    show();
+    return;
+  }
+  const observer = new IntersectionObserver((entries, instance) => {
+    if (entries.some(entry => entry.isIntersecting)) {
+      show();
+      instance.disconnect();
+    }
+  }, {threshold:0.12,rootMargin:'0px 0px -48px 0px'});
+  observer.observe(panel);
+})();
