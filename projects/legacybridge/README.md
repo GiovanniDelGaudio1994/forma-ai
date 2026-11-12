@@ -1,5 +1,7 @@
 # LegacyBridge — Hardware Compatibility Lab
 
+🇮🇹 **Italiano** · [🇬🇧 English](README.en.md)
+
 **Old hardware. New possibilities.** Ricerca e diagnostica responsabile sui computer legacy.
 
 ![Copertina LegacyBridge](../../portfolio/assets/projects/legacybridge-cover.svg)
