@@ -5,6 +5,7 @@
 (() => {
   'use strict';
   const doc = document;
+  const english = doc.documentElement.lang === 'en';
   const nav = doc.getElementById('site-nav');
   const toggle = doc.getElementById('nav-toggle');
   const menu = doc.getElementById('nav-links');
@@ -22,14 +23,14 @@
     if (!menu || !toggle) return;
     menu.classList.remove('is-open');
     toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Apri il menu di navigazione');
+    toggle.setAttribute('aria-label', english ? 'Open navigation menu' : 'Apri il menu di navigazione');
   };
   if (toggle && menu) {
     toggle.addEventListener('click', () => {
       const open = toggle.getAttribute('aria-expanded') !== 'true';
       menu.classList.toggle('is-open', open);
       toggle.setAttribute('aria-expanded', String(open));
-      toggle.setAttribute('aria-label', open ? 'Chiudi il menu di navigazione' : 'Apri il menu di navigazione');
+      toggle.setAttribute('aria-label', open ? (english ? 'Close navigation menu' : 'Chiudi il menu di navigazione') : (english ? 'Open navigation menu' : 'Apri il menu di navigazione'));
     });
     menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
     doc.addEventListener('click', e => { if (!toggle.contains(e.target) && !menu.contains(e.target)) closeMenu(); });
@@ -95,7 +96,7 @@
         other.classList.toggle('is-active',active);
         other.setAttribute('aria-pressed',String(active));
       }
-      if(output)output.textContent=visible+' '+(visible===1?'attestazione':'attestazioni');
+      if(output)output.textContent=visible+' '+(document.documentElement.lang==='en'?(visible===1?'credential':'credentials'):(visible===1?'attestazione':'attestazioni'));
     });
   }
 })();
@@ -108,11 +109,12 @@
   const updateToggle=()=>{
     if(!toggle)return;
     const light=root.dataset.theme==='light';
-    toggle.setAttribute('aria-label',light?'Attiva tema scuro':'Attiva tema chiaro');
-    toggle.setAttribute('title',light?'Passa al tema scuro':'Passa al tema chiaro');
+    const en=root.lang==='en';
+    toggle.setAttribute('aria-label',light?(en?'Activate dark theme':'Attiva tema scuro'):(en?'Activate light theme':'Attiva tema chiaro'));
+    toggle.setAttribute('title',light?(en?'Switch to dark theme':'Passa al tema scuro'):(en?'Switch to light theme':'Passa al tema chiaro'));
     toggle.setAttribute('aria-pressed',String(light));
     const label=toggle.querySelector('.theme-switch-text');
-    if(label)label.textContent=light?'Scuro':'Chiaro';
+    if(label)label.textContent=light?(en?'Dark':'Scuro'):(en?'Light':'Chiaro');
     const meta=document.querySelector('meta[name="theme-color"]');
     if(meta)meta.setAttribute('content',light?'#f8fbff':'#080c16');
   };
@@ -173,7 +175,7 @@
    const source=trigger.getAttribute('data-demo-url');
    const full=new URL(source,document.baseURI);
    if(full.origin!==location.origin)return;
-   title.textContent=trigger.getAttribute('data-demo-title')||'Demo universitaria';
+   title.textContent=trigger.getAttribute('data-demo-title')||(document.documentElement.lang==='en'?'University demo':'Demo universitaria');
    frame.title=title.textContent;
    ext.href=full.href;
    opener=trigger;
@@ -279,4 +281,32 @@
     }
   }, {threshold:0.12,rootMargin:'0px 0px -48px 0px'});
   observer.observe(panel);
+})();
+
+
+/* Language persistence: standard links work even with JavaScript disabled. */
+(() => {
+  'use strict';
+  const key = 'gdg-language';
+  const path = window.location.pathname.replace(/index\.html$/, '');
+  const english = document.documentElement.lang === 'en';
+  let stored = null;
+  try { stored = window.localStorage.getItem(key); } catch (_) {}
+  // Only auto-redirect from the default Italian landing pages.
+  if (!english && stored === 'en' && (path === '/' || path === '/portfolio/')) {
+    window.location.replace((path === '/portfolio/' ? '/portfolio/en/' : '/en/') + window.location.hash);
+    return;
+  }
+  document.querySelectorAll('.locale-switch a[data-locale]').forEach(link => {
+    link.addEventListener('click', event => {
+      const lang = link.getAttribute('data-locale');
+      if (!lang || (lang !== 'it' && lang !== 'en')) return;
+      try { window.localStorage.setItem(key, lang); } catch (_) {}
+      // Preserve the current section during the language switch.
+      const url = new URL(link.href);
+      url.hash = window.location.hash;
+      event.preventDefault();
+      window.location.assign(url.href);
+    });
+  });
 })();
