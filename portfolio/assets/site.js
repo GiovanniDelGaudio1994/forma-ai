@@ -271,6 +271,7 @@
     show();
     return;
   }
+  panel.classList.add('stack-animate');
   const observer = new IntersectionObserver((entries, instance) => {
     if (entries.some(entry => entry.isIntersecting)) {
       show();
