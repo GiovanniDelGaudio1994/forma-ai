@@ -14,3 +14,11 @@ jobs:
         with:
           node-version: '22'
       - run: npm test
+      - name: Validate first-party JavaScript
+        run: |
+          node --check portfolio/assets/site.js
+          node --check portfolio/assets/theme-init.js
+      - name: Verify generated portfolio and security regressions
+        run: |
+          python3 scripts/build_pages.py
+          python3 scripts/audit_portfolio.py
