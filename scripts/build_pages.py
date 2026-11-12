@@ -15,6 +15,8 @@ import re
 import shutil
 from urllib.parse import unquote, urlsplit
 
+from translate_pages import translate_portfolio, translate_legacybridge
+
 SOURCE = Path(__file__).resolve().parents[1]
 OUTPUT = SOURCE / "_site"
 DOMAIN = "https://giovannidelgaudio.it/"
@@ -56,6 +58,58 @@ def adapt_portfolio(html: str, root: bool) -> str:
 
     # Search engines should index the new site homepage, not duplicate paths.
     return html
+
+
+
+def adapt_portfolio_english(html: str, root: bool) -> str:
+    """Place the English portfolio at /en/ and /portfolio/en/."""
+    result = adapt_portfolio(html, root=root)
+    if root:
+        for attr in ("src", "href"):
+            result = result.replace(
+                f'{attr}="portfolio/assets/', f'{attr}="../portfolio/assets/'
+            )
+        result = result.replace(
+            'data-demo-url="portfolio/demos/', 'data-demo-url="../portfolio/demos/'
+        )
+        for name in ("gestione-farmacia-demo", "ewine-demo"):
+            result = result.replace(
+                f'data-demo-url="{name}/', f'data-demo-url="../{name}/'
+            )
+        for name in (
+            "forma-ai-demo", "fit-zone-demo", "signalscope-demo",
+            "meteo-bash2d-demo", "gestione-farmacia-demo", "ewine-demo",
+            "legacybridge-demo",
+        ):
+            result = result.replace(f'href="{name}/', f'href="../{name}/')
+        result = result.replace('href="sitemap.xml"', 'href="../sitemap.xml"')
+    else:
+        # /portfolio/en/ is one directory deeper than /portfolio/.
+        for attr in ("src", "href"):
+            result = result.replace(f'{attr}="assets/', f'{attr}="../assets/')
+        result = result.replace(
+            'data-demo-url="../', 'data-demo-url="../../'
+        )
+        result = result.replace(
+            'data-demo-url="demos/', 'data-demo-url="../demos/'
+        )
+        for name in (
+            "forma-ai-demo", "fit-zone-demo", "signalscope-demo",
+            "meteo-bash2d-demo", "gestione-farmacia-demo", "ewine-demo",
+            "legacybridge-demo",
+        ):
+            result = result.replace(f'href="../{name}/', f'href="../../{name}/')
+        result = result.replace('href="../sitemap.xml"', 'href="../../sitemap.xml"')
+    return result
+
+
+def adapt_legacybridge_english(html: str) -> str:
+    """English demo lives at /legacybridge-demo/en/."""
+    return (
+        html.replace('href="site.css"', 'href="../site.css"')
+        .replace('src="site.js"', 'src="../site.js"')
+        .replace('src="../portfolio/assets/', 'src="../../portfolio/assets/')
+    )
 
 
 def adapt_forma(html: str) -> str:
@@ -118,6 +172,23 @@ def build() -> None:
         adapt_portfolio(template, root=False), encoding="utf-8"
     )
 
+    english = translate_portfolio(template)
+    (OUTPUT / "en").mkdir(exist_ok=True)
+    (OUTPUT / "en/index.html").write_text(
+        adapt_portfolio_english(english, root=True), encoding="utf-8"
+    )
+    (OUTPUT / "portfolio/en").mkdir(exist_ok=True)
+    (OUTPUT / "portfolio/en/index.html").write_text(
+        adapt_portfolio_english(english, root=False), encoding="utf-8"
+    )
+
+    legacy = (SOURCE / "legacybridge-demo/index.html").read_text(encoding="utf-8")
+    (OUTPUT / "legacybridge-demo/en").mkdir(exist_ok=True)
+    (OUTPUT / "legacybridge-demo/en/index.html").write_text(
+        adapt_legacybridge_english(translate_legacybridge(legacy)),
+        encoding="utf-8",
+    )
+
     forma = (SOURCE / "index.html").read_text(encoding="utf-8")
     (OUTPUT / "forma-ai-demo").mkdir(exist_ok=True)
     (OUTPUT / "forma-ai-demo/index.html").write_text(adapt_forma(forma), encoding="utf-8")
@@ -135,9 +206,10 @@ def build() -> None:
 
     # A single canonical sitemap covers the homepage and the public demos.
     from xml.sax.saxutils import escape
-    paths = ("", "forma-ai-demo/", "ewine-demo/", "fit-zone-demo/",
+    paths = ("", "en/", "forma-ai-demo/", "ewine-demo/", "fit-zone-demo/",
              "gestione-farmacia-demo/", "meteo-bash2d-demo/",
-             "signalscope-demo/", "legacybridge-demo/", "atlante-3d.html")
+             "signalscope-demo/", "legacybridge-demo/", "legacybridge-demo/en/",
+             "atlante-3d.html")
     sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n'
     sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     for path in paths:
@@ -153,8 +225,11 @@ def build() -> None:
     for page in (
         OUTPUT / "index.html",
         OUTPUT / "portfolio/index.html",
+        OUTPUT / "en/index.html",
+        OUTPUT / "portfolio/en/index.html",
         OUTPUT / "forma-ai-demo/index.html",
         OUTPUT / "legacybridge-demo/index.html",
+        OUTPUT / "legacybridge-demo/en/index.html",
     ):
         verify_local_references(page)
 
@@ -164,6 +239,8 @@ def build() -> None:
     assert (OUTPUT / "signalscope-demo/index.html").exists()
     assert (OUTPUT / "meteo-bash2d-demo/index.html").exists()
     assert (OUTPUT / "legacybridge-demo/index.html").exists()
+    assert (OUTPUT / "legacybridge-demo/en/index.html").exists()
+    assert (OUTPUT / "en/index.html").exists()
     print("Site prepared: / = portfolio; /forma-ai-demo/ = FORMA AI; other demos preserved.")
 
 
