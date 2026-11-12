@@ -34,6 +34,12 @@ Non necessita amministratore; stampa JSON in console e **non** cambia firmware, 
 - [Sito portfolio](https://giovannidelgaudio.it/)
 - Step successivo: creare backup, avviare antiX Live x64 da USB, leggere CPUID e controllare la salute del supporto senza scriverci dati.
 
+
+## Ricerca aperta e casi studio
+
+- [HP 550 e Windows 11: il primo caso studio](https://giovannidelgaudio.it/legacybridge-demo/hp-550/)
+- [Contribuisci con un report hardware anonimizzato](CONTRIBUTING.md)
+
 ### Licenza e attribuzioni
 
 Copyright © 2026 Giovanni Del Gaudio. Il codice qui pubblicato è sotto **GNU AGPLv3 only**; leggi [LICENSE](./LICENSE). AGPL consente copia, modifica e distribuzione rispettando condizioni, copyright e obblighi sul sorgente. Non è una licenza che proibisce ogni riuso. Il logo/nome possono essere gestiti separatamente.
