@@ -107,6 +107,32 @@ def main() -> int:
             target = path.parent / asset
             if not target.is_file():
                 errors.append(f"{path}: missing referenced asset {asset}")
+    # LegacyBridge English is a real static route, not an untranslated fallback.
+    for path, language, canonical, sample in (
+        (SITE / "legacybridge-demo/index.html", "it",
+         CANONICAL + "legacybridge-demo/", "Misurare. Capire. Condividere."),
+        (SITE / "legacybridge-demo/en/index.html", "en",
+         CANONICAL + "legacybridge-demo/en/", "Measure. Understand. Share."),
+    ):
+        if not path.is_file():
+            errors.append(f"Missing localized LegacyBridge page: {path}")
+            continue
+        html = path.read_text(encoding="utf-8")
+        if f'<html lang="{language}">' not in html:
+            errors.append(f"{path}: incorrect language")
+        if sample not in html:
+            errors.append(f"{path}: expected translated content missing")
+        if f'<link rel="canonical" href="{canonical}">' not in html:
+            errors.append(f"{path}: incorrect canonical")
+        if 'hreflang="it"' not in html or 'hreflang="en"' not in html:
+            errors.append(f"{path}: bilingual alternate links missing")
+        if 'class="locale-switch"' not in html:
+            errors.append(f"{path}: language control missing")
+        if html.count('aria-current="page"') != 1:
+            errors.append(f"{path}: precisely one active language expected")
+        if f'data-locale="{language}"' not in html:
+            errors.append(f"{path}: locale link missing")
+    
     for error in errors:
         print("SECURITY AUDIT FAILED:", error, file=sys.stderr)
     if errors:
