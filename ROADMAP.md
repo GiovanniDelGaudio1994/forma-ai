@@ -1,6 +1,6 @@
 # FORMA AI — Product Roadmap
 
-> Planning document for the public **portfolio demo**. A private development prototype of Exercise Atlas now exists, but it is **not available in the public preview**; its exercise instructions and 3D-style illustration concepts have **not** been professionally validated. The commercial app's source code remains separate from this public repository.
+> Planning document for FORMA AI's public **portfolio demo** and private product. A **public, illustrative 3D body atlas** with selectable male/female figures exists in the preview; it is *not* a validated, per-exercise anatomical reference. The structured Exercise Atlas and its unreviewed exercise instructions remain part of private research/development, not a public verified training library. The commercial app's source code remains separate from this public repository.
 
 ## Vision
 
@@ -12,7 +12,7 @@ Turn FORMA AI into a fitness experience where an exercise is not just a name in 
 |---|---|---|---|
 | 1. Taxonomy | Muscles, movement patterns, equipment, difficulty and aliases (IT/EN) | Valid schema, deduplication, transparent sources | Draft implemented privately; validation pending |
 | 2. Curated library | Initial set of ~50 diverse exercises, with home-gym alternatives | Each entry includes instructions, cautions, and attributions; reviewed by a qualified trainer | 50 original drafts prepared privately; 0 professionally reviewed |
-| 3. Anatomy | Consistent 3D-style anatomical illustrations for each selected exercise | Primary/secondary muscles checked; labels understandable; assets licensed or original | Two unvalidated illustrative concepts for one exercise; rest planned |
+| 3. Anatomy | Public illustrative 3D body viewer; validated, per-exercise muscle visuals later | Primary/secondary muscles checked; labels understandable; assets licensed or original | Public body-viewer preview available; validated exercise-specific assets not ready |
 | 4. Virtual trainer | One original, consistent 3D trainer identity and static start/end poses | Coherent anatomy/positioning across assets; labeled demonstrations | Planned |
 | 5. Motion | Optional short demonstrations, with reduced-motion support | Motion and cues reviewed for accuracy; accessible still image alternative | Planned |
 | 6. App integration | Search, filters, exercise details and Home Gym equipment matching | Automated data validation and user testing | Private web prototype working; full QA pending |
@@ -61,7 +61,7 @@ This is a **schema example**, not a validated exercise prescription.
 
 ## Public demo versus commercial app
 
-**Public demo:** interface, screenshots, a small illustrative set of **non-sensitive, intentionally demonstrative** exercises, product announcements, and the README animation.
+**Public demo:** interface, screenshots, **illustrative male/female 3D body atlas**, a small non-sensitive demonstrative exercise set, product announcements, and README animation. The atlas is educational artwork, not a validated training or biomechanics tool.
 
 **Private product:** complete curated dataset (subject to third-party licenses), personalized logic, commercial Android build, protected backend, API configuration, and user's private health information.
 
