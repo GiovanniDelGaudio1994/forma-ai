@@ -782,3 +782,31 @@ body.gdg-mouse-active .gdg-cursor-aura.is-over-action{scale:1.3;opacity:.79;filt
 .education-mark.school-mark img{width:100%;height:100%;object-fit:contain;display:block}
 .education-mark.school-mark:hover{box-shadow:0 8px 24px rgba(9,175,199,.22)}
 :root[data-theme="light"] .education-mark.school-mark{background:#087a8c;border-color:#258da5}
+
+
+/* Rome date and time: navbar on wide displays, hero panel on smaller screens */
+.rome-clock{display:flex;align-items:center;min-width:0;font-variant-numeric:tabular-nums;color:#dcefff}
+.rome-clock-time{display:block;font-size:17px;line-height:1.2;font-weight:800;letter-spacing:.015em;color:#f5fbff}
+.rome-clock-zone{font-size:10px;font-weight:680;color:#91cefa;white-space:nowrap}
+.rome-clock-nav{gap:9px;flex:0 0 auto;padding:7px 11px;border:1px solid rgba(113,176,238,.28);border-radius:15px;background:linear-gradient(120deg,rgba(16,44,73,.85),rgba(10,28,51,.88))}
+.rome-clock-nav>svg{width:18px;height:18px;flex-shrink:0;color:#69c9f6}
+.rome-clock-nav .rome-clock-time{font-size:15px}
+.rome-clock-nav .rome-clock-meta{display:flex;align-items:center;gap:7px;font-size:10px;color:#abc3de;white-space:nowrap}
+.rome-clock-nav .rome-clock-zone{font-size:10px}
+.rome-clock-hero{gap:14px;width:min(100%,450px);padding:15px 17px;margin-top:24px;border:1px solid rgba(102,171,242,.3);border-radius:20px;background:linear-gradient(130deg,rgba(18,43,77,.82),rgba(11,27,51,.7));box-shadow:0 12px 30px rgba(1,16,36,.17)}
+.rome-clock-hero .rome-clock-indicator{display:grid;place-items:center;flex:0 0 40px;width:40px;height:40px;border-radius:12px;background:rgba(47,139,222,.17);border:1px solid rgba(102,191,255,.24)}
+.rome-clock-hero .rome-clock-indicator svg{height:23px;width:23px;color:#86d4ff}
+.rome-clock-hero .rome-clock-copy{display:flex;flex:1;flex-direction:column;gap:4px;min-width:0}
+.rome-clock-kicker{font-size:9px;letter-spacing:.16em;font-weight:850;color:#72cfff}
+.rome-clock-date{font-size:12px;font-weight:640;color:#d8e8f8;line-height:1.5}
+.rome-clock-hero .rome-clock-reading{text-align:right;display:flex;flex-direction:column;gap:5px;align-items:flex-end}
+.rome-clock-hero .rome-clock-time{font-size:20px}
+:root[data-theme="light"] .rome-clock{color:#15406b}
+:root[data-theme="light"] .rome-clock-nav,:root[data-theme="light"] .rome-clock-hero{background:linear-gradient(135deg,#f1f8ff,#e6f2ff);border-color:#bdd7ef;box-shadow:0 10px 22px #19477d12}
+:root[data-theme="light"] .rome-clock-time{color:#193a60}
+:root[data-theme="light"] .rome-clock-zone,:root[data-theme="light"] .rome-clock-kicker{color:#116aab}
+:root[data-theme="light"] .rome-clock-date,:root[data-theme="light"] .rome-clock-nav .rome-clock-meta{color:#486687}
+@media(max-width:1420px){.rome-clock-nav{display:none}}
+@media(min-width:1421px){.rome-clock-hero{display:none}}
+@media(max-width:520px){.rome-clock-hero{gap:10px;padding:13px}.rome-clock-hero .rome-clock-reading{flex-shrink:0}.rome-clock-hero .rome-clock-time{font-size:17px}.rome-clock-date{font-size:11px}}
+@media(max-width:365px){.rome-clock-hero{flex-wrap:wrap}.rome-clock-hero .rome-clock-reading{align-items:flex-start;text-align:left;margin-left:50px}}
