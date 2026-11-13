@@ -111,9 +111,17 @@ def main() -> int:
                 errors.append(f"{path}: missing education reference {institution}")
         if 'id="formazione-unisa"' not in html or 'id="formazione-diploma"' not in html:
             errors.append(f"{path}: education timeline incomplete")
+        for anchor in ("#progetti", "#aggiornamenti", "#approccio",
+                       "#chi-sono", "#certificazioni", "#contatti"):
+            if f'href="{anchor}"' not in html:
+                errors.append(f"{path}: missing primary navigation target {anchor}")
+        if html.count('class="nav-item-icon"') < 6:
+            errors.append(f"{path}: primary navigation icons missing")
+        if 'Diploma tecnico — Geometra' not in html and not english:
+            errors.append(f"{path}: Surveying diploma missing from Italian timeline")
         if 'id="aggiornamenti"' not in html or 'id="release-grid"' not in html:
             errors.append(f"{path}: release notes not rendered")
-        if 'data-release-feed' in html or html.count('class="release-card"') < 19:
+        if 'data-release-feed' in html or html.count('class="release-card"') < 21:
             errors.append(f"{path}: changelog placeholder or missing published entries")
         if 'id="release-more"' not in html or 'class="release-summary"' not in html:
             errors.append(f"{path}: changelog archive expansion or summary missing")
