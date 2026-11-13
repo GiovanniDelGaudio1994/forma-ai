@@ -48,6 +48,10 @@ Il controllo verifica la pubblicazione della homepage, `/en/`, i principali demo
 
 ## Trasferimento del dominio (solo dopo preview verificata)
 
+**Nota correttiva 13/11/2026:** GitHub Pages del vecchio repository usa attualmente il dominio personalizzato `www.giovannidelgaudio.it`, non il dominio apex `giovannidelgaudio.it`. La prima versione dello script interrompeva giustamente il passaggio senza modifiche quando rilevava questa differenza. Usare **`giovanni_portfolio_migrate_fixed.sh`**, che accetta entrambe le varianti ma trasferisce *esattamente* il dominio configurato sul vecchio Pages. Il rollback riporta lo stesso host al vecchio repository. Il dominio apex continuerà a reindirizzare alla variante `www` se i DNS sono correttamente configurati. Non ripetere `prepare`, perché il repository di destinazione esiste già. Eseguire `bash ~/Downloads/giovanni_portfolio_migrate_fixed.sh cutover I-VERIFIED-PREVIEW` dopo la verifica della preview.
+
+
+
 ```bash
 bash ~/Downloads/giovanni_portfolio_migrate.sh cutover I-VERIFIED-PREVIEW
 ```
