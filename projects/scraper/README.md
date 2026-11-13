@@ -59,3 +59,8 @@ Lo ZIP `Scraper.zip` fornito dall'autore contiene anche un **mini-scraper finanz
 La protezione DNS inclusa non è sufficiente contro ogni possibile race DNS/SSRF; SignalScope non deve essere esposto come API multiutente senza controlli di rete aggiuntivi. Nessun dato da pagine private o protette. Prima di monitorare un sito, verificare termini d'uso e condizioni d'accesso.
 
 © 2026 Giovanni Del Gaudio — codice originale SignalScope.
+
+
+## Licenza del codice pubblico
+
+Il **codice originale SignalScope** contenuto in `source/` e nei test originali è distribuito sotto **[GNU AGPLv3 (AGPL-3.0-only)](LICENSE)**. La licenza permette copia, modifica e ridistribuzione nel rispetto degli obblighi di copyleft e delle condizioni relative al codice sorgente; non protegge le idee astratte e non è un divieto di riuso. I servizi, contenuti e marchi di terze parti conservano i rispettivi diritti.
