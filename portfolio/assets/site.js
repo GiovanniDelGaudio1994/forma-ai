@@ -310,3 +310,35 @@
     });
   });
 })();
+
+/* Release notes project filter — all notes remain readable without JS. */
+(() => {
+  'use strict';
+  const buttons = [...document.querySelectorAll('[data-update-filter]')];
+  const cards = [...document.querySelectorAll('[data-update-project]')];
+  if (!buttons.length || !cards.length) return;
+  const applyFilter = (slug) => {
+    const exists = slug === 'all' || cards.some(card => card.dataset.updateProject === slug);
+    if (!exists) return;
+    cards.forEach(card => {
+      card.hidden = slug !== 'all' && card.dataset.updateProject !== slug;
+    });
+    buttons.forEach(button => {
+      const active = button.dataset.updateFilter === slug;
+      button.setAttribute('aria-pressed', String(active));
+      button.classList.toggle('is-active', active);
+    });
+  };
+  buttons.forEach(button => {
+    button.addEventListener('click', () => applyFilter(button.dataset.updateFilter));
+  });
+  const changeFromHash = () => {
+    const match = /^#updates-([a-z0-9-]+)$/.exec(window.location.hash);
+    if (!match) return;
+    applyFilter(match[1]);
+    const section = document.getElementById('aggiornamenti');
+    if (section) section.scrollIntoView({block:'start'});
+  };
+  window.addEventListener('hashchange', changeFromHash);
+  changeFromHash();
+})();
