@@ -4,6 +4,29 @@
   "entries": [
     {
       "date": "2026-11-13",
+      "project": "legacybridge",
+      "project_name": "LegacyBridge",
+      "version": "Ownership · 13.11.2026",
+      "type": "documentation",
+      "title": {
+        "it": "LegacyBridge: roadmap proprietaria e sonda storica AGPLv3",
+        "en": "LegacyBridge: proprietary roadmap and legacy AGPLv3 probe"
+      },
+      "changes": {
+        "it": [
+          "Aggiornata la documentazione IT/EN per riservare i futuri moduli indipendenti a uno sviluppo proprietario.",
+          "Chiarito che la piccola sonda PowerShell già distribuita conserva la precedente licenza AGPLv3; non vengono revocati i permessi già concessi."
+        ],
+        "en": [
+          "Updated Italian and English documentation to identify independent future modules as proprietary development.",
+          "Clarified that the previously released small PowerShell probe retains its AGPLv3 license; existing grants remain valid."
+        ]
+      },
+      "url": "https://giovannidelgaudio.it/legacybridge-demo/",
+      "evidence_url": "https://github.com/GiovanniDelGaudio1994/forma-ai/commit/b5a7938c800403818fb9549f7bd642163cc95e87"
+    },
+    {
+      "date": "2026-11-13",
       "project": "portfolio",
       "project_name": "Portfolio",
       "version": "Licenses · 13.11.2026",
