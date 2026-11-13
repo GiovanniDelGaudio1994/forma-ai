@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#090b20">
-<meta name="description" content="FORMA AI — demo interattiva del futuro coach per allenamento, alimentazione e progressi. Nessun dato personale richiesto.">
-<title>FORMA AI — Neon Edition · Demo interattiva</title>
+<meta name="description" content="FORMA AI Neon Edition: scopri la demo fitness viola/neon, Exercise Atlas e Muscle Atlas 3D uomo/donna. Anteprima educativa senza dati personali.">
+<title>FORMA AI — Neon Edition · Exercise Atlas & Demo</title>
 <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 <style>
 :root{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:#eef3f4;background:#090c12;--muted:#89919f;--line:rgba(255,255,255,.095);--accent:#bdff6b;--purple:#a899ff;--panel:#151922;--radius:23px}
@@ -53,16 +53,17 @@ button,select,input{font:inherit}button{cursor:pointer}button:focus-visible,sele
 <body>
 <div class="app">
 <aside class="sidebar" aria-label="Navigazione principale">
-<a class="brand" href="#dashboard" data-go="dashboard"><span class="mark">F</span><span><strong>FORMA <b>AI</b></strong><small>NEON EDITION · PREVIEW</small></span></a>
-<div class="side-label">IL TUO WORKSPACE</div>
+<a class="brand" href="#dashboard" data-go="dashboard"><span class="mark">F</span><span><strong>FORMA <b>AI</b></strong><small>YOUR TRAINING LAB · PREVIEW</small></span></a>
+<div class="side-label">WORKSPACE · 01 / 07</div>
 <nav class="nav" aria-label="Sezioni">
-<button data-go="dashboard" aria-current="page"><span class="glyph">◫</span> Dashboard</button>
-<button data-go="workout"><span class="glyph">⌁</span> Scheda workout</button>
-<a href="atlante-3d.html" style="display:flex;align-items:center;gap:13px;padding:14px;color:#dfbcff;text-decoration:none;border:1px solid #8d56d85f;background:#a45cff19;border-radius:14px;font-size:14px;font-weight:750"><span class="glyph" aria-hidden="true">◈</span> Atlante muscolare 3D <span aria-hidden="true">↗</span></a>
+<button data-go="dashboard" aria-current="page"><span class="glyph">◫</span> Panoramica</button>
+<button data-go="workout"><span class="glyph">⌁</span> Scheda AI</button>
+<button data-go="atlas"><span class="glyph">◎</span> Exercise Atlas</button>
 <button data-go="nutrition"><span class="glyph">◈</span> Alimentazione</button>
 <button data-go="progress"><span class="glyph">▥</span> Check & progressi</button>
 <button data-go="coach"><span class="glyph">✧</span> Coach AI</button>
 <button data-go="video"><span class="glyph">▣</span> Video Lab</button>
+<button data-go="settings"><span class="glyph">⚙</span> Impostazioni</button>
 </nav>
 <div class="side-bottom"><div class="mini">● PUBLIC PREVIEW</div><p>Questa versione mostra l'esperienza di prodotto con dati inventati. Nessun algoritmo privato è incluso.</p><a href="https://github.com/GiovanniDelGaudio1994/forma-ai" target="_blank" rel="noopener noreferrer">Scopri il progetto ↗</a></div>
 </aside>
@@ -70,12 +71,25 @@ button,select,input{font:inherit}button{cursor:pointer}button:focus-visible,sele
 <header class="topbar"><div class="crumb">FORMA AI <span style="color:#5d6872"> / </span><b id="currentScreen">Dashboard</b></div><div class="top-actions"><span class="pill">● DEMO INTERATTIVA</span><div class="avatar" aria-label="Profilo demo">F</div></div></header>
 
 <section class="screen active" id="dashboard" aria-label="Dashboard">
-<div class="hero"><div><span class="preview-edition">NEON EDITION · PRODUCT PREVIEW</span><br><span class="overline">Il tuo coach fitness intelligente</span><h1>Il tuo potenziale<br>non ha <em>limiti.</em></h1><p>Allenamenti, progressi, nutrizione e coaching in un'unica esperienza Dark Neon. Esplora la visione di FORMA AI attraverso questa demo interattiva con dati dimostrativi.</p><div class="actions"><button class="primary" data-go="workout">Esplora gli allenamenti ↗</button><button class="secondary" data-go="coach">Scopri il coach</button><a href="atlante-3d.html" class="secondary" style="display:inline-flex;align-items:center;text-decoration:none">◈ Esplora atlante 3D ↗</a></div></div><div class="hero-graphic" aria-hidden="true"><div class="circle c1"></div><div class="circle c2"></div><div class="circle c3"></div><div class="body-icon">⌁</div><div class="orbit a">+ ADAPTIVE PLAN</div><div class="orbit b">▲ PROGRESS TRACKING</div></div></div>
-<div class="atlas-feature" style="margin-top:17px;padding:23px;border-radius:21px;border:1px solid #965de980;background:linear-gradient(110deg,#34215cbb,#1b2456bb);display:flex;gap:15px;justify-content:space-between;align-items:center;flex-wrap:wrap"><div><span class="overline">NEW · INTERACTIVE 3D</span><h2 style="margin:7px 0 8px;font-size:23px;letter-spacing:-.04em">Muscle Atlas <span style="color:#c079ff">3D</span></h2><p style="margin:0;color:#bfb7dc;font-size:13px;max-width:510px;line-height:1.6">Ruota il corpo umano stilizzato, seleziona i gruppi muscolari ed esplora gli esercizi dimostrativi direttamente nel browser.</p></div><a href="atlante-3d.html" class="primary" style="text-decoration:none;display:inline-flex;align-items:center">Apri l’atlante 3D ↗</a></div>
+<div class="hero"><div><span class="preview-edition">NEON EDITION · PRODUCT PREVIEW</span><br><span class="overline">Il tuo coach fitness intelligente</span><h1>Il tuo potenziale<br>non ha <em>limiti.</em></h1><p>Allenamenti, progressi, nutrizione e coaching in un'unica esperienza Dark Neon. Esplora la visione di FORMA AI attraverso questa demo interattiva con dati dimostrativi.</p><div class="actions"><button class="primary" data-go="workout">Esplora gli allenamenti ↗</button><button class="secondary" data-go="coach">Scopri il coach</button><a href="atlante-3d.html" class="secondary" style="display:inline-flex;align-items:center;text-decoration:none">◈ Esplora atlante 3D ↗</a></div></div><div class="hero-graphic" aria-hidden="true"><div class="circle c1"></div><div class="circle c2"></div><img class="dashboard-model" src="assets/anatomia-uomo-neon.png" alt=""><div class="dashboard-model-label">FORMA AI · NEXT GENERATION</div></div></div>
+<div class="atlas-feature" style="margin-top:17px;padding:23px;border-radius:21px;border:1px solid #965de980;background:linear-gradient(110deg,#34215cbb,#1b2456bb)"><div><span class="overline">01 / PRIME 50 SCHEDE · PROTOTIPO PRIVATO</span><h2 style="margin:9px 0;font-size:clamp(24px,3vw,36px);letter-spacing:-.05em">Impara il movimento.<br>Non solo il nome.</h2><p style="margin:0 0 17px;color:#bfb7dc;font-size:13px;max-width:510px;line-height:1.65">Anatomia illustrativa, attrezzatura ed esempi di esercizi. Il catalogo privato è composto da 50 bozze non ancora revisionate: qui esplori una preview educativa.</p><button data-go="atlas" class="primary">Scopri Exercise Atlas ↗</button></div><a class="atlas-feature-image" href="atlante-3d.html" aria-label="Apri il visualizzatore 3D interattivo"><img src="assets/anatomia-donna-neon.png" alt="Anteprima illustrativa del modello femminile del Muscle Atlas 3D" loading="lazy"></a></div>
 <div class="section-head"><h2>La tua attività, in sintesi</h2><small>Valori fittizi • demo</small></div>
 <div class="grid"><article class="card"><div class="metric-label">Workout completati</div><div class="metric-value">12 <small>/ 16</small></div><div class="metric-foot">↗ 75% del ciclo dimostrativo</div></article><article class="card"><div class="metric-label">Tempo attivo</div><div class="metric-value">8h <small>40m</small></div><div class="metric-foot">↗ Settimana campione</div></article><article class="card"><div class="metric-label">Prossimo check</div><div class="metric-value">03 <small>giorni</small></div><div class="metric-foot">◎ Promemoria simulato</div></article></div>
 <div class="section-head"><h2>Il tuo percorso</h2><small>Una settimana dimostrativa</small></div>
 <div class="split"><article class="card"><div class="row-between"><strong>Routine settimanale</strong><span class="tag">3 / 5 completati</span></div><div class="week"><div class="day done">Lun<span>✓</span></div><div class="day done">Mar<span>✓</span></div><div class="day">Mer<span>○</span></div><div class="day done">Gio<span>✓</span></div><div class="day now">Ven<span>●</span></div><div class="day">Sab<span>○</span></div><div class="day">Dom<span>○</span></div></div><div class="muted">Esempio di calendario allenamenti: nessun dato registrato.</div></article><article class="card highlight"><div class="overline">TRAINING INSIGHT</div><h2 style="margin:12px 0 8px">Ogni ripetizione conta.</h2><p class="subtext" style="margin:0">Nella versione completa, il coach considera feedback e progressi prima di proporre modifiche al programma.</p><div class="track"><span></span></div><button class="secondary" data-go="progress" style="margin-top:17px">Vedi un check demo</button></article></div>
+</section>
+
+<section class="screen" id="atlas" aria-label="Exercise Atlas">
+<div class="atlas-intro"><div class="overline">— EXERCISE KNOWLEDGE BASE · PREVIEW EDUCATIVA</div><h1 class="page-title">Exercise <em>Atlas.</em></h1><p class="subtext">La libreria di esercizi FORMA AI è in sviluppo: 50 schede in bozza nel prodotto privato. Nella demo puoi esplorare il concept, selezionare gruppi muscolari e accedere a un modello 3D stilizzato uomo/donna.</p></div>
+<div class="atlas-hero">
+<div class="atlas-hero-copy"><span class="overline">01 / IL MOVIMENTO IN PRIMO PIANO</span><h2>Impara il movimento.<br>Non solo il nome.</h2><p>La visione dell'Exercise Atlas unisce anatomia, attrezzatura, descrizioni degli esercizi e un personal trainer virtuale, ancora in progettazione. Nessuna scheda privata è pubblicata qui come istruzione validata.</p><a href="atlante-3d.html" class="primary">Apri Muscle Atlas 3D ↗</a></div>
+<div class="atlas-preview-panel"><div class="atlas-preview-heading">FORMA AI <span>MODEL PREVIEW · NON CLINICO</span></div><img id="atlasModelImage" src="assets/anatomia-uomo-neon.png" alt="Illustrazione anatomica stilizzata del modello uomo" loading="lazy"><div class="atlas-model-switch" aria-label="Seleziona modello illustrato"><button type="button" data-atlas-model="male" aria-pressed="true">Uomo</button><button type="button" data-atlas-model="female" aria-pressed="false">Donna</button></div></div>
+</div>
+<div class="atlas-reassurance"><strong>Prototipo dimostrativo.</strong> Le immagini e il viewer 3D sono illustrativi, non clinicamente o biomeccanicamente validati. Le schede di esercizio nel prodotto privato sono ancora bozze. Nessuna analisi AI o consulenza individuale è attiva in questa demo.</div>
+<div class="atlas-subheading"><h3>Esplora i gruppi muscolari</h3><span class="muted">7 aree illustrative · scegli una categoria</span></div>
+<div class="atlas-muscles" role="group" aria-label="Gruppi muscolari"><button data-atlas-muscle="chest" aria-pressed="true">◈ Pettorali</button><button data-atlas-muscle="shoulders" aria-pressed="false">◈ Spalle</button><button data-atlas-muscle="arms" aria-pressed="false">◈ Braccia</button><button data-atlas-muscle="back" aria-pressed="false">◈ Dorsali</button><button data-atlas-muscle="core" aria-pressed="false">◈ Addome</button><button data-atlas-muscle="glutes" aria-pressed="false">◈ Glutei</button><button data-atlas-muscle="legs" aria-pressed="false">◈ Gambe</button></div>
+<div class="atlas-muscle-status" id="atlasMuscleStatus" role="status" aria-live="polite"><strong>Pettorali</strong> · Area anteriore del torace. Esempio dimostrativo: push-up adattati.</div>
+<div class="atlas-cta-row"><a class="primary" href="atlante-3d.html">Interagisci con il corpo 3D ↗</a><button type="button" class="secondary" data-go="workout">Vedi una scheda demo</button></div>
 </section>
 
 <section class="screen" id="workout" aria-label="Scheda workout">
@@ -107,6 +121,8 @@ button,select,input{font:inherit}button{cursor:pointer}button:focus-visible,sele
 <div class="coach-layout"><article class="card"><div class="row-between"><strong>FORMA Coach <span style="color:var(--accent)">✧</span></strong><span class="tag">DEMO / OFFLINE</span></div><div class="divider"></div><p id="coachQuestion" class="message">Scegli una domanda per visualizzare un esempio.</p><div class="bubble" id="coachAnswer" aria-live="polite">Ciao! Nella versione completa potrò aiutarti a ragionare sul programma, chiarire la tecnica degli esercizi e raccogliere il feedback. Qui le risposte sono contenuti dimostrativi statici.</div><div class="notice">Le risposte non sono generate dall'AI e non sostituiscono consigli medici o di un personal trainer qualificato.</div></article><article class="card"><strong>Prova un argomento</strong><p class="subtext" style="margin-top:8px">Seleziona una delle domande di esempio:</p><div class="preview-list"><button data-question="squat">Come migliorare lo squat?</button><button data-question="recovery">Come interpreto il recupero?</button><button data-question="pain">Cosa fare se sento dolore?</button><button data-question="plan">Come si aggiornerà la mia scheda?</button></div></article></div>
 </section>
 
+<section class="screen" id="settings" aria-label="Impostazioni della demo"><div class="overline">FORMA AI / PREFERENZE</div><h1 class="page-title">Impostazioni.</h1><p class="subtext">Questa è una preview pubblica senza login o dati personali. La versione completa con preferenze utente rimane privata e in sviluppo.</p><div class="settings-grid"><article class="card"><h2>Modalità dimostrativa</h2><p class="subtext">I dati visualizzati nella demo sono fittizi. Nessuna richiesta è inviata a un coach AI reale.</p><span class="tag">Public preview</span></article><article class="card"><h2>Privacy e sviluppo</h2><p class="subtext">Non carichiamo video o fotografie e non generiamo raccomandazioni personalizzate sul corpo o sull'alimentazione.</p><a href="privacy.html" class="secondary" style="display:inline-block;text-decoration:none">Privacy della demo ↗</a></article></div></section>
+
 <section class="screen" id="video" aria-label="Video Lab">
 <div class="overline">MOTION INTELLIGENCE</div><h1 class="page-title">Ogni movimento, sotto una nuova luce.</h1><p class="subtext">Anteprima della sezione Video Lab. L'analisi dei gesti tramite video è una funzionalità sperimentale da validare, non attiva nella demo pubblica.</p><div class="split"><article class="card"><div class="mock-video"><span class="silhouette" aria-hidden="true">🏋️</span></div><div class="notice"><strong>Nessun video è registrato, caricato o analizzato.</strong> I confronti visivi dei movimenti non misurano il carico sui singoli arti, non identificano lesioni e non certificano l'esecuzione corretta.</div></article><article class="card"><span class="overline">COMING IN FULL APP</span><h2 style="font-size:27px;letter-spacing:-1px">Video & form review</h2><p class="subtext">Un futuro modulo potrà aiutare a rivedere aspetti visivi dell'esecuzione con controlli espliciti su privacy e consenso.</p><div class="divider"></div><div class="exercise"><span class="ex-no">01</span><div><div class="ex-name">Caricamento locale</div><div class="ex-meta">Controllo volontario dell'utente</div></div><span class="tag">In sviluppo</span></div><div class="exercise"><span class="ex-no">02</span><div><div class="ex-name">Landmark e angoli</div><div class="ex-meta">Indicatori visuali da validare</div></div><span class="tag">Beta</span></div><div class="exercise"><span class="ex-no">03</span><div><div class="ex-name">Feedback prudente</div><div class="ex-meta">Nessuna diagnosi o misurazione della forza</div></div><span class="tag">Ricerca</span></div></article></div>
 </section>
@@ -114,12 +130,12 @@ button,select,input{font:inherit}button{cursor:pointer}button:focus-visible,sele
 <footer class="footer">© 2026 Giovanni Del Gaudio · FORMA AI · Demo pubblica a dati fittizi · All rights reserved. <a href="privacy.html">Privacy della demo</a> · <a href="https://github.com/GiovanniDelGaudio1994/forma-ai">GitHub</a></footer>
 </main></div>
 <nav class="mobile-nav" aria-label="Navigazione mobile">
-<button data-go="dashboard" aria-current="page"><span>◫</span>Home</button><button data-go="workout"><span>⌁</span>Scheda</button><button data-go="nutrition"><span>◈</span>Pasti</button><button data-go="progress"><span>▥</span>Check</button><button data-go="coach"><span>✧</span>Coach</button><button data-go="video"><span>▣</span>Lab</button>
+<button data-go="dashboard" aria-current="page"><span>◫</span>Home</button><button data-go="workout"><span>⌁</span>Scheda</button><button data-go="atlas"><span>◎</span>Atlante</button><button data-go="nutrition"><span>◈</span>Pasti</button><button data-go="progress"><span>▥</span>Check</button><button data-go="coach"><span>✧</span>Coach</button><button data-go="video"><span>▣</span>Lab</button>
 </nav>
 <script>
 (function(){
 'use strict';
-const labels={dashboard:'Dashboard',workout:'Scheda workout',nutrition:'Alimentazione',progress:'Check & progressi',coach:'Coach AI',video:'Video Lab'};
+const labels={dashboard:'Panoramica',workout:'Scheda AI',atlas:'Exercise Atlas',nutrition:'Alimentazione',progress:'Check & progressi',coach:'Coach AI',video:'Video Lab',settings:'Impostazioni'};
 const preset={
 massa:{title:'Massa • Upper Body',summary:'Esempio editoriale di lavoro per la parte superiore del corpo.',time:'55 min • esempio',moves:[['Distensioni manubri','3 × 8–10 • 90s'],['Rematore con manubrio','3 × 10 • 90s'],['Shoulder press','3 × 10 • 90s'],['Curl con manubri','2 × 12 • 60s']]},
 forza:{title:'Forza • Full Body',summary:'Esempio editoriale con enfasi su movimenti fondamentali.',time:'60 min • esempio',moves:[['Squat con manubrio','3 × 6 • 120s'],['Distensioni manubri','3 × 6 • 120s'],['Rematore','3 × 8 • 90s']]},
@@ -140,6 +156,26 @@ document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',e=>
 document.querySelectorAll('[data-goal]').forEach(b=>b.addEventListener('click',()=>renderPlan(b.dataset.goal)));
 document.getElementById('feedbackBtn').addEventListener('click',()=>{document.getElementById('feedbackStatus').textContent='Simulazione completata: nessun carico o piano modificato.';});
 document.querySelectorAll('[data-question]').forEach(b=>b.addEventListener('click',()=>{const key=b.dataset.question;document.getElementById('coachQuestion').textContent=b.textContent;document.getElementById('coachAnswer').textContent=answers[key]||'Anteprima non disponibile.';}));
+const atlasMuscles={
+ chest:['Pettorali','Area anteriore del torace. Esempio dimostrativo: push-up adattati.'],
+ shoulders:['Spalle','Area deltoidea. Esempio dimostrativo: alzate laterali controllate.'],
+ arms:['Braccia','Flessione ed estensione del gomito. Esempio dimostrativo: curl con manubri.'],
+ back:['Dorsali','Area posteriore del tronco. Esempio dimostrativo: rematore con manubrio.'],
+ core:['Addome','Muscoli stabilizzatori del tronco. Esempio dimostrativo: dead bug semplificato.'],
+ glutes:['Glutei','Area posteriore del bacino. Esempio dimostrativo: ponte glutei.'],
+ legs:['Gambe','Muscoli della coscia e della gamba. Esempio dimostrativo: squat a corpo libero.']
+};
+document.querySelectorAll('[data-atlas-muscle]').forEach(button=>button.addEventListener('click',()=>{
+ document.querySelectorAll('[data-atlas-muscle]').forEach(other=>other.setAttribute('aria-pressed',String(other===button)));
+ const item=atlasMuscles[button.dataset.atlasMuscle],status=document.getElementById('atlasMuscleStatus');
+ status.replaceChildren();const strong=document.createElement('strong');strong.textContent=item[0];status.append(strong,document.createTextNode(' · '+item[1]));
+}));
+document.querySelectorAll('[data-atlas-model]').forEach(button=>button.addEventListener('click',()=>{
+ document.querySelectorAll('[data-atlas-model]').forEach(other=>other.setAttribute('aria-pressed',String(other===button)));
+ const female=button.dataset.atlasModel==='female',img=document.getElementById('atlasModelImage');
+ img.src=female?'assets/anatomia-donna-neon.png':'assets/anatomia-uomo-neon.png';
+ img.alt='Illustrazione anatomica stilizzata del modello '+(female?'donna':'uomo');
+}));
 window.addEventListener('hashchange',()=>{const p=location.hash.replace('#','');if(labels[p])navigate(p);});
 renderPlan(lastGoal);if(labels[location.hash.slice(1)])navigate(location.hash.slice(1));
 })();
