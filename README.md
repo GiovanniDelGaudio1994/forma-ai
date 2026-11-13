@@ -52,12 +52,12 @@ The preview runs entirely in the browser without sign-up, keys or backend servic
 
 ## 🧬 Next milestone: Exercise Atlas & Virtual Coach
 
-**Product roadmap — planned, not yet implemented.** We're designing a structured exercise library with anatomy-first visualizations and a consistent virtual personal trainer.
+**Current status: educational atlas preview available; advanced coaching remains planned.** The public demo contains a stylized, interactive male/female 3D anatomy viewer and HD illustrations. A validated exercise knowledge base, accurate motion simulation and an adaptive virtual trainer are **not** implemented in this preview.
 
 | Feature | Concept | Status |
 |---|---|---|
 | Exercise knowledge base | Curated exercise metadata: muscles, equipment, movement pattern, skill level and home-gym alternatives | 🟡 Research & design |
-| 3D anatomy viewer | Anatomical illustrations highlighting prime movers and supporting muscles | 🟡 Planned |
+| 3D anatomy viewer | Interactive illustrative male/female models with basic group selection; not clinically or biomechanically validated | 🟢 Educational demo available — advanced features planned |
 | Virtual trainer | Original branded 3D avatar demonstrating start/end positions, later short movement animations | 🟡 Planned |
 | Coaching integration | Link exercise explanations and appropriate alternatives to the future adaptive coach | 🟡 Planned |
 | Video form review | Carefully qualified visual feedback, requiring separate validation and consent | 🟡 Experimental concept |
@@ -82,7 +82,7 @@ Then visit http://localhost:8080. No production AI APIs are used.
 
 Go to **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 
-A workflow in `.github/workflows/pages.yml` can publish this **static demo** after pushes to `main`. GitHub Pages deployment is not automatic until Pages is enabled and the workflow succeeds.
+The existing `.github/workflows/pages.yml` builds and publishes the **portfolio with all public demos** to the custom domain `https://giovannidelgaudio.it/`. The FORMA AI showcase is at `/forma-ai-demo/`; the root `/` is the developer portfolio. A migration to a dedicated `portfolio` repository is planned but not yet complete.
 
 ## 🔒 Code and commercial development
 
