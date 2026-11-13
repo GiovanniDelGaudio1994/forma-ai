@@ -11,7 +11,7 @@
 
 **The fitness app that adapts to you.** *(Neon Edition — public product concept and interactive prototype.)*
 
-**Nuovo restyling:** la demo pubblica utilizza ora la palette viola/blu Dark Neon della versione privata, con dashboard e navigazione responsive. Restano contenuti dimostrativi: il backend, i dati privati e le funzioni AI reali non sono pubblicati.
+**Nuovo restyling:** la demo pubblica utilizza la palette viola/blu Dark Neon e incorpora una sezione Exercise Atlas dedicata, con anteprime uomo/donna, categorie muscolari e collegamento al viewer 3D interattivo. Restano contenuti dimostrativi: il backend, i dati privati e le funzioni AI reali non sono pubblicati.
 
 [![Demo live](https://img.shields.io/badge/OPEN-LIVE%20DEMO-a85aff?style=for-the-badge&labelColor=12171d)](https://giovannidelgaudio.it/forma-ai-demo/)
 ![Rights](https://img.shields.io/badge/License-All%20Rights%20Reserved-8d94a5?style=for-the-badge&labelColor=12171d)
@@ -21,15 +21,22 @@
 
 **[Esplora l'atlante muscolare 3D interattivo](https://giovannidelgaudio.it/atlante-3d.html)** · Modelli corporei stilizzati 3D Uomo/Donna selezionabili, preferenza salvata localmente, rotazione e selezione di 7 gruppi muscolari, vista frontale/posteriore e schede esercizio illustrative. Funziona lato browser con Three.js via CDN, senza dati personali o backend proprietario. **È una preview educativa, non un atlante clinicamente accurato né un sistema di analisi biomeccanica.**
 
-## 👀 FORMA AI in movimento
+## 👀 Anteprima FORMA AI — Neon Edition & Exercise Atlas
 
 <p align="center">
-  <a href="https://giovannidelgaudio.it/forma-ai-demo/" title="Apri la demo interattiva di FORMA AI">
-    <img src="assets/forma-ai-demo-animated.gif" alt="Tour animato di FORMA AI: dashboard, scheda workout, alimentazione, check e progressi, coach dimostrativo e Video Lab" width="100%">
+  <a href="https://giovannidelgaudio.it/forma-ai-demo/" title="Apri la nuova demo FORMA AI">
+    <img src="assets/forma-ai-cover.svg" alt="FORMA AI Neon Edition, concept viola e blu della nuova interfaccia fitness" width="100%">
   </a>
 </p>
 
-<p align="center"><sub>Tour visivo illustrativo delle sezioni della demo · Valori fittizi · Coach AI e Video Lab non sono funzioni operative nella preview pubblica.</sub></p>
+<p align="center">
+  <a href="https://giovannidelgaudio.it/atlante-3d.html" title="Apri l'atlante interattivo">
+    <img src="assets/anatomia-uomo-neon.png" alt="Illustrazione anatomica maschile del Muscle Atlas" width="44%">
+    <img src="assets/anatomia-donna-neon.png" alt="Illustrazione anatomica femminile del Muscle Atlas" width="44%">
+  </a>
+</p>
+
+<p align="center"><sub>La nuova demo presenta una schermata Exercise Atlas integrata, anteprime uomo/donna e il visualizzatore 3D pubblico. I contenuti sono illustrativi e non revisionati clinicamente; Coach AI e Video Lab restano preview.</sub></p>
 
 <p align="center">
   <a href="https://giovannidelgaudio.it/forma-ai-demo/"><strong>▶ PROVA LA DEMO INTERATTIVA</strong></a>
