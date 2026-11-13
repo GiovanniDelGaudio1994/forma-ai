@@ -172,3 +172,18 @@ button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible{ou
 }
 @media(max-width:400px){.atlas-muscles{grid-template-columns:1fr 1fr}.atlas-muscles button{padding:12px 10px;font-size:12px}}
 @media(prefers-reduced-motion:reduce){.atlas-muscles button{transition:none!important}}
+
+
+/* Public Exercise Atlas screenshot: matches the supplied product concept. */
+.atlas-exercise-screen{display:block;position:relative;align-self:stretch;min-width:0;min-height:255px;background:linear-gradient(130deg,#0e1128,#151735);border:1px solid #68539b;border-radius:19px;overflow:hidden;text-decoration:none;transition:border-color .18s,transform .18s}
+.atlas-exercise-screen:hover{border-color:#d47bff;transform:translateY(-2px)}
+.atlas-exercise-screen img{display:block;position:absolute;width:215%;max-width:none;height:auto;top:-40%;left:-112%;filter:saturate(1.08) contrast(1.04)}
+.atlas-exercise-label{position:absolute;bottom:12px;left:12px;right:12px;text-align:center;border:1px solid #ab7aff79;background:#100b28e8;color:#ead4ff;font-size:10px;font-weight:850;letter-spacing:.08em;padding:9px;border-radius:10px}
+.atlas-screen-preview{display:grid;grid-template-columns:minmax(0,1fr) minmax(160px,.36fr);align-items:center;gap:20px;margin-top:17px;padding:15px;background:linear-gradient(140deg,#151a37,#12142b);border:1px solid #7157ac66;border-radius:17px}
+.atlas-screen-preview img{width:100%;display:block;border:1px solid #7253a670;border-radius:11px;background:#0d1028}
+.atlas-screen-preview div{display:flex;flex-direction:column;gap:9px}
+.atlas-screen-preview strong{color:#f1e6ff;font-size:15px}
+.atlas-screen-preview span{color:#c2b8da;font-size:12px;line-height:1.7}
+.atlas-feature-exercise img{height:190px!important;object-fit:cover!important;object-position:center 37%!important}
+@media(max-width:780px){.atlas-exercise-screen{min-height:230px}.atlas-exercise-screen img{top:-34%;left:-110%;width:215%}.atlas-screen-preview{grid-template-columns:1fr}.atlas-screen-preview img{max-width:580px}.atlas-feature-exercise img{height:175px!important}}
+@media(prefers-reduced-motion:reduce){.atlas-exercise-screen{transition:none!important}}
