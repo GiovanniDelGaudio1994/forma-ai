@@ -1,5 +1,8 @@
 # FORMA AI — Neon Edition · Public Experience Demo
 
+> **Repository organization / Organizzazione:** per il momento questo repository ospita anche il **build del portfolio** e alcune demo pubbliche. La riorganizzazione in repository distinti (`portfolio` e `LegacyBridge`) è in preparazione e non è ancora avvenuta. La versione completa di FORMA AI resta in `forma-ai-private`, privato. [Piano di migrazione senza interruzioni](docs/GITHUB_REPOSITORY_REORGANIZATION.md).
+
+
 <p align="center">
   <img src="assets/forma-ai-cover.svg" alt="FORMA AI — copertina concept neon con dashboard, coach virtuale e monitoraggio progressi" width="100%">
 </p>
@@ -8,18 +11,18 @@
 
 **Nuovo restyling:** la demo pubblica utilizza ora la palette viola/blu Dark Neon della versione privata, con dashboard e navigazione responsive. Restano contenuti dimostrativi: il backend, i dati privati e le funzioni AI reali non sono pubblicati.
 
-[![Demo live](https://img.shields.io/badge/OPEN-LIVE%20DEMO-a85aff?style=for-the-badge&labelColor=12171d)](https://giovannidelgaudio1994.github.io/forma-ai/forma-ai-demo/)
+[![Demo live](https://img.shields.io/badge/OPEN-LIVE%20DEMO-a85aff?style=for-the-badge&labelColor=12171d)](https://giovannidelgaudio.it/forma-ai-demo/)
 ![Rights](https://img.shields.io/badge/License-All%20Rights%20Reserved-8d94a5?style=for-the-badge&labelColor=12171d)
 ![Status](https://img.shields.io/badge/Status-Portfolio%20Preview-a998ff?style=for-the-badge&labelColor=12171d)
 
 ## 🧬 Novità — Muscle Atlas 3D
 
-**[Esplora l'atlante muscolare 3D interattivo](https://giovannidelgaudio1994.github.io/forma-ai/atlante-3d.html)** · Modelli corporei stilizzati 3D Uomo/Donna selezionabili, preferenza salvata localmente, rotazione e selezione di 7 gruppi muscolari, vista frontale/posteriore e schede esercizio illustrative. Funziona lato browser con Three.js via CDN, senza dati personali o backend proprietario. **È una preview educativa, non un atlante clinicamente accurato né un sistema di analisi biomeccanica.**
+**[Esplora l'atlante muscolare 3D interattivo](https://giovannidelgaudio.it/atlante-3d.html)** · Modelli corporei stilizzati 3D Uomo/Donna selezionabili, preferenza salvata localmente, rotazione e selezione di 7 gruppi muscolari, vista frontale/posteriore e schede esercizio illustrative. Funziona lato browser con Three.js via CDN, senza dati personali o backend proprietario. **È una preview educativa, non un atlante clinicamente accurato né un sistema di analisi biomeccanica.**
 
 ## 👀 FORMA AI in movimento
 
 <p align="center">
-  <a href="https://giovannidelgaudio1994.github.io/forma-ai/forma-ai-demo/" title="Apri la demo interattiva di FORMA AI">
+  <a href="https://giovannidelgaudio.it/forma-ai-demo/" title="Apri la demo interattiva di FORMA AI">
     <img src="assets/forma-ai-demo-animated.gif" alt="Tour animato di FORMA AI: dashboard, scheda workout, alimentazione, check e progressi, coach dimostrativo e Video Lab" width="100%">
   </a>
 </p>
@@ -27,7 +30,7 @@
 <p align="center"><sub>Tour visivo illustrativo delle sezioni della demo · Valori fittizi · Coach AI e Video Lab non sono funzioni operative nella preview pubblica.</sub></p>
 
 <p align="center">
-  <a href="https://giovannidelgaudio1994.github.io/forma-ai/forma-ai-demo/"><strong>▶ PROVA LA DEMO INTERATTIVA</strong></a>
+  <a href="https://giovannidelgaudio.it/forma-ai-demo/"><strong>▶ PROVA LA DEMO INTERATTIVA</strong></a>
   &nbsp; · &nbsp;
   <a href="https://github.com/GiovanniDelGaudio1994/forma-ai/tree/main/assets">Visual assets</a>
 </p>
