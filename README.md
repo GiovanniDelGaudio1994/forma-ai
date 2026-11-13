@@ -1,6 +1,6 @@
 # FORMA AI — Neon Edition · Public Experience Demo
 
-> **Repository organization / Organizzazione:** per il momento questo repository ospita anche il **build del portfolio** e alcune demo pubbliche. La riorganizzazione in repository distinti (`portfolio` e `LegacyBridge`) è in preparazione e non è ancora avvenuta. La versione completa di FORMA AI resta in `forma-ai-private`, privato. [Piano di migrazione senza interruzioni](docs/GITHUB_REPOSITORY_REORGANIZATION.md).
+> **Repository organization / Organizzazione:** il sito personale e le sue future Pull Request sono ora in **[`giovanni-portfolio`](https://github.com/GiovanniDelGaudio1994/giovanni-portfolio)**, assegnatario GitHub Pages del dominio personalizzato `www.giovannidelgaudio.it` dal 13/11/2026. Questo repository storico **`forma-ai`** conserva il progetto e la demo FORMA AI, oltre ad alcune vecchie copie pubbliche e alla cronologia delle PR. Il workflow Pages qui è solo manuale per evitare pubblicazioni concorrenti. La versione completa resta in **`forma-ai-private`**, privato. [Dettagli migrazione](docs/PORTFOLIO_MIGRATION_RUNBOOK.md).
 >
 > **Licenze / Licenses:** la presentazione FORMA AI resta coperta dalle sue condizioni specifiche. Il futuro prodotto LegacyBridge è previsto **proprietario**; soltanto la sonda già pubblicata in `projects/legacybridge/` resta sotto **GNU AGPL-3.0-only**, come indicato dalla licenza locale. Un badge FORMA AI non deve essere interpretato come licenza di tutti i progetti ospitati temporaneamente qui.
 
@@ -98,7 +98,7 @@ Then visit http://localhost:8080. No production AI APIs are used.
 
 Go to **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 
-The existing `.github/workflows/pages.yml` builds and publishes the **portfolio with all public demos** to the custom domain `https://giovannidelgaudio.it/`. The FORMA AI showcase is at `/forma-ai-demo/`; the root `/` is the developer portfolio. A migration to a dedicated `portfolio` repository is planned but not yet complete.
+**Production publishing moved to [`giovanni-portfolio`](https://github.com/GiovanniDelGaudio1994/giovanni-portfolio).** That repository builds and publishes the portfolio and public demos to the custom domain `www.giovannidelgaudio.it`. This historical repository's `.github/workflows/pages.yml` is now **manual-only**, retained for controlled rollback; do not use it for website changes. FORMA AI's public interactive experience remains at [`/forma-ai-demo/`](https://www.giovannidelgaudio.it/forma-ai-demo/).
 
 ## 🔒 Code and commercial development
 
