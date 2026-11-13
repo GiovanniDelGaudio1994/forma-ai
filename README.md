@@ -2,7 +2,7 @@
 
 > **Repository organization / Organizzazione:** per il momento questo repository ospita anche il **build del portfolio** e alcune demo pubbliche. La riorganizzazione in repository distinti (`portfolio` e `LegacyBridge`) è in preparazione e non è ancora avvenuta. La versione completa di FORMA AI resta in `forma-ai-private`, privato. [Piano di migrazione senza interruzioni](docs/GITHUB_REPOSITORY_REORGANIZATION.md).
 >
-> **Licenze / Licenses:** la presentazione FORMA AI resta coperta dalle sue condizioni specifiche. La piccola sonda pubblica LegacyBridge in `projects/legacybridge/` è invece concessa sotto **GNU AGPL-3.0-only**, come indicato dalla licenza locale. Un badge FORMA AI non deve essere interpretato come licenza di tutti i progetti ospitati temporaneamente qui.
+> **Licenze / Licenses:** la presentazione FORMA AI resta coperta dalle sue condizioni specifiche. Il futuro prodotto LegacyBridge è previsto **proprietario**; soltanto la sonda già pubblicata in `projects/legacybridge/` resta sotto **GNU AGPL-3.0-only**, come indicato dalla licenza locale. Un badge FORMA AI non deve essere interpretato come licenza di tutti i progetti ospitati temporaneamente qui.
 
 
 <p align="center">
@@ -125,7 +125,7 @@ Copyright © 2026 Giovanni Del Gaudio. All rights reserved. Source is publicly v
 
 Le licenze sono **specifiche di ciascun componente** e non equivalgono a una licenza unica per l'intero portfolio:
 
-- **[LegacyBridge — sonda read-only](projects/legacybridge/LICENSE): GNU AGPL-3.0-only** sul piccolo modulo originale pubblicato.
+- **LegacyBridge — prodotto futuro proprietario**; **[sonda read-only già pubblicata](projects/legacybridge/LICENSE): GNU AGPL-3.0-only** per la sola versione rilasciata. Le concessioni esistenti non vengono revocate retroattivamente.
 - **[SignalScope — motore Python](projects/scraper/LICENSE): GNU AGPL-3.0-only** sul codice originale pubblico.
 - **[Meteo Bash 2D](projects/meteo-bash2d/LICENSE): GNU AGPL-3.0-only** sulla nuova implementazione originale; codice e contenuti di terzi conservano le licenze rispettive.
 - **FORMA AI, DriveGlass e altri prototipi privati:** codice applicativo non pubblicato; non vengono presentati come AGPL.
