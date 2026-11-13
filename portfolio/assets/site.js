@@ -332,6 +332,9 @@
   buttons.forEach(button => {
     button.addEventListener('click', () => applyFilter(button.dataset.updateFilter));
   });
+  document.querySelectorAll('[data-update-target]').forEach(link => {
+    link.addEventListener('click', () => applyFilter(link.dataset.updateTarget));
+  });
   const changeFromHash = () => {
     const match = /^#updates-([a-z0-9-]+)$/.exec(window.location.hash);
     if (!match) return;
