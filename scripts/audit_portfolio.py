@@ -101,6 +101,32 @@ def main() -> int:
         if english and ('<h3 id="stack-heading">Languages & technologies' not in html
                         or 'Personal projects' not in html):
             errors.append(f"{path}: essential English translations missing")
+        # Validate verified education history and bilingual project release notes.
+        for year in ("2014/2015", "2016/2017"):
+            if year not in html:
+                errors.append(f"{path}: missing education year {year}")
+        for institution in ("Leonardo da Vinci", "unisa-seal.svg",
+                            "leonardo-da-vinci-sapri-education.svg"):
+            if institution not in html:
+                errors.append(f"{path}: missing education reference {institution}")
+        if 'id="formazione-unisa"' not in html or 'id="formazione-diploma"' not in html:
+            errors.append(f"{path}: education timeline incomplete")
+        if 'id="aggiornamenti"' not in html or 'id="release-grid"' not in html:
+            errors.append(f"{path}: release notes not rendered")
+        if 'data-release-feed' in html or html.count('class="release-card"') < 4:
+            errors.append(f"{path}: changelog placeholder or missing published entries")
+        if 'data-update-filter="legacybridge"' not in html:
+            errors.append(f"{path}: missing project release filter")
+        if english:
+            for item in ("Education & background", "Real updates.", "Release notes",
+                         "Technical high-school diploma", "2016/2017"):
+                if item not in html:
+                    errors.append(f"{path}: missing English education/changelog text: {item}")
+        else:
+            for item in ("Il mio percorso di studi", "Aggiornamenti reali.",
+                         "Diploma di istruzione tecnica", "Studi attualmente in corso."):
+                if item not in html:
+                    errors.append(f"{path}: missing Italian education/changelog text: {item}")
         if len(page.js_sources) != 2 or len(page.css_sources) != 1:
             errors.append(f"{path}: first-party JS/CSS assets missing")
         for asset in page.js_sources | page.css_sources:
