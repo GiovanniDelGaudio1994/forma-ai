@@ -113,8 +113,17 @@ def main() -> int:
             errors.append(f"{path}: education timeline incomplete")
         if 'id="aggiornamenti"' not in html or 'id="release-grid"' not in html:
             errors.append(f"{path}: release notes not rendered")
-        if 'data-release-feed' in html or html.count('class="release-card"') < 4:
+        if 'data-release-feed' in html or html.count('class="release-card"') < 19:
             errors.append(f"{path}: changelog placeholder or missing published entries")
+        if 'id="release-more"' not in html or 'class="release-summary"' not in html:
+            errors.append(f"{path}: changelog archive expansion or summary missing")
+        if html.count('class="release-evidence"') < 15:
+            errors.append(f"{path}: commit provenance missing from historical entries")
+        for project in ("portfolio", "legacybridge", "forma-ai", "fit-zone",
+                        "signalscope", "meteo-bash2d", "e-wine",
+                        "gestione-farmacia", "irem"):
+            if f'data-update-filter="{project}"' not in html:
+                errors.append(f"{path}: missing archive filter: {project}")
         if 'data-update-filter="legacybridge"' not in html:
             errors.append(f"{path}: missing project release filter")
         if english:
