@@ -128,12 +128,12 @@ def main() -> int:
             errors.append(f"{path}: missing project release filter")
         if english:
             for item in ("Education & background", "Real updates.", "Release notes",
-                         "Technical high-school diploma", "2016/2017"):
+                         "Technical diploma — Surveying", "2016/2017"):
                 if item not in html:
                     errors.append(f"{path}: missing English education/changelog text: {item}")
         else:
             for item in ("Il mio percorso di studi", "Aggiornamenti reali.",
-                         "Diploma di istruzione tecnica", "Studi attualmente in corso."):
+                         "Diploma tecnico — Geometra", "Studi attualmente in corso."):
                 if item not in html:
                     errors.append(f"{path}: missing Italian education/changelog text: {item}")
         if len(page.js_sources) != 2 or len(page.css_sources) != 1:
