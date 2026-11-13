@@ -98,10 +98,10 @@ def main() -> int:
             errors.append(f"{path}: bilingual alternate links missing")
         if 'class="locale-switch"' not in html:
             errors.append(f"{path}: language selector missing")
-        if html.count('data-rome-clock') != 2 or 'Europe/Rome' not in html:
+        if html.count('data-rome-clock') != 1 or 'Europe/Rome' not in html:
             errors.append(f"{path}: Europe/Rome live clock missing")
         for field in ('data-clock-time', 'data-clock-date', 'data-clock-zone'):
-            if html.count(field) != 2:
+            if html.count(field) != 1:
                 errors.append(f"{path}: incomplete live clock: {field}")
         if english and ('<h3 id="stack-heading">Languages & technologies' not in html
                         or 'Personal projects' not in html):
