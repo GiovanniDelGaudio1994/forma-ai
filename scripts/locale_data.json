@@ -174,7 +174,27 @@
       "PORTFOLIO · DEMO UNIVERSITARIA": "PORTFOLIO · UNIVERSITY DEMO",
       "Apri a schermo intero ↗": "Open full screen ↗",
       "Demo dimostrativa pubblica: nessun dato personale reale e nessun collegamento al database universitario originale.": "Public demonstration with fictional data: no real personal information or connection to the original university database.",
-      "Torna su ↑": "Back to top ↑"
+      "Torna su ↑": "Back to top ↑",
+      "Aggiornamenti": "Updates",
+      "FORMAZIONE · EDUCATION": "EDUCATION · BACKGROUND",
+      "Il mio percorso di studi": "Education & background",
+      "Dalle basi tecniche al percorso universitario in Informatica.": "From a technical-school background to ongoing Computer Science studies.",
+      "A.A. 2016/2017 — oggi": "Academic year 2016/2017 — present",
+      "In corso": "Ongoing",
+      "Informatica": "Computer Science",
+      "Percorso universitario iniziato nell'anno accademico 2016/2017. Studi attualmente in corso.": "Started my Computer Science studies in the 2016/2017 academic year. My degree is currently in progress.",
+      "A.S. 2014/2015": "School year 2014/2015",
+      "Diploma conseguito": "Graduated",
+      "Diploma di istruzione tecnica": "Technical high-school diploma",
+      "I.I.S. “Leonardo da Vinci” · Sapri (SA)": "I.I.S. “Leonardo da Vinci” · Sapri, Italy",
+      "Diploma conseguito nell'anno scolastico 2014/2015 presso l'istituto tecnico di Sapri.": "Graduated from the technical high school in Sapri in the 2014/2015 school year.",
+      "CHANGELOG · PATCH NOTES": "CHANGELOG · PATCH NOTES",
+      "Aggiornamenti reali.": "Real updates.",
+      "Ogni versione, documentata.": "Every version, documented.",
+      "Nuove funzionalità, fix, miglioramenti e note di rilascio: la cronologia verificabile dell'evoluzione dei progetti.": "New features, bug fixes, improvements and release notes: a verifiable history of how my projects evolve.",
+      "Le date indicano la pubblicazione delle modifiche sul sito o sul progetto. Non sono promesse di funzionalità future.": "Dates refer to published website or project changes, not promises of future functionality.",
+      "e studio": "and I study",
+      "all'": "at the"
     },
     "attributes": {
       "aria-label=\"Navigazione principale\"": "aria-label=\"Main navigation\"",
@@ -189,7 +209,12 @@
       "data-demo-title=\"GestioneFarmacia · Demo web\"": "data-demo-title=\"GestioneFarmacia · Web demo\"",
       "data-demo-title=\"RememberMe / iRem · Prototipo navigabile\"": "data-demo-title=\"RememberMe / iRem · Interactive prototype\"",
       "data-demo-title=\"e-Wine · Demo universitaria navigabile\"": "data-demo-title=\"e-Wine · Interactive university demo\"",
-      "aria-label=\"Sezioni del report\"": "aria-label=\"Report sections\""
+      "aria-label=\"Sezioni del report\"": "aria-label=\"Report sections\"",
+      "aria-label=\"Sito dell'Università degli Studi di Salerno\"": "aria-label=\"Official University of Salerno website\"",
+      "aria-label=\"Sito dell'I.I.S. Leonardo da Vinci di Sapri\"": "aria-label=\"Leonardo da Vinci Sapri school website\"",
+      "aria-label=\"Interessi personali\"": "aria-label=\"Personal interests\"",
+      "alt=\"Sigillo dell’Università degli Studi di Salerno\"": "alt=\"University of Salerno seal\"",
+      "alt=\"Icona illustrativa originale per l'Istituto Leonardo da Vinci di Sapri, non il logo ufficiale\"": "alt=\"Original illustrated icon for Leonardo da Vinci technical school in Sapri, not the official school logo\""
     }
   },
   "legacybridge": {
