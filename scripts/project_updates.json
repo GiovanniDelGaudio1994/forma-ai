@@ -6,6 +6,52 @@
       "date": "2026-11-13",
       "project": "portfolio",
       "project_name": "Portfolio",
+      "version": "Architecture · 13.11.2026",
+      "type": "documentation",
+      "title": {
+        "it": "Preparata la separazione di portfolio e LegacyBridge",
+        "en": "Prepared standalone Portfolio and LegacyBridge repositories"
+      },
+      "changes": {
+        "it": [
+          "Documentato il piano di migrazione senza interrompere GitHub Pages o il dominio personalizzato.",
+          "Avviato il controllo qualità dei progetti con priorità, stato e verifiche da completare. I nuovi repository non sono ancora stati creati."
+        ],
+        "en": [
+          "Documented a staged migration plan that preserves the existing GitHub Pages domain.",
+          "Started an evidence-based project quality audit. The standalone repositories have not been created yet."
+        ]
+      },
+      "url": "https://github.com/GiovanniDelGaudio1994/forma-ai/blob/main/docs/GITHUB_REPOSITORY_REORGANIZATION.md",
+      "evidence_url": "https://github.com/GiovanniDelGaudio1994/forma-ai/commit/c426206822925dd8672516d091d0d1f5c8e3ecd4"
+    },
+    {
+      "date": "2026-11-13",
+      "project": "portfolio",
+      "project_name": "Portfolio",
+      "version": "UI · 13.11.2026",
+      "type": "feature",
+      "title": {
+        "it": "Navbar più chiara e diploma Geometra aggiornato",
+        "en": "Clearer navigation and updated Surveying diploma"
+      },
+      "changes": {
+        "it": [
+          "Riorganizzata la navigazione con icone, etichette più chiare, stato attivo e menu mobile a griglia.",
+          "Aggiornata la voce del diploma tecnico nell'indirizzo Geometri; il logo autentico dell'istituto è ancora da inserire."
+        ],
+        "en": [
+          "Redesigned navigation with icons, clearer labels, active section state and a mobile grid menu.",
+          "Clarified the technical high-school qualification in Surveying; the authentic school logo is still pending."
+        ]
+      },
+      "url": "https://giovannidelgaudio.it/#chi-sono",
+      "evidence_url": "https://github.com/GiovanniDelGaudio1994/forma-ai/commit/031eb42eee9c15b4c554b07ffc027d2bef65db23"
+    },
+    {
+      "date": "2026-11-13",
+      "project": "portfolio",
+      "project_name": "Portfolio",
       "version": "2026.11.13",
       "type": "feature",
       "title": {
