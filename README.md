@@ -1,6 +1,8 @@
 # FORMA AI — Neon Edition · Public Experience Demo
 
 > **Repository organization / Organizzazione:** per il momento questo repository ospita anche il **build del portfolio** e alcune demo pubbliche. La riorganizzazione in repository distinti (`portfolio` e `LegacyBridge`) è in preparazione e non è ancora avvenuta. La versione completa di FORMA AI resta in `forma-ai-private`, privato. [Piano di migrazione senza interruzioni](docs/GITHUB_REPOSITORY_REORGANIZATION.md).
+>
+> **Licenze / Licenses:** la presentazione FORMA AI resta coperta dalle sue condizioni specifiche. La piccola sonda pubblica LegacyBridge in `projects/legacybridge/` è invece concessa sotto **GNU AGPL-3.0-only**, come indicato dalla licenza locale. Un badge FORMA AI non deve essere interpretato come licenza di tutti i progetti ospitati temporaneamente qui.
 
 
 <p align="center">
