@@ -43,3 +43,7 @@ La pagina web è una ricostruzione illustrativa navigabile delle funzionalità, 
 - **Flutter, Dart, Node.js, SQLite e repository di sviluppo**: rimangono privati.
 
 © 2026 Giovanni Del Gaudio. Il materiale pubblicato non autorizza il riutilizzo dei componenti proprietari.
+
+### Caricamento degli originali senza perdita di qualità
+
+Dopo il push dei file binari, il sito rende disponibili [registrazione Full HD](assets/driveglass-demo-fullhd-2026.mp4) e [Passaporto digitale PDF originale](assets/passaporto-digitale-driveglass-2026.pdf). Questi due asset devono essere pubblicati separatamente dal codice, tramite lo script di trasferimento per macOS. Il PDF non è una fattura né un certificato ufficiale e riporta solo dati inseriti dall'utente.
