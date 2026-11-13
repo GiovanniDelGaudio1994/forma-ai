@@ -2,7 +2,7 @@
 
 ![Meteo Bash 2D](../../assets/meteo-bash2d-cover.svg)
 
-[▶ **Apri la demo web live**](https://giovannidelgaudio1994.github.io/forma-ai/meteo-bash2d-demo/) · [Portfolio](https://giovannidelgaudio1994.github.io/forma-ai/portfolio/)
+[▶ **Apri la demo web live**](https://giovannidelgaudio.it/meteo-bash2d-demo/) · [Portfolio](https://giovannidelgaudio.it/)
 
 **Progetto personale originale (2020), modernizzato nel 2026.**
 
@@ -19,7 +19,7 @@ Richiede Bash, Python 3 e curl. Interroga Open-Meteo direttamente senza chiavi A
 
 ## Demo pubblica
 
-La [demo web live](https://giovannidelgaudio1994.github.io/forma-ai/meteo-bash2d-demo/) ricostruisce l'esperienza grafica del terminale in HTML/CSS/JS, con richieste reali a Open-Meteo. Non è un emulatore Bash eseguito nel browser. Se l'API non risponde, la demo mostra un errore anziché inventare dati.
+La [demo web live](https://giovannidelgaudio.it/meteo-bash2d-demo/) ricostruisce l'esperienza grafica del terminale in HTML/CSS/JS, con richieste reali a Open-Meteo. Non è un emulatore Bash eseguito nel browser. Se l'API non risponde, la demo mostra un errore anziché inventare dati.
 
 ## Stato e attribuzioni
 
