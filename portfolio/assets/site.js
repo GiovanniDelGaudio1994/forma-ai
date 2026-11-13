@@ -35,7 +35,7 @@
     menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
     doc.addEventListener('click', e => { if (!toggle.contains(e.target) && !menu.contains(e.target)) closeMenu(); });
     doc.addEventListener('keydown', e => { if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') { closeMenu(); toggle.focus(); } });
-    const desktop = matchMedia('(min-width: 921px)');
+    const desktop = matchMedia('(min-width: 1211px)');
     if (desktop.addEventListener) desktop.addEventListener('change', () => { if (desktop.matches) closeMenu(); });
   }
 
