@@ -1,5 +1,7 @@
 # Piano di separazione dei repository GitHub
 
+> **Aggiornamento 13/11/2026:** questa è la pianificazione storica. La migrazione effettiva si esegue con la nuova [procedura controllata per `giovanni-portfolio`](PORTFOLIO_MIGRATION_RUNBOOK.md), che non ha ancora trasferito il dominio. **LegacyBridge è ora destinato a sviluppo proprietario**: nessun nuovo repository pubblico LegacyBridge è previsto dalla procedura. La sonda PowerShell precedentemente pubblicata rimane AGPLv3.
+
 **Obiettivo:** dare a ogni progetto una propria identità GitHub senza interrompere la pubblicazione di `https://giovannidelgaudio.it`. This document is also usable by international contributors.
 
 ## Situazione verificata al 13 novembre 2026
