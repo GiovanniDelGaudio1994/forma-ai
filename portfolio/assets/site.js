@@ -311,27 +311,43 @@
   });
 })();
 
-/* Release notes project filter — all notes remain readable without JS. */
+/* Release notes project filter — fully readable without JavaScript.
+   Progressive enhancement only: on JS-enabled pages show six latest by default;
+   filtering reveals every matching release. */
 (() => {
   'use strict';
   const buttons = [...document.querySelectorAll('[data-update-filter]')];
   const cards = [...document.querySelectorAll('[data-update-project]')];
+  const more = document.getElementById('release-more');
   if (!buttons.length || !cards.length) return;
+  let expanded = false;
+  let selectedProject = 'all';
   const applyFilter = (slug) => {
     const exists = slug === 'all' || cards.some(card => card.dataset.updateProject === slug);
     if (!exists) return;
+    selectedProject = slug;
+    let matchIndex = 0;
     cards.forEach(card => {
-      card.hidden = slug !== 'all' && card.dataset.updateProject !== slug;
+      const matches = slug === 'all' || card.dataset.updateProject === slug;
+      card.hidden = !matches || (slug === 'all' && !expanded && matchIndex >= 6);
+      if (matches) matchIndex++;
     });
     buttons.forEach(button => {
       const active = button.dataset.updateFilter === slug;
       button.setAttribute('aria-pressed', String(active));
       button.classList.toggle('is-active', active);
     });
+    if (more) more.hidden = slug !== 'all' || expanded || cards.length <= 6;
   };
   buttons.forEach(button => {
     button.addEventListener('click', () => applyFilter(button.dataset.updateFilter));
   });
+  if (more) {
+    more.addEventListener('click', () => {
+      expanded = true;
+      applyFilter(selectedProject);
+    });
+  }
   document.querySelectorAll('[data-update-target]').forEach(link => {
     link.addEventListener('click', () => applyFilter(link.dataset.updateTarget));
   });
@@ -343,5 +359,6 @@
     if (section) section.scrollIntoView({block:'start'});
   };
   window.addEventListener('hashchange', changeFromHash);
+  applyFilter('all');
   changeFromHash();
 })();
