@@ -106,9 +106,13 @@ def main() -> int:
             if year not in html:
                 errors.append(f"{path}: missing education year {year}")
         for institution in ("Leonardo da Vinci", "unisa-seal.svg",
-                            "leonardo-da-vinci-sapri-education.svg"):
+                            "leonardo-da-vinci-sapri-official.png"):
             if institution not in html:
                 errors.append(f"{path}: missing education reference {institution}")
+        if 'alt="Logo ufficiale dell’Istituto di Istruzione Superiore' not in html and not english:
+            errors.append(f"{path}: official logo alt text missing in Italian")
+        if 'alt="Official emblem of Leonardo da Vinci Upper Secondary School' not in html and english:
+            errors.append(f"{path}: official logo alt text missing in English")
         if 'id="formazione-unisa"' not in html or 'id="formazione-diploma"' not in html:
             errors.append(f"{path}: education timeline incomplete")
         for anchor in ("#progetti", "#aggiornamenti", "#approccio",
