@@ -32,6 +32,7 @@ PUBLIC_DIRS = (
     "meteo-bash2d-demo",
     "signalscope-demo",
     "legacybridge-demo",
+    "driveglass-demo",
 )
 PUBLIC_FILES = (".nojekyll", "atlante-3d.html", "privacy.html")
 
@@ -212,7 +213,7 @@ def build() -> None:
              "gestione-farmacia-demo/", "meteo-bash2d-demo/",
              "signalscope-demo/", "legacybridge-demo/", "legacybridge-demo/en/",
              "legacybridge-demo/hp-550/", "legacybridge-demo/hp-550/en/",
-             "atlante-3d.html")
+             "atlante-3d.html", "driveglass-demo/")
     sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n'
     sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     for path in paths:
@@ -244,6 +245,9 @@ def build() -> None:
     assert (OUTPUT / "signalscope-demo/index.html").exists()
     assert (OUTPUT / "meteo-bash2d-demo/index.html").exists()
     assert (OUTPUT / "legacybridge-demo/index.html").exists()
+    assert (OUTPUT / "driveglass-demo/index.html").exists()
+    assert (OUTPUT / "driveglass-demo/assets/driveglass-real-demo-2026.mp4").exists()
+    assert (OUTPUT / "driveglass-demo/assets/driveglass-real-demo-poster.webp").exists()
     assert (OUTPUT / "legacybridge-demo/en/index.html").exists()
     assert (OUTPUT / "legacybridge-demo/hp-550/index.html").exists()
     assert (OUTPUT / "legacybridge-demo/hp-550/en/index.html").exists()
