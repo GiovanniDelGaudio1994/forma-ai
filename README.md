@@ -23,6 +23,15 @@
 
 ## 👀 Anteprima FORMA AI — Neon Edition & Exercise Atlas
 
+### La schermata Exercise Atlas del concept
+
+[![Schermata FORMA AI Exercise Atlas: interfaccia viola/neon, 50 schede in bozza, anteprima Dumbbell Bench Press](assets/exercise-atlas-preview-2026.webp)](https://giovannidelgaudio.it/forma-ai-demo/#atlas)
+
+**[▶ Apri Exercise Atlas nella demo pubblica](https://giovannidelgaudio.it/forma-ai-demo/#atlas)** · **[🧬 Apri il visualizzatore 3D uomo/donna](https://giovannidelgaudio.it/atlante-3d.html)**
+
+Questa è la schermata di riferimento del prodotto, adesso visibile anche nella demo Neon Edition. La rappresentazione della distensione con manubri è illustrativa; il catalogo completo di 50 schede resta una bozza privata non validata e non è pubblicato come prescrizione personalizzata.
+
+
 <p align="center">
   <a href="https://giovannidelgaudio.it/forma-ai-demo/" title="Apri la nuova demo FORMA AI">
     <img src="assets/forma-ai-cover.svg" alt="FORMA AI Neon Edition, concept viola e blu della nuova interfaccia fitness" width="100%">
