@@ -31,6 +31,7 @@
       menu.classList.toggle('is-open', open);
       toggle.setAttribute('aria-expanded', String(open));
       toggle.setAttribute('aria-label', open ? (english ? 'Close navigation menu' : 'Chiudi il menu di navigazione') : (english ? 'Open navigation menu' : 'Apri il menu di navigazione'));
+      if (open) menu.querySelector('a')?.focus({ preventScroll: true });
     });
     menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
     doc.addEventListener('click', e => { if (!toggle.contains(e.target) && !menu.contains(e.target)) closeMenu(); });
