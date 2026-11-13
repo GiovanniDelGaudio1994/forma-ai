@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "description": "Portfolio and project changelog. Append a dated entry for each published change; write only verified changes. Site build renders this file in IT/EN.",
+  "entries": [
+    {
+      "date": "2026-11-13",
+      "project": "portfolio",
+      "project_name": "Portfolio",
+      "version": "2026.11.13",
+      "type": "feature",
+      "title": {
+        "it": "Percorso di studi e registro aggiornamenti",
+        "en": "Education timeline and release notes"
+      },
+      "changes": {
+        "it": [
+          "Aggiunta la timeline del diploma tecnico 2014/2015 a Sapri e degli studi in Informatica a UNISA dal 2016/2017.",
+          "Introdotte patch notes bilingui per documentare versioni, funzionalità, correzioni e aggiornamenti dei progetti."
+        ],
+        "en": [
+          "Added the education timeline: technical high-school diploma in Sapri (2014/2015) and ongoing Computer Science studies at UNISA since 2016/2017.",
+          "Introduced bilingual release notes to document versions, new features, fixes and project updates."
+        ]
+      },
+      "url": "https://giovannidelgaudio.it/#chi-sono"
+    },
+    {
+      "date": "2026-11-12",
+      "project": "legacybridge",
+      "project_name": "LegacyBridge",
+      "version": "Lab #001",
+      "type": "documentation",
+      "title": {
+        "it": "Pubblicato il caso studio HP 550",
+        "en": "Published the HP 550 case study"
+      },
+      "changes": {
+        "it": [
+          "Pubblicata la documentazione tecnica in italiano e inglese con risultati osservati e prove ancora da svolgere.",
+          "Esplicitati i limiti CPU per Windows 11 e la capacità fisica non verificata dell'unità SATA."
+        ],
+        "en": [
+          "Published bilingual technical documentation distinguishing observed findings from tests still pending.",
+          "Explained Windows 11 CPU limitations and the unverified physical capacity of the SATA device."
+        ]
+      },
+      "url": "https://giovannidelgaudio.it/legacybridge-demo/hp-550/"
+    },
+    {
+      "date": "2026-11-12",
+      "project": "portfolio",
+      "project_name": "Portfolio",
+      "version": "2026.11.12",
+      "type": "feature",
+      "title": {
+        "it": "Portfolio e LegacyBridge disponibili in IT/EN",
+        "en": "Portfolio and LegacyBridge now in IT/EN"
+      },
+      "changes": {
+        "it": [
+          "Inserito un selettore IT/EN con preferenza memorizzata e contenuti tradotti.",
+          "Aggiunti URL distinti per lingua, metadati hreflang e controlli automatici della pubblicazione."
+        ],
+        "en": [
+          "Added an IT/EN language selector with a remembered preference and translated content.",
+          "Introduced separate language URLs, hreflang metadata and automated publishing checks."
+        ]
+      },
+      "url": "https://giovannidelgaudio.it/en/"
+    },
+    {
+      "date": "2026-11-12",
+      "project": "legacybridge",
+      "project_name": "LegacyBridge",
+      "version": "Public probe",
+      "type": "release",
+      "title": {
+        "it": "Primo laboratorio pubblico e sonda read-only",
+        "en": "Public lab preview and read-only probe"
+      },
+      "changes": {
+        "it": [
+          "Pubblicata la demo del laboratorio e una piccola sonda diagnostica PowerShell originale sotto AGPLv3.",
+          "Il codice sperimentale completo resta separato dalla parte pubblica."
+        ],
+        "en": [
+          "Published a lab demo and a small original read-only PowerShell probe under AGPLv3.",
+          "The complete experimental codebase remains separate from the public component."
+        ]
+      },
+      "url": "https://giovannidelgaudio.it/legacybridge-demo/"
+    }
+  ]
+}
