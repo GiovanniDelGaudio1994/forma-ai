@@ -1,7 +1,7 @@
-name: Publish public demo
+name: Legacy demo deployment (manual only)
+# Production GitHub Pages moved to GiovanniDelGaudio1994/giovanni-portfolio.
+# Keep this manual workflow only for controlled rollback/legacy preview.
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
