@@ -4,6 +4,29 @@
   "entries": [
     {
       "date": "2026-11-13",
+      "project": "forma-ai",
+      "project_name": "FORMA AI",
+      "version": "Docs · 13.11.2026",
+      "type": "fix",
+      "title": {
+        "it": "Allineate demo 3D e roadmap di FORMA AI",
+        "en": "Aligned FORMA AI 3D demo with product roadmap"
+      },
+      "changes": {
+        "it": [
+          "Corretto il README: l'atlante 3D illustrativo uomo/donna è già nella demo pubblica.",
+          "Chiarito che esercizi validati, coach AI personalizzato e analisi biomeccanica rimangono separati o da sviluppare."
+        ],
+        "en": [
+          "Corrected the README: the illustrative male/female 3D atlas is already available in the public demo.",
+          "Clarified that validated exercises, personalized AI coaching and biomechanics analysis remain private or planned."
+        ]
+      },
+      "url": "https://giovannidelgaudio.it/forma-ai-demo/",
+      "evidence_url": "https://github.com/GiovanniDelGaudio1994/forma-ai/commit/3b72d838acf193360c83f6c5674ac96453b892b6"
+    },
+    {
+      "date": "2026-11-13",
       "project": "portfolio",
       "project_name": "Portfolio",
       "version": "Architecture · 13.11.2026",
