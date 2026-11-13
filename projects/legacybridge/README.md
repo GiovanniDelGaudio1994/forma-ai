@@ -16,7 +16,7 @@
 - **Linux Live x64:** ancora da provare
 - **Windows 11:** non testato, **non certificato compatibile**; il bypass dei requisiti non fornisce istruzioni CPU mancanti.
 
-Questo repository pubblico contiene **solo una piccola sonda di diagnostica read-only** e documentazione; il progetto sperimentale completo rimane separato.
+**Strategia del progetto:** LegacyBridge è destinato a uno sviluppo **proprietario** se gli esperimenti avranno esito positivo. Questo repository pubblico conserva soltanto la sonda diagnostica read-only già rilasciata e la documentazione; il codice del prodotto futuro non sarà pubblicato automaticamente.
 
 ### Esecuzione (Windows PowerShell)
 
@@ -42,6 +42,6 @@ Non necessita amministratore; stampa JSON in console e **non** cambia firmware, 
 
 ### Licenza e attribuzioni
 
-Copyright © 2026 Giovanni Del Gaudio. Il codice qui pubblicato è sotto **GNU AGPLv3 only**; leggi [LICENSE](./LICENSE). AGPL consente copia, modifica e distribuzione rispettando condizioni, copyright e obblighi sul sorgente. Non è una licenza che proibisce ogni riuso. Il logo/nome possono essere gestiti separatamente.
+**LegacyBridge (sviluppi futuri): proprietario, codice completo non distribuito.** L'attuale sonda originale `probe_windows_readonly.ps1` è **già stata pubblicata sotto GNU AGPL-3.0-only**: per quella versione valgono i permessi e gli obblighi previsti dalla [LICENSE](./LICENSE), che non possono essere revocati retroattivamente. Questa concessione non estende automaticamente AGPLv3 a nuovi moduli proprietari indipendenti. Per futuri moduli derivati o combinati dalla sonda AGPL occorre verificare attentamente la compatibilità delle licenze. Il nome e l'identità grafica del progetto sono trattati separatamente dal codice.
 
 Progetto indipendente, **non affiliato** a HP, Intel o Microsoft. Nessun file Windows, patch del kernel, ISO o codice di terzi è distribuito qui.
