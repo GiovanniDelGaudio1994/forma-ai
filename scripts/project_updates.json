@@ -4,6 +4,29 @@
   "entries": [
     {
       "date": "2026-11-13",
+      "project": "portfolio",
+      "project_name": "Portfolio",
+      "version": "Licenses · 13.11.2026",
+      "type": "documentation",
+      "title": {
+        "it": "Licenze e diritti dei progetti chiariti su GitHub",
+        "en": "Clarified project licensing and rights on GitHub"
+      },
+      "changes": {
+        "it": [
+          "Pubblicate licenze GNU AGPLv3 separate per il codice originale di SignalScope e della nuova implementazione Meteo Bash 2D; LegacyBridge mantiene AGPLv3 per la sonda pubblica.",
+          "Documentato il diverso trattamento dei prodotti proprietari privati, del codice pubblico e dei contributi di terzi; aggiornato anche il profilo GitHub."
+        ],
+        "en": [
+          "Added separate GNU AGPLv3 licenses to original public SignalScope code and the new Meteo Bash 2D implementation; the public LegacyBridge probe remains AGPLv3.",
+          "Documented the distinction between private proprietary products, public code and third-party contributions; updated the GitHub profile as well."
+        ]
+      },
+      "url": "https://github.com/GiovanniDelGaudio1994/GiovanniDelGaudio1994#licenze-dei-progetti",
+      "evidence_url": "https://github.com/GiovanniDelGaudio1994/forma-ai/commit/350dbcee5639eb497f1c05b545691ff8647236a7"
+    },
+    {
+      "date": "2026-11-13",
       "project": "driveglass",
       "project_name": "DriveGlass",
       "version": "Demo · 13.11.2026",
