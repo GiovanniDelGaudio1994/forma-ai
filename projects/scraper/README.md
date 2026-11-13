@@ -2,7 +2,7 @@
 
 ![SignalScope cover](../../assets/signalscope-cover.svg)
 
-[▶ **Demo interattiva**](https://giovannidelgaudio1994.github.io/forma-ai/signalscope-demo/) · [Portfolio](https://giovannidelgaudio1994.github.io/forma-ai/portfolio/)
+[▶ **Demo interattiva**](https://giovannidelgaudio.it/signalscope-demo/) · [Portfolio](https://giovannidelgaudio.it/)
 
 **La differenza non è trovare un cambiamento: è spiegare cosa è cambiato, da dove arriva e perché potrebbe essere importante.**
 
@@ -14,7 +14,7 @@ Scadenze di bandi, opportunità e avvisi possono cambiare senza comunicazioni ev
 
 ## Demo web
 
-La [demo SignalScope](https://giovannidelgaudio1994.github.io/forma-ai/signalscope-demo/) confronta due testi editabili nel browser: è illustrativa e non chiama siti esterni. Il motore Python sottostante implementa anche SHA-256, history SQLite e controlli robots.txt.
+La [demo SignalScope](https://giovannidelgaudio.it/signalscope-demo/) confronta due testi editabili nel browser: è illustrativa e non chiama siti esterni. Il motore Python sottostante implementa anche SHA-256, history SQLite e controlli robots.txt.
 
 ## Usa il motore CLI
 
