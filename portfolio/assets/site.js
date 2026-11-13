@@ -363,3 +363,36 @@
   applyFilter('all');
   changeFromHash();
 })();
+
+
+/* Live Italian time in Europe/Rome, with automatic CET/CEST handling. */
+(() => {
+  'use strict';
+  const widgets = [...document.querySelectorAll('[data-rome-clock]')];
+  if (!widgets.length) return;
+  const zone = 'Europe/Rome';
+  const locale = document.documentElement.lang === 'en' ? 'en-GB' : 'it-IT';
+  const shortDate = new Intl.DateTimeFormat(locale, { timeZone: zone, weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
+  const fullDate = new Intl.DateTimeFormat(locale, { timeZone: zone, weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+  const time = new Intl.DateTimeFormat(locale, { timeZone: zone, hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23' });
+  const longZone = new Intl.DateTimeFormat('en-GB', { timeZone: zone, timeZoneName: 'short' });
+  const offsetZone = new Intl.DateTimeFormat('en-GB', { timeZone: zone, timeZoneName: 'shortOffset' });
+  const render = () => {
+    const now = new Date();
+    const name = longZone.formatToParts(now).find(x => x.type === 'timeZoneName')?.value || zone;
+    const offset = offsetZone.formatToParts(now).find(x => x.type === 'timeZoneName')?.value?.replace('GMT', 'UTC') || '';
+    const label = name + (offset ? ' · ' + offset : '');
+    const formatted = time.format(now);
+    for (const widget of widgets) {
+      const dateNode = widget.querySelector('[data-clock-date]');
+      const clockNode = widget.querySelector('[data-clock-time]');
+      const zoneNode = widget.querySelector('[data-clock-zone]');
+      if (dateNode) dateNode.textContent = (widget.classList.contains('rome-clock-nav') ? shortDate : fullDate).format(now);
+      if (clockNode) { clockNode.textContent = formatted; clockNode.dateTime = now.toISOString(); }
+      if (zoneNode) zoneNode.textContent = label;
+    }
+  };
+  render();
+  window.setInterval(render, 1000);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) render(); });
+})();
