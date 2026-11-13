@@ -372,6 +372,7 @@
   const timeNode = widget.querySelector('[data-clock-time]');
   const dateNode = widget.querySelector('[data-clock-date]');
   const zoneNode = widget.querySelector('[data-clock-zone]');
+  const offsetNode = widget.querySelector('[data-clock-offset]');
   const zone = 'Europe/Rome';
   const locale = document.documentElement.lang === 'en' ? 'en-GB' : 'it-IT';
   const shortDate = new Intl.DateTimeFormat(locale, { timeZone: zone, weekday: 'short', day: 'numeric', month: 'short' });
@@ -386,6 +387,7 @@
     if (timeNode) { timeNode.textContent = time.format(now); timeNode.dateTime = now.toISOString(); }
     if (dateNode) dateNode.textContent = shortDate.format(now);
     if (zoneNode) zoneNode.textContent = zoneName;
+    if (offsetNode) offsetNode.textContent = utc;
     const detail = (locale === 'en-GB' ? 'Italy time: ' : 'Ora italiana: ') + fullDate.format(now) + ', ' + time.format(now) + ', ' + zoneName + (utc ? ' (' + utc + ')' : '');
     widget.title = detail;
     widget.setAttribute('aria-label', detail);
