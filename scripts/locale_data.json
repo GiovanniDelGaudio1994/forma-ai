@@ -195,7 +195,11 @@
       "Le date indicano la pubblicazione delle modifiche sul sito o sul progetto. Non sono promesse di funzionalità future.": "Dates refer to published website or project changes, not promises of future functionality.",
       "e studio": "and I study",
       "all'": "at the",
-      "Note di rilascio": "Release notes"
+      "Note di rilascio": "Release notes",
+      "Profilo e studi": "About & education",
+      "Contatti": "Contact",
+      "Diploma tecnico — Geometra": "Technical diploma — Surveying",
+      "Diploma conseguito nell'anno scolastico 2014/2015 nell'indirizzo Geometri (Costruzioni, Ambiente e Territorio).": "Completed a technical high-school diploma in the 2014/2015 school year, specialising in Surveying (Construction, Environment and Territory)."
     },
     "attributes": {
       "aria-label=\"Navigazione principale\"": "aria-label=\"Main navigation\"",
@@ -215,7 +219,8 @@
       "aria-label=\"Sito dell'I.I.S. Leonardo da Vinci di Sapri\"": "aria-label=\"Leonardo da Vinci Sapri school website\"",
       "aria-label=\"Interessi personali\"": "aria-label=\"Personal interests\"",
       "alt=\"Sigillo dell’Università degli Studi di Salerno\"": "alt=\"University of Salerno seal\"",
-      "alt=\"Icona illustrativa originale per l'Istituto Leonardo da Vinci di Sapri, non il logo ufficiale\"": "alt=\"Original illustrated icon for Leonardo da Vinci technical school in Sapri, not the official school logo\""
+      "alt=\"Icona illustrativa originale per l'Istituto Leonardo da Vinci di Sapri, non il logo ufficiale\"": "alt=\"Original illustrated icon for Leonardo da Vinci technical school in Sapri, not the official school logo\"",
+      "alt=\"Simbolo illustrativo provvisorio dell’Istituto Leonardo da Vinci di Sapri, da sostituire con il logo ufficiale\"": "alt=\"Temporary illustration for Leonardo da Vinci technical school in Sapri, pending the official logo file\""
     }
   },
   "legacybridge": {
