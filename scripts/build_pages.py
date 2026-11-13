@@ -16,6 +16,7 @@ import shutil
 from urllib.parse import unquote, urlsplit
 
 from translate_pages import translate_portfolio, translate_legacybridge
+from render_updates import inject_updates
 
 SOURCE = Path(__file__).resolve().parents[1]
 OUTPUT = SOURCE / "_site"
@@ -168,19 +169,19 @@ def build() -> None:
             shutil.copy2(src, OUTPUT / name)
 
     template = (SOURCE / "portfolio/index.html").read_text(encoding="utf-8")
-    (OUTPUT / "index.html").write_text(adapt_portfolio(template, root=True), encoding="utf-8")
+    (OUTPUT / "index.html").write_text(inject_updates(adapt_portfolio(template, root=True)), encoding="utf-8")
     (OUTPUT / "portfolio/index.html").write_text(
-        adapt_portfolio(template, root=False), encoding="utf-8"
+        inject_updates(adapt_portfolio(template, root=False)), encoding="utf-8"
     )
 
     english = translate_portfolio(template)
     (OUTPUT / "en").mkdir(exist_ok=True)
     (OUTPUT / "en/index.html").write_text(
-        adapt_portfolio_english(english, root=True), encoding="utf-8"
+        inject_updates(adapt_portfolio_english(english, root=True)), encoding="utf-8"
     )
     (OUTPUT / "portfolio/en").mkdir(exist_ok=True)
     (OUTPUT / "portfolio/en/index.html").write_text(
-        adapt_portfolio_english(english, root=False), encoding="utf-8"
+        inject_updates(adapt_portfolio_english(english, root=False)), encoding="utf-8"
     )
 
     legacy = (SOURCE / "legacybridge-demo/index.html").read_text(encoding="utf-8")
