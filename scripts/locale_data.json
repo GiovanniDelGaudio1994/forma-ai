@@ -199,7 +199,9 @@
       "Profilo e studi": "About & education",
       "Contatti": "Contact",
       "Diploma tecnico — Geometra": "Technical diploma — Surveying",
-      "Diploma conseguito nell'anno scolastico 2014/2015 nell'indirizzo Geometri (Costruzioni, Ambiente e Territorio).": "Completed a technical high-school diploma in the 2014/2015 school year, specialising in Surveying (Construction, Environment and Territory)."
+      "Diploma conseguito nell'anno scolastico 2014/2015 nell'indirizzo Geometri (Costruzioni, Ambiente e Territorio).": "Completed a technical high-school diploma in the 2014/2015 school year, specialising in Surveying (Construction, Environment and Territory).",
+      "Caricamento data…": "Loading date…",
+      "ORA IN ITALIA": "TIME IN ITALY"
     },
     "attributes": {
       "aria-label=\"Navigazione principale\"": "aria-label=\"Main navigation\"",
@@ -219,7 +221,8 @@
       "aria-label=\"Sito dell'I.I.S. Leonardo da Vinci di Sapri\"": "aria-label=\"Leonardo da Vinci Sapri school website\"",
       "aria-label=\"Interessi personali\"": "aria-label=\"Personal interests\"",
       "alt=\"Sigillo dell’Università degli Studi di Salerno\"": "alt=\"University of Salerno seal\"",
-      "alt=\"Logo ufficiale dell’Istituto di Istruzione Superiore Leonardo da Vinci di Sapri\"": "alt=\"Official emblem of Leonardo da Vinci Upper Secondary School, Sapri\""
+      "alt=\"Logo ufficiale dell’Istituto di Istruzione Superiore Leonardo da Vinci di Sapri\"": "alt=\"Official emblem of Leonardo da Vinci Upper Secondary School, Sapri\"",
+      "aria-label=\"Data e ora italiane, fuso Europe/Rome\"": "aria-label=\"Italian date and time, Europe/Rome time zone\""
     }
   },
   "legacybridge": {
