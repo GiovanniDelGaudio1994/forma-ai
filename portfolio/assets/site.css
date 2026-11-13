@@ -776,3 +776,9 @@ body.gdg-mouse-active .gdg-cursor-aura.is-over-action{scale:1.3;opacity:.79;filt
 @media(prefers-reduced-motion:reduce){
  .site-nav .nav-links .nav-item{transition:none}
 }
+
+/* Official Leonardo da Vinci Sapri logo: user-provided emblem, cropped without redesign */
+.education-mark.school-mark{background:#087a8c;border-color:rgba(91,223,231,.63)}
+.education-mark.school-mark img{width:100%;height:100%;object-fit:contain;display:block}
+.education-mark.school-mark:hover{box-shadow:0 8px 24px rgba(9,175,199,.22)}
+:root[data-theme="light"] .education-mark.school-mark{background:#087a8c;border-color:#258da5}

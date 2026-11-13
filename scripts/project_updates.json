@@ -4,6 +4,28 @@
   "entries": [
     {
       "date": "2026-11-13",
+      "project": "portfolio",
+      "project_name": "Portfolio",
+      "version": "Education · 13.11.2026",
+      "type": "fix",
+      "title": {
+        "it": "Logo originale Leonardo da Vinci di Sapri inserito",
+        "en": "Added the Leonardo da Vinci Sapri school emblem"
+      },
+      "changes": {
+        "it": [
+          "Sostituito il simbolo scolastico provvisorio con il logo fornito dall'autore, ritagliato dal banner senza ridisegnarlo.",
+          "Aggiornati testo alternativo, traduzione inglese e controlli automatici della pagina Formazione."
+        ],
+        "en": [
+          "Replaced the provisional school graphic with the supplied emblem, cropped from the original banner without redesign.",
+          "Updated alternative text, English localization and education-section regression checks."
+        ]
+      },
+      "url": "https://giovannidelgaudio.it/#chi-sono"
+    },
+    {
+      "date": "2026-11-13",
       "project": "forma-ai",
       "project_name": "FORMA AI",
       "version": "Docs · 13.11.2026",
