@@ -12,6 +12,16 @@
 
 Il video è un breve estratto di una registrazione dell'**8 novembre 2026** che mostra l'app Flutter su Mac durante test locali. È diverso dal mockup grafico che compare nella copertina. Non dimostra funzioni OBD, telemetria in diretta o comandi remoti.
 
+
+## Prova PDF: Passaporto digitale
+
+La [sezione Document Center della demo](https://giovannidelgaudio.it/driveglass-demo/#pdf-proof) ora include una **riproduzione visuale HTML dei campi del PDF realmente esportato dall'app il 09/11/2026**. Il documento originale fornito è un Passaporto digitale DriveGlass non ufficiale: MG ZS Luxury (2022), chilometraggio dichiarato 12.000 km, un intervento del 08/11/2026 e spesa registrata di 129,50 EUR.
+
+**Non è una fattura né un certificato.** L'anteprima sul sito è una trascrizione, non il PDF originale; non prova manutenzione o chilometraggio verificati da terzi.
+
+### Filmato Full HD
+Il player preferisce `assets/driveglass-demo-fullhd-2026.mp4` e usa il video compresso `driveglass-real-demo-2026.mp4` come fallback finché il file HD non è stato caricato. Il video originale H.264 va aggiunto separatamente al repository e non deve essere ricompresso. Nessun codice Flutter privato viene distribuito.
+
 ## Stato dei moduli
 
 | Modulo | Stato |
