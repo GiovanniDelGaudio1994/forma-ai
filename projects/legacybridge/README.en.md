@@ -24,7 +24,7 @@ The project distinguishes actual measurements from assumptions. This processor g
 
 ## Public diagnostic probe
 
-The publicly released component is a **small, original Windows PowerShell 5.1 read-only probe**, not the complete experimental lab.
+**Future direction:** LegacyBridge is intended to become a **proprietary project** if the experiments prove viable. The publicly released component is only a **small, original Windows PowerShell 5.1 read-only probe**, not the complete experimental lab.
 
 It reports CPU name, data/address width, memory, Windows version and storage device metadata in JSON. It does **not** detect CPU flags via CPUID, alter the system, write files, contact external servers or verify actual SSD capacity.
 
@@ -57,7 +57,7 @@ No administrator privileges are required. Please remove personal identifiers bef
 
 ## Licensing and scope
 
-The public original source code is licensed under **GNU AGPL-3.0-only** — see [LICENSE](LICENSE). It may be copied, modified and redistributed subject to the license; AGPL is not a no-copy license. The LegacyBridge name and project identity are handled separately from the code license.
+**Future LegacyBridge development is intended to remain proprietary and unpublished.** The already-published PowerShell probe is licensed under **GNU AGPL-3.0-only** — see [LICENSE](LICENSE). The previously granted rights to that version cannot be retroactively withdrawn. New independent private components are not automatically AGPL-licensed, but any future derivative or combined use of the probe must respect applicable copyleft obligations. The LegacyBridge name and identity are handled separately.
 
 **No Microsoft-owned ISO, DLL, patched kernel, activation tool or third-party proprietary binary is included.** This is independent, experimental research and is not affiliated with Microsoft, HP or Intel.
 
