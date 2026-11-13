@@ -29,3 +29,8 @@ La [demo web live](https://giovannidelgaudio.it/meteo-bash2d-demo/) ricostruisce
 - Dati meteorologici: [Open-Meteo](https://open-meteo.com/), da verificare rispetto ai termini d'uso per eventuale impiego commerciale.
 
 © 2026 Giovanni Del Gaudio, per i contributi originali.
+
+
+## Licenza del codice pubblico
+
+La **nuova implementazione originale** `source/meteo.sh` e le parti originali pubblicate del progetto sono distribuite sotto **[GNU AGPLv3 (AGPL-3.0-only)](LICENSE)**. Componenti preesistenti come `bash-weather` di terze parti, non ripubblicati qui, non sono rilicenziati: mantengono la propria licenza. La GNU AGPLv3 consente il riuso sotto condizioni e non rende non copiabili le idee.
