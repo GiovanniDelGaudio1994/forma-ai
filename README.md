@@ -119,3 +119,16 @@ Copyright © 2026 Giovanni Del Gaudio. All rights reserved. Source is publicly v
 ## 👨‍💻 Author
 
 [GiovanniDelGaudio1994](https://github.com/GiovanniDelGaudio1994) — Software Development Portfolio.
+
+
+## Politica delle licenze dei progetti pubblici
+
+Le licenze sono **specifiche di ciascun componente** e non equivalgono a una licenza unica per l'intero portfolio:
+
+- **[LegacyBridge — sonda read-only](projects/legacybridge/LICENSE): GNU AGPL-3.0-only** sul piccolo modulo originale pubblicato.
+- **[SignalScope — motore Python](projects/scraper/LICENSE): GNU AGPL-3.0-only** sul codice originale pubblico.
+- **[Meteo Bash 2D](projects/meteo-bash2d/LICENSE): GNU AGPL-3.0-only** sulla nuova implementazione originale; codice e contenuti di terzi conservano le licenze rispettive.
+- **FORMA AI, DriveGlass e altri prototipi privati:** codice applicativo non pubblicato; non vengono presentati come AGPL.
+- **Demo, materiali universitari, Fit Zone e risorse grafiche:** diritti e provenienza da verificare per ogni componente; nessuna applicazione automatica della AGPL a opere di terzi.
+
+La **AGPLv3 non impedisce la copia né protegge l'idea in sé**: autorizza l'uso e le modifiche del codice sotto specifici obblighi, incluso il rilascio del sorgente nelle circostanze previste. I marchi, i dataset, gli asset e le dipendenze di terze parti possono avere condizioni diverse. Per componenti proprietari non distribuiti si applicano le condizioni specifiche del relativo titolare.
