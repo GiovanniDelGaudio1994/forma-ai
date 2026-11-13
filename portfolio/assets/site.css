@@ -635,3 +635,69 @@ body.gdg-mouse-active .gdg-cursor-aura.is-over-action{scale:1.3;opacity:.79;filt
 @media(max-width:920px){.locale-switch{margin-left:auto}.nav-inner .theme-switch{margin-left:0}}
 @media(max-width:420px){.locale-switch{padding:3px;gap:2px}.locale-switch a{min-width:31px;min-height:33px;font-size:10px}.nav-inner{gap:6px}}
 @media(prefers-reduced-motion:reduce){.locale-switch a{transition:none}}
+
+
+/* Education journey and public release notes — November 2026 */
+.education-journey{margin:34px 0 12px}
+.education-heading{margin:0 0 19px}
+.education-heading h3{font-size:clamp(22px,2.2vw,29px);letter-spacing:-.045em;margin:10px 0 7px;color:var(--ink)}
+.education-heading p{font-size:13px;line-height:1.65;margin:0;color:#99b6d4}
+.education-timeline{display:grid;gap:15px;position:relative}
+.education-step{display:grid;grid-template-columns:60px minmax(0,1fr);align-items:start;gap:15px;padding:20px;border:1px solid #5596d24c;border-radius:19px;background:linear-gradient(130deg,rgba(22,47,81,.83),rgba(11,24,43,.82));box-shadow:0 16px 36px #0002}
+.education-mark{width:60px;height:60px;border:1px solid #70add455;border-radius:15px;background:#112b49;display:grid;place-items:center;overflow:hidden;flex:none;transition:transform .24s}
+.education-mark:hover{transform:translateY(-2px)}
+.education-mark img{width:51px;height:51px;object-fit:contain}
+.education-mark.school-mark img{width:54px;height:54px}
+.education-detail{min-width:0}
+.education-topline{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.education-date{color:#92c7f4;font-size:11px;font-weight:760;letter-spacing:.02em}
+.education-status{font-size:10px;font-weight:720;line-height:1.4;color:#97e8d2;border:1px solid #59d9b065;border-radius:60px;padding:4px 9px;background:#1b665437}
+.education-status.completed{color:#f1d2a3;border-color:#e1aa6366;background:#c4862330}
+.education-detail h4{font-size:19px;line-height:1.3;letter-spacing:-.03em;margin:3px 0 5px;color:#f1f8ff}
+.education-detail>strong{display:block;font-size:12px;font-weight:700;color:#bedaf2;line-height:1.6}
+.about-copy .education-detail>p{margin:9px 0 0;font-size:12px;line-height:1.7;color:#9daec5}
+.releases{position:relative;background:linear-gradient(180deg,#091424,#080f1d 95%);border-top:1px solid #81b6ec1d;border-bottom:1px solid #81b6ec1d}
+.releases-intro{margin-bottom:37px}
+.releases .release-filters{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:25px}
+.release-filter{border:1px solid #6d9dc751;color:#b1cde4;border-radius:90px;padding:10px 18px;font-size:12px;font-weight:710;cursor:pointer;background:#152940;min-height:43px;transition:background .2s,border-color .2s}
+.release-filter:hover{border-color:#69bbf6;color:#fff;background:#1f4c76}
+.release-filter.is-active,.release-filter[aria-pressed="true"]{background:#1a67b6;border-color:#5bacf5;color:#fff}
+.release-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:19px}
+.release-card{min-width:0;padding:28px;border:1px solid #669cc04e;border-radius:20px;background:linear-gradient(138deg,#12233b,#0e192b 88%);display:flex;flex-direction:column}
+.release-card[hidden]{display:none}
+.release-meta{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:18px}
+.release-project{font-size:11px;letter-spacing:.09em;font-weight:780;text-transform:uppercase;color:#a2d7fa}
+.release-kind{font-size:10px;font-weight:760;color:#9bd9e9;background:#114663;border:1px solid #4eb1da60;border-radius:90px;padding:5px 11px}
+.release-kind-fix{color:#f6d29e;background:#5a411e59;border-color:#d79a4b78}
+.release-kind-release{color:#9ee7cb;background:#175a4e66;border-color:#6bcaac72}
+.release-kind-documentation{color:#c3b7ff;background:#45407b4c;border-color:#9581f46d}
+.release-card h3{font-size:clamp(19px,2vw,25px);line-height:1.3;letter-spacing:-.038em;margin:0 0 9px;color:#f2f8ff}
+.release-version{font-size:11px;color:#92adc7;display:flex;gap:8px;align-items:center}
+.release-card ul{color:#b3c7da;font-size:13px;line-height:1.75;padding:0 0 0 19px;margin:20px 0;flex:1}
+.release-card li{padding-left:2px;margin:7px 0}
+.release-link{font-size:12px;font-weight:740;color:#8bdcff;align-self:start;border-bottom:1px solid transparent;padding-bottom:2px}
+.release-link:hover{border-bottom-color:#8bdcff}
+.release-hint{font-size:12px;color:#89a4bd;margin:23px 0 0}
+#aggiornamenti,#formazione-unisa,#formazione-diploma{scroll-margin-top:105px}
+:root[data-theme="light"] .education-heading h3,:root[data-theme="light"] .education-detail h4{color:#16324f}
+:root[data-theme="light"] .education-heading p{color:#51708d}
+:root[data-theme="light"] .education-step{background:#f7fbff;border-color:#c6d7eb;box-shadow:0 9px 25px #204b7511}
+:root[data-theme="light"] .education-detail>strong{color:#244d70}
+:root[data-theme="light"] .about-copy .education-detail>p{color:#516782}
+:root[data-theme="light"] .education-date{color:#1765a1}
+:root[data-theme="light"] .education-mark{background:#eaf4ff;border-color:#bacfdf}
+:root[data-theme="light"] .education-status{color:#16654c;background:#e4f6ed}
+:root[data-theme="light"] .education-status.completed{color:#815013;background:#fbf0d9}
+:root[data-theme="light"] .releases{background:#f3f8ff;border-color:#d9e5f4}
+:root[data-theme="light"] .release-filter{background:#f7fbff;color:#285576;border-color:#bbcfdf}
+:root[data-theme="light"] .release-filter.is-active,:root[data-theme="light"] .release-filter[aria-pressed="true"]{background:#196fb8;color:#fff;border-color:#196fb8}
+:root[data-theme="light"] .release-card{background:#fff;border-color:#d0dfed}
+:root[data-theme="light"] .release-card h3{color:#193453}
+:root[data-theme="light"] .release-project{color:#236b99}
+:root[data-theme="light"] .release-card ul{color:#4d637e}
+:root[data-theme="light"] .release-version,:root[data-theme="light"] .release-hint{color:#627994}
+:root[data-theme="light"] .release-link{color:#0b6aaa}
+@media(max-width:1120px) and (min-width:921px){.nav-links{gap:12px;font-size:12px}}
+@media(max-width:740px){.release-grid{grid-template-columns:1fr}.education-step{grid-template-columns:52px minmax(0,1fr);padding:17px 14px;gap:12px}.education-mark{width:52px;height:52px}.education-mark img,.education-mark.school-mark img{width:46px;height:46px}.release-card{padding:23px}}
+@media(max-width:420px){.education-topline{align-items:flex-start}.education-date{font-size:10px}.education-detail h4{font-size:17px}.release-filter{padding:10px 14px}}
+@media(prefers-reduced-motion:reduce){.release-filter,.education-mark{transition:none}}
