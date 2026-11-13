@@ -364,35 +364,33 @@
   changeFromHash();
 })();
 
-
 /* Live Italian time in Europe/Rome, with automatic CET/CEST handling. */
 (() => {
   'use strict';
-  const widgets = [...document.querySelectorAll('[data-rome-clock]')];
-  if (!widgets.length) return;
+  const widget = document.querySelector('[data-rome-clock]');
+  if (!widget) return;
+  const timeNode = widget.querySelector('[data-clock-time]');
+  const dateNode = widget.querySelector('[data-clock-date]');
+  const zoneNode = widget.querySelector('[data-clock-zone]');
   const zone = 'Europe/Rome';
   const locale = document.documentElement.lang === 'en' ? 'en-GB' : 'it-IT';
-  const shortDate = new Intl.DateTimeFormat(locale, { timeZone: zone, weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
+  const shortDate = new Intl.DateTimeFormat(locale, { timeZone: zone, weekday: 'short', day: 'numeric', month: 'short' });
   const fullDate = new Intl.DateTimeFormat(locale, { timeZone: zone, weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
-  const time = new Intl.DateTimeFormat(locale, { timeZone: zone, hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23' });
-  const longZone = new Intl.DateTimeFormat('en-GB', { timeZone: zone, timeZoneName: 'short' });
-  const offsetZone = new Intl.DateTimeFormat('en-GB', { timeZone: zone, timeZoneName: 'shortOffset' });
-  const render = () => {
+  const time = new Intl.DateTimeFormat(locale, { timeZone: zone, hour: '2-digit', minute: '2-digit', hourCycle: 'h23' });
+  const timezone = new Intl.DateTimeFormat('en-GB', { timeZone: zone, timeZoneName: 'short' });
+  const offset = new Intl.DateTimeFormat('en-GB', { timeZone: zone, timeZoneName: 'shortOffset' });
+  const tick = () => {
     const now = new Date();
-    const name = longZone.formatToParts(now).find(x => x.type === 'timeZoneName')?.value || zone;
-    const offset = offsetZone.formatToParts(now).find(x => x.type === 'timeZoneName')?.value?.replace('GMT', 'UTC') || '';
-    const label = name + (offset ? ' · ' + offset : '');
-    const formatted = time.format(now);
-    for (const widget of widgets) {
-      const dateNode = widget.querySelector('[data-clock-date]');
-      const clockNode = widget.querySelector('[data-clock-time]');
-      const zoneNode = widget.querySelector('[data-clock-zone]');
-      if (dateNode) dateNode.textContent = (widget.classList.contains('rome-clock-nav') ? shortDate : fullDate).format(now);
-      if (clockNode) { clockNode.textContent = formatted; clockNode.dateTime = now.toISOString(); }
-      if (zoneNode) zoneNode.textContent = label;
-    }
+    const zoneName = timezone.formatToParts(now).find(p => p.type === 'timeZoneName')?.value || zone;
+    const utc = offset.formatToParts(now).find(p => p.type === 'timeZoneName')?.value?.replace('GMT', 'UTC') || '';
+    if (timeNode) { timeNode.textContent = time.format(now); timeNode.dateTime = now.toISOString(); }
+    if (dateNode) dateNode.textContent = shortDate.format(now);
+    if (zoneNode) zoneNode.textContent = zoneName;
+    const detail = (locale === 'en-GB' ? 'Italy time: ' : 'Ora italiana: ') + fullDate.format(now) + ', ' + time.format(now) + ', ' + zoneName + (utc ? ' (' + utc + ')' : '');
+    widget.title = detail;
+    widget.setAttribute('aria-label', detail);
   };
-  render();
-  window.setInterval(render, 1000);
-  document.addEventListener('visibilitychange', () => { if (!document.hidden) render(); });
+  tick();
+  window.setInterval(tick, 1000);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) tick(); });
 })();
