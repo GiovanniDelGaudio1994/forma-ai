@@ -4,6 +4,31 @@
   "entries": [
     {
       "date": "2026-11-13",
+      "project": "driveglass",
+      "project_name": "DriveGlass",
+      "version": "Demo · 13.11.2026",
+      "type": "feature",
+      "title": {
+        "it": "DriveGlass: video Full HD e prova del Passaporto digitale",
+        "en": "DriveGlass: Full HD demo and digital passport evidence"
+      },
+      "changes": {
+        "it": [
+          "Preparata la riproduzione Full HD della registrazione Flutter: il player userà il nuovo video dopo il caricamento del file MP4, con fallback sul filmato compresso.",
+          "Aggiunta l'anteprima HTML di un vero Passaporto digitale PDF generato dall'app il 9 novembre 2026; i dati sono dichiarati dall'utente e non certificati.",
+          "Aggiornate la scheda progetto nel portfolio e la documentazione della demo."
+        ],
+        "en": [
+          "Prepared Full HD playback of the original Flutter recording; the player will use the new MP4 once uploaded, falling back to the compressed clip.",
+          "Added an HTML preview based on an actual digital-passport PDF exported by the app on November 9, 2026; values are user-declared, not certified.",
+          "Updated the project's portfolio card and public demo documentation."
+        ]
+      },
+      "url": "https://giovannidelgaudio.it/driveglass-demo/",
+      "evidence_url": "https://github.com/GiovanniDelGaudio1994/forma-ai/commit/6b4341e7d0a0347452692feda993e2b9385bea32"
+    },
+    {
+      "date": "2026-11-13",
       "project": "portfolio",
       "project_name": "Portfolio",
       "version": "Education · 13.11.2026",
